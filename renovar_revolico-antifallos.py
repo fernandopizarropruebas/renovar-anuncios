@@ -18,43 +18,36 @@ async def cerrar_popup(page):
         return False
 
 async def intentar_renovar(page):
-    for intento in range(1, 4):
-        if intento > 1:
-            print(f"  🔄 Reintento Cloudflare ({intento}/3)...")
+    botones = await page.query_selector_all('button:has-text("Renovar anuncio")')
+    if not botones:
+        botones = await page.query_selector_all('a:has-text("Renovar anuncio")')
+    if not botones:
+        return None  # Ya renovado hoy
 
-        botones = await page.query_selector_all('button:has-text("Renovar anuncio")')
-        if not botones:
-            botones = await page.query_selector_all('a:has-text("Renovar anuncio")')
-        if not botones:
-            return None  # Ya renovado hoy
+    await page.evaluate("el => el.click()", botones[0])
+    await asyncio.sleep(2)
 
-        await page.evaluate("el => el.click()", botones[0])
-        await asyncio.sleep(2)
+    try:
+        await page.wait_for_selector(
+            'text="Tu anuncio fue renovado.", text="La verificación falló"',
+            timeout=20000
+        )
+    except Exception:
+        pass
 
-        try:
-            await page.wait_for_selector(
-                'text="Tu anuncio fue renovado.", text="La verificación falló"',
-                timeout=20000
-            )
-        except Exception:
-            pass
+    if await page.query_selector('text="Tu anuncio fue renovado."'):
+        entendido = await page.query_selector('button:has-text("Entendido")')
+        if entendido:
+            await page.evaluate("el => el.click()", entendido)
+        await asyncio.sleep(1)
+        return True
 
-        if await page.query_selector('text="Tu anuncio fue renovado."'):
-            entendido = await page.query_selector('button:has-text("Entendido")')
-            if entendido:
-                await page.evaluate("el => el.click()", entendido)
-            await asyncio.sleep(1)
-            return True
+    if await page.query_selector('text="La verificación falló"'):
+        print(f"  ⚠️  Cloudflare falló")
+        # Retornamos False inmediatamente para que lo acumule en la cola de 'fallidos' para las próximas rondas
+        return False
 
-        if await page.query_selector('text="La verificación falló"'):
-            print(f"  ⚠️  Cloudflare falló, reintentando...")
-            reintentar = await page.query_selector('text="Reintentar"')
-            if reintentar:
-                await page.evaluate("el => el.click()", reintentar)
-                await asyncio.sleep(3)
-            continue
-
-        await asyncio.sleep(2)
+    await asyncio.sleep(2)
     return False
 
 async def cargar_todos_los_ids(page):
