@@ -1,0 +1,18 @@
+Verificación: 2026-04-21 18:05
+Guardados localmente : 193
+Activos en Revolico  : 187
+OK                   : 186
+BORRADOS             : 7
+Sin descargar        : 1
+
+BORRADOS:
+  [54130204] Butacas / muebles reclinable. — 270 USD (guardado: 2026-04-18)
+  [54131287] Carpas azules de 3*3m, son impermeables con parede — 130 USD (guardado: 2026-04-18)
+  [54271074] adornos con forma de bicicleta — 1 USD (guardado: 2026-04-18)
+  [54278912] Macetas con flores artificiales — 1 USD (guardado: 2026-04-18)
+  [54278929] Flores Artificales — 1 USD (guardado: 2026-04-18)
+  [54479280] Butacones reclinables — 270 USD (guardado: 2026-04-18)
+  [54625845] Muebles de terraza — 1 USD (guardado: 2026-04-18)
+
+SIN DESCARGAR:
+  ID 54999516
