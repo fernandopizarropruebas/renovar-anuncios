@@ -122,10 +122,16 @@ def parsear_datos_md(ruta_md):
         datos["categoria"] = segs[:2]
 
     # Descripción: limpiar líneas de fotos que el scraper pone cuando estaba vacía
-    # Ej: "- `foto_01.jpg`" no es descripción real, es artefacto del scraper
-    m = re.search(r'##\s+Descripci[oó]n\s*\n+(.*?)(?=\n##|\Z)', contenido, re.DOTALL)
+    # Ojo con \n+ que puede comerse el \n de la cabecera ## Fotos si está vacío
+    m = re.search(r'##\s+Descripci[oó]n(.*?)(?=\n#|\Z)', contenido, re.DOTALL)
     if m:
-        lineas = m.group(1).strip().split("\n")
+        # Extraemos y limpiamos
+        raw_desc = m.group(1).strip()
+        # Fallback de limpieza extra por si acaso capturó la sección de fotos
+        if "## Fotos" in raw_desc:
+            raw_desc = raw_desc.split("## Fotos")[0].strip()
+            
+        lineas = raw_desc.split("\n")
         lineas_reales = [
             l for l in lineas
             if not re.match(r'\s*-\s*`foto_\d+\.\w+`', l)
