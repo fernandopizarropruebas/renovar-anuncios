@@ -1,12 +1,16 @@
 """
-publicar_anuncios-oculta-q-soy-bots.py — Publica anuncios evitando detección Anti-Bot
+publicar-antiduplicados.py — Publicador Supremo (Anti-Bot + Anti-Duplicados MD5)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Hereda todas las funciones de camuflaje biológico (Jitter y type_human).
+PERO añade la capa de evasión 'Hash-Busting' matemática:
 
-Versión modificada del publicador original. Agrega "ruido humano":
-- Tiempos de espera aleatorios entre acciones.
-- Usa .type() en lugar de .fill() con demoras de milisegundos entre letras.
-- Clics mecánicos naturales con duración de pulsación.
-- Navegación con cabeceras `Referer` falsificadas para que parezca que entramos desde /home.
+1. FOTOS: Recorta 1 o 2 píxeles aleatoriamente, cambia el brillo en un 1%, 
+   altera el nivel de compresión JPGE, y cambia 1 píxel al azar en la esquina.
+   La foto se verá 100% igual al ojo humano, pero el Servidor verá un archivo NUEVO.
+   
+2. TEXTO: Inyecta espacios Unicode "Zero-Width" (invisibles) al azar en el Título 
+   y la Descripción. Modifica drásticamente la estructura criptográfica original,
+   rompiendo el análisis de coincidencia de cadenas al 100% en la red.
 """
 
 import asyncio
@@ -16,26 +20,91 @@ import json
 import sys
 import base64
 import random
+import tempfile
 from pathlib import Path
+from PIL import Image, ImageEnhance
 from playwright.async_api import async_playwright
 
-# Intento de cargar stealth_async si está instalado
 try:
     from playwright_stealth import stealth_async
 except ImportError:
     stealth_async = None
 
-# ══════════════════════════════════════════════════════════════════════════════
-# ── CONFIGURACIÓN ─────────────────────────────────────────────────────────────
-# ══════════════════════════════════════════════════════════════════════════════
-
 CARPETA_ANUNCIOS = "anuncios"
 MAX_REINTENTOS_FOTOS = 3
 ESPERA_CARGA_FOTOS = 10
-
-# Pausa ALEATORIA entre anuncios (mínimo, máximo en segundos)
-# Para simular distracción humana o pausas de lectura
 PAUSA_RANGO = (25.0, 48.0) 
+
+# ── CAPA ANTI-DUPLICADOS (HASH-BUSTING) ──────────────────────────────────────
+
+def hashbust_image(input_path, output_path):
+    """Genera una imagen visualmente idéntica pero matemáticamente distinta."""
+    try:
+        with Image.open(input_path) as img:
+            if img.mode in ("RGBA", "P"):
+                img = img.convert("RGB")
+            
+            # 1. Micro alteración de color/contraste impreceptible (Rango muy sutil)
+            enhancer = ImageEnhance.Brightness(img)
+            img = enhancer.enhance(random.uniform(0.97, 1.03))
+            
+            # 2. Recorte de píxeles fantasmas (0 a 2 píxeles de ancho y alto)
+            w, h = img.size
+            if w > 10 and h > 10:  # validar seguridad
+                recorte_w = random.randint(0, 2)
+                recorte_h = random.randint(0, 2)
+                img = img.crop((0, 0, w - recorte_w, h - recorte_h))
+            
+            # 3. Mancha cuántica (1 pixel al azar de un color modificado en una esquina)
+            try:
+                px = random.randint(0, 3)
+                py = random.randint(0, 3)
+                fake_color = random.randint(20, 240)
+                img.putpixel((px, py), (fake_color, fake_color, fake_color))
+            except Exception:
+                pass
+                 
+            # 4. Guardado con recomprecion JPG dinámica
+            img.save(output_path, "JPEG", quality=random.randint(89, 98))
+            return True
+    except Exception as e:
+        print(f"    ⚠️ Error de camuflaje en foto: {e}")
+        return False
+
+def hashbust_text(text):
+    """
+    Inyecta secuencias Unicode invisisbles (Zero-Width Space \u200B) 
+    para que el texto sea distinto para los servidores anti-Spam.
+    """
+    if not text: return text
+    zero_width_chars = ['\u200B', '\u200C', '\u200D', '\uFEFF']
+    
+    # Inyectamos el ruido invisible generalemente al FINAL del titulo
+    invisible_tail = "".join(random.choices(zero_width_chars, k=random.randint(3, 10)))
+    
+    # A veces podemos meter uno microscopico en el medio (solo 50% chance)
+    if len(text) > 5 and random.random() > 0.5:
+        mitad = len(text) // 2
+        invisible_mid = random.choice(zero_width_chars)
+        text = text[:mitad] + invisible_mid + text[mitad:]
+        
+    return text + invisible_tail
+
+def hashbust_description(desc):
+    """Igual pero para multilinea en descripciones largas."""
+    if not desc: return desc
+    zero_width_chars = ['\u200B', '\u200C', '\u200D', '\uFEFF']
+    lineas = desc.split('\n')
+    nuevas_lineas = []
+    
+    for l in lineas:
+        if l.strip():
+            # Inyecta polvo invisible al final de cada frase
+            polvo = "".join(random.choices(zero_width_chars, k=random.randint(1, 4)))
+            nuevas_lineas.append(l + polvo)
+        else:
+            nuevas_lineas.append(l)
+    return "\n".join(nuevas_lineas)
 
 # ══════════════════════════════════════════════════════════════════════════════
 
@@ -45,13 +114,10 @@ async def obtener_email_cuenta(context):
         if c['name'] == 'st-access-token':
             try:
                 parts = c['value'].split('.')
-                if len(parts) >= 2:
-                    payload = parts[1]
-                    payload += '=' * (-len(payload) % 4)
-                    data = json.loads(base64.b64decode(payload).decode('utf-8'))
-                    return data.get("user_email") or data.get("user_name")
-            except Exception:
-                pass
+                payload = parts[1] + '=' * (-len(parts[1]) % 4)
+                data = json.loads(base64.b64decode(payload).decode('utf-8'))
+                return data.get("user_email") or data.get("user_name")
+            except Exception: pass
     return None
 
 def cargar_publicados(archivo):
@@ -72,8 +138,7 @@ def parsear_datos_md(ruta_md):
     datos = {"titulo": "", "precio": "", "moneda": "USD", "categoria": [], "descripcion": ""}
 
     m = re.search(r'^#\s+(.+)$', contenido, re.MULTILINE)
-    if m:
-        datos["titulo"] = m.group(1).strip()
+    if m: datos["titulo"] = m.group(1).strip()
 
     m = re.search(r'\|\s*\*\*Precio\*\*\s*\|\s*([^\|]+)\s*\|', contenido)
     if m:
@@ -91,7 +156,6 @@ def parsear_datos_md(ruta_md):
         segs = [s.strip() for s in m.group(1).split(">")]
         datos["categoria"] = segs[:2]
 
-    # Descripción parcheada
     m = re.search(r'##\s+Descripci[oó]n(.*?)(?=\n#|\Z)', contenido, re.DOTALL)
     if m:
         raw_desc = m.group(1).strip()
@@ -120,26 +184,18 @@ def listar_fotos(carpeta):
                 fotos.append(str(f.resolve()))
     return sorted(fotos, key=os.path.basename)[:10]
 
+# ── Capa Interacción ────────────────────────────────────────────────────────
 
-# ── Fotos (Anti-Bot) ────────────────────────────────────────────────────────
 async def fotos_en_formulario(page):
-    for sel in [
-        'img[src^="blob:"]', 'img[src^="data:image"]',
-        '[class*="preview"] img', '[class*="thumb"] img',
-        '[class*="uploaded"] img', '[class*="photo"] img:not([alt="logo"])',
-    ]:
+    for sel in ['img[src^="blob:"]', 'img[src^="data:image"]', '[class*="preview"] img', '[class*="photo"] img:not([alt="logo"])']:
         try:
             items = await page.query_selector_all(sel)
             if items: return len(items)
-        except Exception: pass
+        except: pass
     return 0
 
 async def limpiar_fotos(page):
-    for sel in [
-        'button[aria-label*="liminar"]', 'button[aria-label*="emove"]',
-        'button[aria-label*="lose"]', '[class*="photo"] button',
-        '[class*="preview"] button', '[class*="delete"]', '[class*="remove"]',
-    ]:
+    for sel in ['button[aria-label*="liminar"]', 'button[aria-label*="emove"]', '[class*="photo"] button', '[class*="preview"] button']:
         try:
             btns = await page.query_selector_all(sel)
             for btn in btns:
@@ -148,21 +204,34 @@ async def limpiar_fotos(page):
             if btns:
                 await asyncio.sleep(1)
                 return
-        except Exception: pass
+        except: pass
 
 async def subir_fotos(page, rutas_fotos):
     if not rutas_fotos: return 0
+    
+    # === RUTINA DE HASH-BUSTING EN IMÁGENES ===
+    print("    🎨 Camuflando y reescribiendo pixeles de fotos al vuelo...")
+    temp_dir = tempfile.mkdtemp()
+    rutas_busted = []
+    for idx, original_file in enumerate(rutas_fotos):
+        busted_file = os.path.join(temp_dir, f"hacked_{idx}_{random.randint(100,999)}.jpg")
+        if hashbust_image(original_file, busted_file):
+            rutas_busted.append(busted_file)
+        else:
+            rutas_busted.append(original_file)
+            
     for intento in range(1, MAX_REINTENTOS_FOTOS + 1):
-        print(f"    📸 Fotos — intento {intento}/{MAX_REINTENTOS_FOTOS}")
+        print(f"    📸 Subiendo Fotos Evadidas — intento {intento}/{MAX_REINTENTOS_FOTOS}")
         try:
             file_input = await page.query_selector('input[type="file"]')
             if not file_input: break
             
-            await file_input.set_input_files(rutas_fotos)
+            await file_input.set_input_files(rutas_busted)
             await asyncio.sleep(ESPERA_CARGA_FOTOS + random.uniform(0.5, 2.0))
 
             n = await fotos_en_formulario(page)
-            print(f"    🖼️  {n}/{len(rutas_fotos)} fotos cargadas")
+            print(f"    🖼️  {n}/{len(rutas_busted)} fotos cargadas firmemente")
+            
             if n > 0: return n
 
             if intento < MAX_REINTENTOS_FOTOS:
@@ -170,25 +239,18 @@ async def subir_fotos(page, rutas_fotos):
                 await asyncio.sleep(3)
         except Exception:
             if intento < MAX_REINTENTOS_FOTOS: await asyncio.sleep(3)
+            
     return 0
 
-
-# ── Formulario Humanizado ─────────────────────────────────────────────────────
-
 async def type_human(page, selector, valor):
-    """Evita rellenar al instante. Emula el tecleo humano letra a letra."""
     try:
         el = await page.query_selector(selector)
         if el:
-            # 1. Clic natural en el campo de texto (con demora de soltar botón de Mouse)
             await el.click(delay=random.randint(80, 180))
             await asyncio.sleep(random.uniform(0.2, 0.6))
-            
-            # 2. Tecleo humano (X ms entre pulsaciones)
-            await el.type(str(valor), delay=random.randint(25, 75))
+            await el.type(str(valor), delay=random.randint(25, 70))
             return True
-    except Exception:
-        pass
+    except: pass
     return False
 
 async def seleccionar_moneda(page, moneda):
@@ -198,27 +260,24 @@ async def seleccionar_moneda(page, moneda):
     ]:
         try:
             await metodo()
-            await asyncio.sleep(random.uniform(0.4, 0.9)) # Pausa extra
+            await asyncio.sleep(random.uniform(0.4, 0.9))
             return True
-        except Exception:
-            pass
+        except: pass
     return False
 
 async def seleccionar_categoria(page, segmentos):
     if not segmentos: return False
     subcategoria = segmentos[-1]
 
-    # Abrir categoría mediante click simulado
     for sel in ['[data-testid*="category"]', 'button:has-text("Elige una categoría")']:
         try:
             btn = await page.query_selector(sel)
             if btn:
                 await btn.click(force=True, delay=random.randint(100, 220))
-                await asyncio.sleep(random.uniform(1.8, 2.5))
+                await asyncio.sleep(random.uniform(1.5, 2.2))
                 break
-        except Exception: pass
+        except: pass
 
-    # Sugerida
     try:
         texto_modal = await page.evaluate("() => document.body.innerText")
         if subcategoria.lower() in texto_modal.lower():
@@ -226,100 +285,81 @@ async def seleccionar_categoria(page, segmentos):
             for btn in btns:
                 await btn.click(force=True, delay=random.randint(100, 220))
                 await asyncio.sleep(random.uniform(1.0, 2.0))
-                print(f"      ✅ Sugerencia aceptada: {subcategoria}")
                 return True
-    except Exception: pass
+    except: pass
 
-    print(f"      → Buscando '{subcategoria}' en la lista...")
-    
-    # Text Has-Text
-    for sel in [
-        f'li:has-text("{subcategoria}")',
-        f'[role="option"]:has-text("{subcategoria}")',
-        f'a:has-text("{subcategoria}")',
-    ]:
+    for sel in [f'li:has-text("{subcategoria}")', f'[role="option"]:has-text("{subcategoria}")', f'a:has-text("{subcategoria}")']:
         try:
             els = await page.query_selector_all(sel)
             if els:
                 await els[0].click(force=True, delay=random.randint(80, 200))
-                await asyncio.sleep(random.uniform(1.2, 2.0))
-                print(f"      ✅ '{subcategoria}' seleccionado nativamente")
+                await asyncio.sleep(random.uniform(1.0, 1.5))
                 return True
-        except Exception: pass
+        except: pass
 
     await page.keyboard.press("Escape")
     return False
 
 
 async def publicar_anuncio(page, item_id, datos, rutas_fotos, preview=False):
-    titulo      = datos["titulo"]
+    # === APLICAR POLVO INVISIBLE (Hash-Busting Textual) ===
+    titulo      = hashbust_text(datos["titulo"])
+    descripcion = hashbust_description(datos["descripcion"])
+    
     precio      = datos["precio"]
     moneda      = datos["moneda"]
-    descripcion = datos["descripcion"]
     categoria   = datos["categoria"]
 
-    print(f"  📝 {titulo}")
+    print(f"  📝 {datos['titulo']}")
     if preview: return "PREVIEW"
 
-    # 1. NAVEGACIÓN HUMANIZADA: Decirle al server que venimos de /account
-    # y simular un scroll inicial
     await page.goto("https://www.revolico.com/item/publish", wait_until="domcontentloaded", referer="https://www.revolico.com/account")
     await asyncio.sleep(random.uniform(3.5, 5.0))
 
-    # 2. Fotos
     await subir_fotos(page, rutas_fotos)
     await asyncio.sleep(random.uniform(0.5, 1.5))
 
-    # 3. Título (Type en vez de Fill)
     ok = await type_human(page, 'input[name="title"]', titulo[:120])
-    print(f"    {'✅' if ok else '⚠️ '} Título (tecleado humano)")
+    print(f"    {'✅' if ok else '⚠️ '} Título (Ofuscado MD5 + Humano)")
 
-    # 4. Precio
     ok = await type_human(page, 'input[name="price"]', precio)
     print(f"    {'✅' if ok else '⚠️ '} Precio")
 
-    # 5. Moneda
     if moneda != "USD":
         ok = await seleccionar_moneda(page, moneda)
 
-    # 6. Descripción
-    # Hacemos un poco de scroll artificial antes de llenar
     await page.evaluate("window.scrollTo(0, 300)")
     await asyncio.sleep(random.uniform(0.5, 1.2))
     ok = await type_human(page, 'textarea[name="description"]', descripcion[:1000])
-    print(f"    {'✅' if ok else '⚠️ '} Descripción (tecleada a velocidad humana)")
+    print(f"    {'✅' if ok else '⚠️ '} Descripción (Ofuscada MD5 + Humana)")
 
-    # 7. Categoría
     if categoria:
         ok = await seleccionar_categoria(page, categoria)
 
-    # Añadimos ruido: un scroll ciego en la página
     await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
     await asyncio.sleep(random.uniform(1.0, 2.5))
 
-    # 8. Publicar usando clic físico
     url_antes = page.url
     try:
         btn = await page.query_selector('button[type="submit"]')
         if btn:
-            await btn.click(delay=random.randint(200, 450)) # Clic real sostenido
-    except Exception as e:
-        return None
+            await btn.click(delay=random.randint(200, 450)) 
+    except: return None
 
-    print(f"    ⏳ Esperando backend...")
+    print(f"    ⏳ Esperando verificación del Backend...")
     try: await page.wait_for_url(lambda u: u != url_antes and "publish" not in u, timeout=25000)
-    except Exception: pass
+    except: pass
 
     nueva_url = page.url
     if nueva_url and "item" in nueva_url and "publish" not in nueva_url:
-        print(f"    ✅ Publicado → {nueva_url}")
+        print(f"    ✅ Desplegado indetectablemente → {nueva_url}")
         return nueva_url
 
     return None
 
 # ══════════════════════════════════════════════════════════════════════════════
 async def main():
-    preview  = "--preview" in sys.argv
+    preview = "--preview" in sys.argv
     ids_unicos = []
     if "--id" in sys.argv:
         idx = sys.argv.index("--id")
@@ -342,7 +382,7 @@ async def main():
         
         if stealth_async:
             await stealth_async(page)
-            print("🥷  Modo Stealth Cargado (Anti-Fingerprint)")
+            print("🥷  Modo Stealth WebActivado (Anti-Fingerprint)")
 
         email = await obtener_email_cuenta(context)
         archivo_registro = f"publicados_en_{email}.json" if email else "publicados_en_cuenta_nueva.json"
@@ -350,7 +390,8 @@ async def main():
 
         pendientes = todos_ids if ids_unicos else [i for i in todos_ids if i not in publicados]
 
-        print(f"📂 Anuncios locales     : {len(todos_ids)}")
+        print(f"📂 Anuncios locales      : {len(todos_ids)}")
+        print(f"⭐ Protocolo Activo     : Anti-Bots y Hash-Busting de Contenido Activo")
         print(f"📤 Pendientes de publicar: {len(pendientes)}\n{'='*65}\n")
 
         if not pendientes: return
@@ -367,7 +408,7 @@ async def main():
                 rutas_fotos = listar_fotos(carpeta)
                 nueva_url = await publicar_anuncio(page, item_id, datos, rutas_fotos, preview=preview)
             except Exception as e:
-                print(f"  ❌ Excepción: {e}")
+                print(f"  ❌ Excepción crítica: {e}")
                 nueva_url = None
 
             if nueva_url:
@@ -377,12 +418,11 @@ async def main():
                 fail_ids.append(item_id)
 
             if not preview and i < len(pendientes) - 1:
-                # PAUSA ANTI-BOT CON CAOS
                 espera = random.uniform(PAUSA_RANGO[0], PAUSA_RANGO[1])
-                print(f"\n  ⏱️ Pausa anti-detección: Tomando {espera:.1f} segundos de descanso...")
+                print(f"\n  ⏱️ Pausa anti-detección: Reestructurando patrones... ({espera:.1f}s)")
                 await asyncio.sleep(espera)
 
-    print("\n✅ ¡Publicación con Camuflaje finalizada!")
+    print("\n✅ ¡Escuadrón Supremo de Publicación Finalizado!")
 
 if __name__ == "__main__":
     asyncio.run(main())

@@ -496,10 +496,12 @@ async def publicar_anuncio(page, item_id, datos, rutas_fotos, preview=False):
 
 async def main():
     preview  = "--preview" in sys.argv
-    id_unico = None
-    for i, arg in enumerate(sys.argv):
-        if arg == "--id" and i + 1 < len(sys.argv):
-            id_unico = sys.argv[i + 1]
+    ids_unicos = []
+    if "--id" in sys.argv:
+        idx = sys.argv.index("--id")
+        for arg in sys.argv[idx+1:]:
+            if arg.startswith("--"): break
+            ids_unicos.append(arg)
 
     if preview:
         print("👁️  MODO PREVIEW — no se publicará nada\n")
@@ -516,10 +518,10 @@ async def main():
         and os.path.exists(os.path.join(CARPETA_ANUNCIOS, d, "datos.md"))
     )
 
-    if id_unico:
-        todos_ids = [i for i in todos_ids if i == id_unico]
+    if ids_unicos:
+        todos_ids = [i for i in todos_ids if i in ids_unicos]
         if not todos_ids:
-            print(f"❌ No se encontró el ID {id_unico} en '{CARPETA_ANUNCIOS}/'")
+            print(f"❌ No se encontró ninguno de los IDs solicitados en '{CARPETA_ANUNCIOS}/'")
             return
 
     async with async_playwright() as p:
@@ -539,7 +541,7 @@ async def main():
 
         publicados = cargar_publicados(archivo_registro)
 
-        if id_unico:
+        if ids_unicos:
             # Forzar publicación aunque esté en publicados
             pendientes = todos_ids
             print("⚠️ Modo forzado por --id: ignorando historial de publicados")
