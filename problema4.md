@@ -1,0 +1,1 @@
+ver si en el de publicar se puede subir mas de uno a la vez  o sea envez de solo esto python3 publicar_anuncios.py --id 54129284  poder hacer esto python3 publicar_anuncios.py --id 54129284 54129344  54123284 y todos los que yo quiera
