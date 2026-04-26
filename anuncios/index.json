@@ -2043,12 +2043,66 @@
     "n_fotos": 4
   },
   "55084736": {
+    "titulo": "Vanity",
+    "precio": "340 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/vanity-55084736",
+    "fecha": "Hace 52 minutos",
+    "descargado": "2026-04-26T13:49:57.141216",
+    "n_fotos": 2
+  },
+  "55084727": {
+    "titulo": "Comodas",
+    "precio": "340 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/comodas-55084727",
+    "fecha": "Hace 24 minutos",
+    "descargado": "2026-04-26T13:49:43.217479",
+    "n_fotos": 2
+  },
+  "55084587": {
+    "titulo": "Espejos de pared",
+    "precio": "1 USD",
+    "categoria": "Hogar > Artículos del Hogar > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/espejos-de-pared-55084587",
+    "fecha": "Hace 32 minutos",
+    "descargado": "2026-04-26T13:49:50.574240",
+    "n_fotos": 2
+  },
+  "55084523": {
+    "titulo": "Juegos de terraza",
+    "precio": "1 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/juegos-de-terraza-55084523",
+    "fecha": "Hace 57 minutos",
+    "descargado": "2026-04-26T13:50:03.804053",
+    "n_fotos": 3
+  },
+  "55084602": {
+    "titulo": "Coquetas",
+    "precio": "340 USD",
+    "categoria": "Ropa y Accesorios > Otros - Ropa y Accesorios > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/coquetas-55084602",
+    "fecha": "Hace una hora",
+    "descargado": "2026-04-26T13:50:11.156351",
+    "n_fotos": 2
+  },
+  "55084578": {
     "titulo": "Anuncio en revisión",
     "precio": "1 USD",
     "categoria": "Favoritos > Cuenta",
-    "url": "https://www.revolico.com/item/vanity-55084736",
+    "url": "https://www.revolico.com/item/espejos-55084578",
     "fecha": "",
-    "descargado": "2026-04-26T08:51:43.422929",
-    "n_fotos": 8
+    "descargado": "2026-04-26T13:50:17.792542",
+    "n_fotos": 7
+  },
+  "55084495": {
+    "titulo": "Anuncio en revisión",
+    "precio": "350 USD",
+    "categoria": "Favoritos > Cuenta",
+    "url": "https://www.revolico.com/item/juego-de-muebles-de-exterior-55084495",
+    "fecha": "",
+    "descargado": "2026-04-26T13:50:25.821914",
+    "n_fotos": 7
   }
 }
