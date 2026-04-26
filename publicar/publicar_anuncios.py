@@ -46,6 +46,9 @@ ESPERA_CARGA_FOTOS = 10
 # Pausa entre anuncios (segundos) para no disparar Cloudflare
 PAUSA_ENTRE_ANUNCIOS = 12
 
+# Orden de publicación: "DESC" = últimos primero, "ASC" = primeros primero
+ORDEN_PUBLICACION = "ASC"
+
 # ══════════════════════════════════════════════════════════════════════════════
 
 
@@ -512,10 +515,11 @@ async def main():
         return
 
     todos_ids = sorted(
-        d for d in os.listdir(CARPETA_ANUNCIOS)
+        (d for d in os.listdir(CARPETA_ANUNCIOS)
         if d.isdigit()
         and os.path.isdir(os.path.join(CARPETA_ANUNCIOS, d))
-        and os.path.exists(os.path.join(CARPETA_ANUNCIOS, d, "datos.md"))
+        and os.path.exists(os.path.join(CARPETA_ANUNCIOS, d, "datos.md"))),
+        reverse=(ORDEN_PUBLICACION == "DESC")
     )
 
     if ids_unicos:

@@ -35,6 +35,9 @@ MAX_REINTENTOS_FOTOS = 3
 ESPERA_CARGA_FOTOS = 10
 PAUSA_RANGO = (25.0, 48.0) 
 
+# Orden de publicación: "DESC" = últimos primero, "ASC" = primeros primero
+ORDEN_PUBLICACION = "DESC"
+
 # ── CAPA ANTI-DUPLICADOS (HASH-BUSTING) ──────────────────────────────────────
 
 def hashbust_image(input_path, output_path):
@@ -370,8 +373,9 @@ async def main():
     if not os.path.isdir(CARPETA_ANUNCIOS): return
 
     todos_ids = sorted(
-        d for d in os.listdir(CARPETA_ANUNCIOS) if d.isdigit()
-        and os.path.exists(os.path.join(CARPETA_ANUNCIOS, d, "datos.md"))
+        (d for d in os.listdir(CARPETA_ANUNCIOS) if d.isdigit()
+        and os.path.exists(os.path.join(CARPETA_ANUNCIOS, d, "datos.md"))),
+        reverse=(ORDEN_PUBLICACION == "DESC")
     )
     if ids_unicos: todos_ids = [i for i in todos_ids if i in ids_unicos]
 

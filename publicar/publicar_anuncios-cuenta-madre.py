@@ -18,6 +18,9 @@ from publicar_anuncios import (
 CUENTA_MADRE = "fernandoapg00@gmail.com"
 ARCHIVO_MADRE = f"publicados_en_{CUENTA_MADRE}.json"
 
+# Orden de publicación: "DESC" = últimos primero, "ASC" = primeros primero
+ORDEN_PUBLICACION = "DESC"
+
 def extraer_id_url(url):
     match = re.search(r'-(\d+)\?', url)
     if not match:
@@ -154,8 +157,9 @@ async def main():
         
         print("\n=== FASE 2: CAZA DE HUÉRFANOS CAÍDOS ===")
         carpetas_ids = sorted(
-            d for d in os.listdir(CARPETA_ANUNCIOS)
-            if d.isdigit() and os.path.isdir(os.path.join(CARPETA_ANUNCIOS, d))
+            (d for d in os.listdir(CARPETA_ANUNCIOS)
+            if d.isdigit() and os.path.isdir(os.path.join(CARPETA_ANUNCIOS, d))),
+            reverse=(ORDEN_PUBLICACION == "DESC")
         )
         
         huerfanos = [c_id for c_id in carpetas_ids if c_id not in vivos_set]
