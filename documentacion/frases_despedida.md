@@ -1,6 +1,6 @@
 # Diccionario de Frases Naturales de Cierre (Cuba)
 
-Estas frases se inyectarán aleatoriamente al final de cada anuncio publicado por el bot humano para burlar el chequeo de strings duplicados del servidor.
+Tenga un lindo dia
 
 ---
 
