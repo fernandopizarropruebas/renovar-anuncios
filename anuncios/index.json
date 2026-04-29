@@ -2088,21 +2088,147 @@
     "n_fotos": 2
   },
   "55084578": {
-    "titulo": "Anuncio en revisión",
+    "titulo": "Espejos",
     "precio": "1 USD",
-    "categoria": "Favoritos > Cuenta",
+    "categoria": "Hogar > Artículos del Hogar > La Habana > Diez de Octubre",
     "url": "https://www.revolico.com/item/espejos-55084578",
-    "fecha": "",
-    "descargado": "2026-04-26T13:50:17.792542",
-    "n_fotos": 7
+    "fecha": "Hace 4 horas",
+    "descargado": "2026-04-28T17:44:55.138810",
+    "n_fotos": 2
   },
   "55084495": {
-    "titulo": "Anuncio en revisión",
-    "precio": "350 USD",
-    "categoria": "Favoritos > Cuenta",
+    "titulo": "Juego de muebles de exterior",
+    "precio": "550 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
     "url": "https://www.revolico.com/item/juego-de-muebles-de-exterior-55084495",
-    "fecha": "",
-    "descargado": "2026-04-26T13:50:25.821914",
-    "n_fotos": 7
+    "fecha": "Hace 5 horas",
+    "descargado": "2026-04-28T17:45:28.812416",
+    "n_fotos": 3
+  },
+  "55123928": {
+    "titulo": "Juego de terraza",
+    "precio": "150 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/juego-de-terraza-55123928",
+    "fecha": "Hace 3 horas",
+    "descargado": "2026-04-28T17:44:41.596642",
+    "n_fotos": 1
+  },
+  "55122687": {
+    "titulo": "Mesas con sillas",
+    "precio": "650 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/mesas-con-sillas-55122687",
+    "fecha": "Hace 4 horas",
+    "descargado": "2026-04-28T17:44:48.196334",
+    "n_fotos": 2
+  },
+  "55123971": {
+    "titulo": "Maquillaje",
+    "precio": "1 USD",
+    "categoria": "Ropa y Accesorios > Belleza, Maquillaje y Perfumes > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/maquillaje-55123971",
+    "fecha": "Hace 4 horas",
+    "descargado": "2026-04-28T17:45:02.042139",
+    "n_fotos": 3
+  },
+  "55122785": {
+    "titulo": "Mesa de comedor",
+    "precio": "650 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/mesa-de-comedor-55122785",
+    "fecha": "Hace 4 horas",
+    "descargado": "2026-04-28T17:45:08.952894",
+    "n_fotos": 2
+  },
+  "55123938": {
+    "titulo": "Coquetas",
+    "precio": "1 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/coquetas-55123938",
+    "fecha": "Hace 4 horas",
+    "descargado": "2026-04-28T17:45:15.645042",
+    "n_fotos": 3
+  },
+  "55123903": {
+    "titulo": "Juego de sala",
+    "precio": "650 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/juego-de-sala-55123903",
+    "fecha": "Hace 5 horas",
+    "descargado": "2026-04-28T17:45:22.411122",
+    "n_fotos": 1
+  },
+  "55122674": {
+    "titulo": "Juego de comedor",
+    "precio": "650 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/juego-de-comedor-55122674",
+    "fecha": "Hace 5 horas",
+    "descargado": "2026-04-28T17:45:35.641835",
+    "n_fotos": 2
+  },
+  "55123934": {
+    "titulo": "Set de terraza",
+    "precio": "150 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/set-de-terraza-55123934",
+    "fecha": "Hace 5 horas",
+    "descargado": "2026-04-28T17:45:42.260639",
+    "n_fotos": 1
+  },
+  "55123920": {
+    "titulo": "Espejos",
+    "precio": "1 USD",
+    "categoria": "Servicios > Belleza, Salud y Cuidado Personal > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/espejos-55123920",
+    "fecha": "Hace 5 horas",
+    "descargado": "2026-04-28T17:45:48.789595",
+    "n_fotos": 1
+  },
+  "55123950": {
+    "titulo": "Comodas",
+    "precio": "340 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/comodas-55123950",
+    "fecha": "Hace 5 horas",
+    "descargado": "2026-04-28T17:45:55.396573",
+    "n_fotos": 4
+  },
+  "55123909": {
+    "titulo": "Hamacas",
+    "precio": "280 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/hamacas-55123909",
+    "fecha": "Hace 5 horas",
+    "descargado": "2026-04-28T17:46:02.501479",
+    "n_fotos": 1
+  },
+  "55123982": {
+    "titulo": "Tocador",
+    "precio": "1 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/tocador-55123982",
+    "fecha": "Hace 5 horas",
+    "descargado": "2026-04-28T17:46:09.092698",
+    "n_fotos": 2
+  },
+  "55122680": {
+    "titulo": "Juego de mesas y sillas",
+    "precio": "650 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/juego-de-mesas-y-sillas-55122680",
+    "fecha": "Hace 5 horas",
+    "descargado": "2026-04-28T17:46:15.786532",
+    "n_fotos": 2
+  },
+  "55122707": {
+    "titulo": "Set de comedor de lujo",
+    "precio": "650 USD",
+    "categoria": "Hogar > Muebles > La Habana > Diez de Octubre",
+    "url": "https://www.revolico.com/item/set-de-comedor-de-lujo-55122707",
+    "fecha": "Hace 5 horas",
+    "descargado": "2026-04-28T17:46:22.500107",
+    "n_fotos": 2
   }
 }
