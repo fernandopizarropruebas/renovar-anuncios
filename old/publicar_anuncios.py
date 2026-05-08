@@ -26,6 +26,7 @@ import os
 import re
 import json
 import sys
+import base64
 from pathlib import Path
 from playwright.async_api import async_playwright
 
@@ -36,9 +37,6 @@ from playwright.async_api import async_playwright
 # Carpeta con los anuncios descargados por descargar_anuncios.py
 CARPETA_ANUNCIOS = "anuncios"
 
-# Archivo donde se guardan los IDs ya publicados (evita duplicados)
-REGISTRO_PUBLICADOS = "publicados_en_cuenta_nueva.json"
-
 # Intentos máximos de subir fotos — si se agotan, publica sin fotos y sigue
 MAX_REINTENTOS_FOTOS = 3
 
@@ -48,20 +46,38 @@ ESPERA_CARGA_FOTOS = 10
 # Pausa entre anuncios (segundos) para no disparar Cloudflare
 PAUSA_ENTRE_ANUNCIOS = 12
 
+# Orden de publicación: "DESC" = últimos primero, "ASC" = primeros primero
+ORDEN_PUBLICACION = "ASC"
+
 # ══════════════════════════════════════════════════════════════════════════════
 
 
-# ── Registro de publicados ────────────────────────────────────────────────────
+# ── Identificar Cuenta y Registro ─────────────────────────────────────────────
 
-def cargar_publicados():
-    if os.path.exists(REGISTRO_PUBLICADOS):
-        with open(REGISTRO_PUBLICADOS, "r", encoding="utf-8") as f:
+async def obtener_email_cuenta(context):
+    cookies = await context.cookies("https://www.revolico.com")
+    for c in cookies:
+        if c['name'] == 'st-access-token':
+            try:
+                parts = c['value'].split('.')
+                if len(parts) >= 2:
+                    payload = parts[1]
+                    payload += '=' * (-len(payload) % 4)
+                    data = json.loads(base64.b64decode(payload).decode('utf-8'))
+                    return data.get("user_email") or data.get("user_name")
+            except Exception:
+                pass
+    return None
+
+def cargar_publicados(archivo):
+    if os.path.exists(archivo):
+        with open(archivo, "r", encoding="utf-8") as f:
             return json.load(f)
     return {}
 
-def marcar_publicado(registro, id_original, nueva_url):
+def marcar_publicado(registro, id_original, nueva_url, archivo):
     registro[id_original] = {"nueva_url": nueva_url}
-    with open(REGISTRO_PUBLICADOS, "w", encoding="utf-8") as f:
+    with open(archivo, "w", encoding="utf-8") as f:
         json.dump(registro, f, ensure_ascii=False, indent=2)
 
 
@@ -108,10 +124,23 @@ def parsear_datos_md(ruta_md):
         segs = [s.strip() for s in m.group(1).split(">")]
         datos["categoria"] = segs[:2]
 
-    # Descripción
-    m = re.search(r'##\s+Descripci[oó]n\s*\n+(.*?)(?=\n##|\Z)', contenido, re.DOTALL)
+    # Descripción: limpiar líneas de fotos que el scraper pone cuando estaba vacía
+    # Ojo con \n+ que puede comerse el \n de la cabecera ## Fotos si está vacío
+    m = re.search(r'##\s+Descripci[oó]n(.*?)(?=\n#|\Z)', contenido, re.DOTALL)
     if m:
-        datos["descripcion"] = m.group(1).strip()
+        # Extraemos y limpiamos
+        raw_desc = m.group(1).strip()
+        # Fallback de limpieza extra por si acaso capturó la sección de fotos
+        if "## Fotos" in raw_desc:
+            raw_desc = raw_desc.split("## Fotos")[0].strip()
+            
+        lineas = raw_desc.split("\n")
+        lineas_reales = [
+            l for l in lineas
+            if not re.match(r'\s*-\s*`foto_\d+\.\w+`', l)
+            and l.strip() not in ("_Sin descripción_", "")
+        ]
+        datos["descripcion"] = "\n".join(lineas_reales).strip()
 
     return datos
 
@@ -358,27 +387,25 @@ async def seleccionar_categoria(page, segmentos):
         except Exception:
             pass
 
-    # Si llegamos aquí no se encontró
-    print(f"      ❌ No se encontró '{subcategoria}' en el modal")
-
-    # Intentar cerrar el modal para no bloquear el formulario
+    # No se encontró la subcategoría exacta — aceptar lo que la IA sugiera
+    print(f"      ⚠️  '{subcategoria}' no encontrado — aceptando sugerencia de la IA")
     try:
-        await page.evaluate("""
+        aceptado = await page.evaluate("""
             () => {
                 const btns = Array.from(document.querySelectorAll('button'));
-                const cerrar = btns.find(b =>
-                    b.innerText.trim() === '×' ||
-                    b.getAttribute('aria-label')?.includes('lose') ||
-                    b.getAttribute('aria-label')?.includes('errar')
-                );
-                if (cerrar) cerrar.click();
+                const btn = btns.find(b => b.innerText.trim() === 'Aceptar');
+                if (btn) { btn.click(); return true; }
+                return false;
             }
         """)
-        await asyncio.sleep(1)
+        if aceptado:
+            await asyncio.sleep(1.5)
+            print(f"      ✅ Sugerencia de la IA aceptada")
+            return True
     except Exception:
         pass
 
-    # Escape como último recurso para cerrar el modal sin bloquear
+    # Si ni siquiera hay sugerencia, cerrar con Escape y continuar
     await page.keyboard.press("Escape")
     await asyncio.sleep(1)
     return False
@@ -472,10 +499,12 @@ async def publicar_anuncio(page, item_id, datos, rutas_fotos, preview=False):
 
 async def main():
     preview  = "--preview" in sys.argv
-    id_unico = None
-    for i, arg in enumerate(sys.argv):
-        if arg == "--id" and i + 1 < len(sys.argv):
-            id_unico = sys.argv[i + 1]
+    ids_unicos = []
+    if "--id" in sys.argv:
+        idx = sys.argv.index("--id")
+        for arg in sys.argv[idx+1:]:
+            if arg.startswith("--"): break
+            ids_unicos.append(arg)
 
     if preview:
         print("👁️  MODO PREVIEW — no se publicará nada\n")
@@ -486,38 +515,53 @@ async def main():
         return
 
     todos_ids = sorted(
-        d for d in os.listdir(CARPETA_ANUNCIOS)
+        (d for d in os.listdir(CARPETA_ANUNCIOS)
         if d.isdigit()
         and os.path.isdir(os.path.join(CARPETA_ANUNCIOS, d))
-        and os.path.exists(os.path.join(CARPETA_ANUNCIOS, d, "datos.md"))
+        and os.path.exists(os.path.join(CARPETA_ANUNCIOS, d, "datos.md"))),
+        reverse=(ORDEN_PUBLICACION == "DESC")
     )
 
-    if id_unico:
-        todos_ids = [i for i in todos_ids if i == id_unico]
+    if ids_unicos:
+        todos_ids = [i for i in todos_ids if i in ids_unicos]
         if not todos_ids:
-            print(f"❌ No se encontró el ID {id_unico} en '{CARPETA_ANUNCIOS}/'")
+            print(f"❌ No se encontró ninguno de los IDs solicitados en '{CARPETA_ANUNCIOS}/'")
             return
 
-    publicados = cargar_publicados()
-    pendientes = [i for i in todos_ids if i not in publicados]
-
-    print(f"📂 Anuncios en carpeta  : {len(todos_ids)}")
-    print(f"✅ Ya publicados        : {len(publicados)}")
-    print(f"📤 Pendientes           : {len(pendientes)}")
-
-    if not pendientes:
-        print(f"\n✨ Todos los anuncios ya están publicados.")
-        print(f"   Registro: {REGISTRO_PUBLICADOS}")
-        return
-
-    print(f"\n{'='*65}\n")
-
     async with async_playwright() as p:
-        print("🔌 Conectando a Chrome...")
+        print("🔌 Conectando a Chrome para detectar cuenta...")
         browser = await p.chromium.connect_over_cdp("http://localhost:9222")
         context = browser.contexts[0]
         page = context.pages[0] if context.pages else await context.new_page()
         print("✅ Conectado\n")
+
+        email = await obtener_email_cuenta(context)
+        if email:
+            archivo_registro = f"publicados_en_{email}.json"
+            print(f"👤 Cuenta detectada: {email}")
+        else:
+            archivo_registro = "publicados_en_cuenta_nueva.json"
+            print("⚠️ No se pudo extraer el email. Usando registro por defecto.")
+
+        publicados = cargar_publicados(archivo_registro)
+
+        if ids_unicos:
+            # Forzar publicación aunque esté en publicados
+            pendientes = todos_ids
+            print("⚠️ Modo forzado por --id: ignorando historial de publicados")
+        else:
+            pendientes = [i for i in todos_ids if i not in publicados]
+
+        print(f"📂 Anuncios en carpeta  : {len(todos_ids)}")
+        print(f"✅ Ya publicados        : {len(publicados)}")
+        print(f"📤 Pendientes           : {len(pendientes)}")
+
+        if not pendientes:
+            print(f"\n✨ Todos los anuncios ya están publicados.")
+            print(f"   Registro: {archivo_registro}")
+            return
+
+        print(f"\n{'='*65}\n")
 
         ok_count = 0
         fail_ids = []
@@ -547,7 +591,7 @@ async def main():
 
             if nueva_url:
                 if not preview:
-                    marcar_publicado(publicados, item_id, nueva_url)
+                    marcar_publicado(publicados, item_id, nueva_url, archivo_registro)
                 ok_count += 1
             else:
                 fail_ids.append(item_id)
@@ -566,9 +610,10 @@ async def main():
         print(f"  ❌ Fallidos      : {len(fail_ids)}")
         if fail_ids:
             print(f"     IDs: {', '.join(fail_ids)}")
-        print(f"  📋 Registro en   : {REGISTRO_PUBLICADOS}")
+        print(f"  📋 Registro en   : {archivo_registro}")
     print(f"{'='*65}")
     print("\n✅ ¡Listo!")
 
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
