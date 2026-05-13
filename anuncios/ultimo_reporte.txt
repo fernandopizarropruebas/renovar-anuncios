@@ -1,9 +1,9 @@
-Verificación: 2026-04-24 21:08
-Guardados localmente : 227
-Activos en Revolico  : 0
+Verificación: 2026-05-08 18:19
+Guardados localmente : 270
+Activos en Revolico  : 53
 OK                   : 0
-BORRADOS             : 227
-Sin descargar        : 0
+BORRADOS             : 270
+Sin descargar        : 53
 
 BORRADOS:
   [54129284] Espejos asimétricos — 110 USD (guardado: 2026-04-18)
@@ -233,4 +233,101 @@ BORRADOS:
   [55042622] Carro de juguete — 1 USD (guardado: 2026-04-23)
   [55042628] Carrito eléctrico montable — 1 USD (guardado: 2026-04-23)
   [55042664] Cafeteras — 1 USD (guardado: 2026-04-23)
+  [55084495] Juego de muebles de exterior — 550 USD (guardado: 2026-04-28)
+  [55084523] Juegos de terraza — 1 USD (guardado: 2026-04-26)
+  [55084578] Espejos — 1 USD (guardado: 2026-04-28)
+  [55084587] Espejos de pared — 1 USD (guardado: 2026-04-26)
+  [55084602] Coquetas — 340 USD (guardado: 2026-04-26)
+  [55084727] Comodas — 340 USD (guardado: 2026-04-26)
+  [55084736] Vanity — 340 USD (guardado: 2026-04-26)
+  [55122674] Juego de comedor — 650 USD (guardado: 2026-04-28)
+  [55122680] Juego de mesas y sillas — 650 USD (guardado: 2026-04-28)
+  [55122687] Mesas con sillas — 650 USD (guardado: 2026-04-28)
+  [55122707] Set de comedor de lujo — 650 USD (guardado: 2026-04-28)
+  [55122785] Mesa de comedor — 650 USD (guardado: 2026-04-28)
+  [55123903] Juego de sala — 650 USD (guardado: 2026-04-28)
+  [55123909] Hamacas — 280 USD (guardado: 2026-04-28)
+  [55123920] Espejos — 1 USD (guardado: 2026-04-28)
+  [55123928] Juego de terraza — 150 USD (guardado: 2026-04-28)
+  [55123934] Set de terraza — 150 USD (guardado: 2026-04-28)
+  [55123938] Coquetas — 1 USD (guardado: 2026-04-28)
+  [55123950] Comodas — 340 USD (guardado: 2026-04-28)
+  [55123971] Maquillaje — 1 USD (guardado: 2026-04-28)
+  [55123982] Tocador — 1 USD (guardado: 2026-04-28)
+  [55164361] Juego de mesa y sillas — 650 USD (guardado: 2026-05-05)
+  [55164370] Juego de comedor — 1 USD (guardado: 2026-05-05)
+  [55164393] Butacon reclinable — 1 USD (guardado: 2026-05-05)
+  [55164406] Sofa cama — 1 USD (guardado: 2026-05-05)
+  [55164420] Butaca reclinable — 250 USD (guardado: 2026-05-05)
+  [55164424] Butacon — 250 USD (guardado: 2026-05-05)
+  [55164433] Butacas — 250 USD (guardado: 2026-05-05)
+  [55164496] Butacones reclinables — 1 USD (guardado: 2026-05-05)
+  [55164509] Butacon reclinable De confort — 300 USD (guardado: 2026-05-05)
+  [55164531] Mesa de comedor — 650 USD (guardado: 2026-05-05)
+  [55164543] Mesas de comedor — 650 USD (guardado: 2026-05-05)
+  [55199154] INVERSOR SOLAR 10K + BATERÍA 16K — 4,000 USD (guardado: 2026-05-05)
+  [55199195] Inversor solar 10k con batería 16 kw — 4,000 USD (guardado: 2026-05-05)
+  [55199220] Solar inverter 10kw + batería 16 kw — 1 USD (guardado: 2026-05-05)
+  [55199244] Convertidor de 10k — 1 USD (guardado: 2026-05-05)
+  [55199262] Inversor 10k + batería 16k en 3800 — 3,800 USD (guardado: 2026-05-05)
+  [55254326] Hamacas — 280 USD (guardado: 2026-05-05)
+  [55254369] Columpios — 280 USD (guardado: 2026-05-05)
+  [55254444] Sillones colgantes — 280 USD (guardado: 2026-05-05)
+  [55254478] Inversor 10k con bateria 16 K — 3,800 USD (guardado: 2026-05-05)
+  [55254502] Solar inverter — 1 USD (guardado: 2026-05-05)
+  [55254517] Convertidor solar 10k + bateria 16k — 3,800 USD (guardado: 2026-05-05)
 
+SIN DESCARGAR:
+  ID 55085443
+  ID 55085474
+  ID 55089270
+  ID 55089296
+  ID 55089306
+  ID 55089314
+  ID 55089324
+  ID 55089334
+  ID 55089342
+  ID 55089350
+  ID 55089375
+  ID 55089387
+  ID 55089392
+  ID 55089400
+  ID 55089415
+  ID 55089420
+  ID 55089433
+  ID 55089438
+  ID 55089450
+  ID 55089459
+  ID 55089469
+  ID 55089496
+  ID 55089505
+  ID 55089515
+  ID 55089522
+  ID 55089534
+  ID 55089541
+  ID 55089550
+  ID 55089558
+  ID 55089596
+  ID 55089607
+  ID 55089618
+  ID 55089658
+  ID 55089667
+  ID 55089685
+  ID 55089693
+  ID 55090177
+  ID 55182146
+  ID 55182151
+  ID 55182185
+  ID 55182188
+  ID 55182202
+  ID 55182215
+  ID 55182222
+  ID 55199031
+  ID 55199042
+  ID 55199110
+  ID 55199136
+  ID 55199366
+  ID 55199371
+  ID 55273566
+  ID 55273572
+  ID 55273580
