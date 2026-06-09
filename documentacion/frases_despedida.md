@@ -8,7 +8,7 @@ Cualquier duda, contácteme sin problemas.
 No dude en contactarme para más detalles.
 Todos los productos están testeados y funcionales.
 Totalmente nuevos y sin detalles.
-Garantía de buen funcionamiento demostrable al momento de la entrega.
+Buen funcionamiento demostrable al momento de la entrega.
 Todo es de primera calidad.
 Los mejores productos de la calidad precio disponible.
 Ofertón especial, artículos nuevecitos.
@@ -19,8 +19,7 @@ Tenemos los mejores precios competitivos.
 Aprovecha que se acaba rápido.
 Productos impecables, tal cual se describen.
 Hacemos domicilio si es de la zona, consúltenos.
-Rebajas si llevas más de uno.
-Todo como nuevo.
+Todo nuevo.
 Interesados al privado o WhatsApp.
 Garantía y seguridad en su compra, cero engaños.
 Cualquier pregunta es bienvenida.
