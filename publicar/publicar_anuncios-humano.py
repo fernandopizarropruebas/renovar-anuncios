@@ -268,14 +268,28 @@ async def subir_fotos(page, rutas_fotos):
 
 async def publicar_anuncio(page, item_id, datos, rutas_fotos, preview=False):
     titulo      = datos["titulo"]
-    precio      = datos["precio"]
+    precio_original = datos["precio"]
     moneda      = datos["moneda"]
     categoria   = datos["categoria"]
     
     # Inyectar texto Genuinamente! (Anti-Clon)
     descripcion = inyectar_frase(datos["descripcion"])
 
-    print(f"  📝 {titulo}")
+    # === Lógica dinámica de incremento de precio y mensajería ===
+    precio_final = precio_original
+    try:
+        precio_num = int(precio_original)
+        incremento = (int(precio_num / 50) + 1) * 5
+        precio_final = str(precio_num + incremento)
+        
+        if incremento >= 20:
+            descripcion += "\n\nmensajeria gratis en toda la habana"
+        elif incremento >= 10:
+            descripcion += "\n\nmensajeria gratis para casi toda la habana"
+    except (ValueError, TypeError):
+        pass # Si el precio no era un número válido, lo dejamos intacto
+
+    print(f"  📝 {titulo} (Precio final: {precio_final} {moneda})")
     if preview: return "PREVIEW"
 
     # Mecánica originaria directa sin Headers raros (SPA Native-Friendly)
@@ -284,7 +298,7 @@ async def publicar_anuncio(page, item_id, datos, rutas_fotos, preview=False):
 
     await subir_fotos(page, rutas_fotos)
     ok = await fill(page, 'input[name="title"]', titulo[:120])
-    ok = await fill(page, 'input[name="price"]', precio)
+    ok = await fill(page, 'input[name="price"]', precio_final)
     if moneda != "USD": await seleccionar_moneda(page, moneda)
     ok = await fill(page, 'textarea[name="description"]', descripcion[:1000])
 
