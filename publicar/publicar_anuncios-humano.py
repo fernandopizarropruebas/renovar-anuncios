@@ -282,10 +282,21 @@ async def publicar_anuncio(page, item_id, datos, rutas_fotos, preview=False):
         incremento = (int(precio_num / 50) + 1) * 5
         precio_final = str(precio_num + incremento)
         
-        if incremento >= 20:
-            descripcion += "\n\nmensajeria gratis en toda la habana"
-        elif incremento >= 10:
-            descripcion += "\n\nmensajeria gratis para casi toda la habana"
+        if incremento >= 10:
+            acciones = ["Mensajería", "Delivery", "Envío", "Transporte", "La entrega", "Servicio a domicilio"]
+            precios = ["gratis", "sin costo", "libre de costo", "incluida", "de cortesía", "por la casa"]
+            emojis = ["🚚", "🛵", "📦", "📍", "🚀", ""]
+            
+            if incremento >= 20:
+                destinos = ["a toda La Habana", "a cualquier municipio", "hasta la puerta de tu casa", "en la capital", "a todos los municipios"]
+            else:
+                destinos = ["para casi toda La Habana", "a zonas céntricas", "a la mayoría de los municipios", "a gran parte de la capital", "(consultar zona)"]
+                
+            frase_spintax = f"{random.choice(acciones)} {random.choice(precios)} {random.choice(destinos)}".capitalize()
+            emoji = random.choice(emojis)
+            inyeccion = f"{emoji} {frase_spintax}".strip()
+                
+            descripcion += f"\n\n{inyeccion}"
     except (ValueError, TypeError):
         pass # Si el precio no era un número válido, lo dejamos intacto
 
@@ -326,6 +337,14 @@ async def publicar_anuncio(page, item_id, datos, rutas_fotos, preview=False):
 # ══════════════════════════════════════════════════════════════════════════════
 async def main():
     preview = "--preview" in sys.argv
+    puerto = 9222
+    for arg in sys.argv:
+        if arg.startswith("--port="):
+            try:
+                puerto = int(arg.split("=")[1])
+            except ValueError:
+                pass
+
     ids_unicos = []
     if "--id" in sys.argv:
         idx = sys.argv.index("--id")
@@ -342,7 +361,8 @@ async def main():
     if ids_unicos: todos_ids = [i for i in todos_ids if i in ids_unicos]
 
     async with async_playwright() as p:
-        browser = await p.chromium.connect_over_cdp("http://localhost:9222")
+        print(f"🔌 Conectando a Chrome en el puerto {puerto}...")
+        browser = await p.chromium.connect_over_cdp(f"http://localhost:{puerto}")
         context = browser.contexts[0]
         page = context.pages[0] if context.pages else await context.new_page()
 
