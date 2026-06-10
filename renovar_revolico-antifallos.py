@@ -1,5 +1,6 @@
 import asyncio
 import re
+import sys
 from playwright.async_api import async_playwright
 
 MAX_RONDAS = 5
@@ -16,6 +17,26 @@ async def cerrar_popup(page):
         return False
     except Exception:
         return False
+
+async def detectar_cloudflare_y_salir(page):
+    try:
+        titulo = await page.title()
+        if "Just a moment" in titulo or "Un momento" in titulo:
+            print("\n🚨 ¡ALERTA DE CLOUDFLARE DETECTADA! 🚨")
+            print("Revolico está pidiendo verificación manual de seguridad.")
+            print("El bot se ha detenido inmediatamente para proteger tu cuenta de un baneo.")
+            print("Por favor, ve a la ventana de Chrome, resuelve el Captcha y luego vuelve a correr el bot.\n")
+            sys.exit(1)
+            
+        cf_elements = await page.query_selector_all('#challenge-running, iframe[src*="cloudflare"]')
+        if cf_elements:
+            print("\n🚨 ¡ALERTA DE CLOUDFLARE DETECTADA! 🚨")
+            print("El sitio está pidiendo verificación manual de seguridad.")
+            print("El bot se ha detenido inmediatamente para proteger tu cuenta.")
+            print("Resuélvelo en tu navegador y reinicia el script.\n")
+            sys.exit(1)
+    except Exception:
+        pass
 
 async def intentar_renovar(page):
     botones = await page.query_selector_all('button:has-text("Renovar anuncio")')
@@ -88,6 +109,7 @@ async def procesar_lista(page, ids, total_global):
                 f"https://www.revolico.com/item/{item_id}/_/manage",
                 wait_until="domcontentloaded"
             )
+            await detectar_cloudflare_y_salir(page)
             await asyncio.sleep(3)
 
             popup_cerrado = await cerrar_popup(page)
@@ -116,15 +138,24 @@ async def procesar_lista(page, ids, total_global):
     return renovados, ya_renovados, fallidos
 
 async def renovar_anuncios():
+    puerto = 9222
+    for arg in sys.argv:
+        if arg.startswith("--port="):
+            try:
+                puerto = int(arg.split("=")[1])
+            except ValueError:
+                pass
+
     async with async_playwright() as p:
-        print("🔌 Conectando a Chrome...")
-        browser = await p.chromium.connect_over_cdp("http://localhost:9222")
+        print(f"🔌 Conectando a Chrome en el puerto {puerto}...")
+        browser = await p.chromium.connect_over_cdp(f"http://localhost:{puerto}")
         context = browser.contexts[0]
         page = context.pages[0] if context.pages else await context.new_page()
         print("✅ Conectado\n")
 
         print("📄 Cargando cuenta de Revolico...")
         await page.goto("https://www.revolico.com/account", wait_until="domcontentloaded")
+        await detectar_cloudflare_y_salir(page)
         print("⏳ Esperando que cargue la página (10 segundos)...")
         await asyncio.sleep(10)
 

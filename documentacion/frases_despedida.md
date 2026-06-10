@@ -21,5 +21,5 @@ Productos impecables, tal cual se describen.
 Hacemos domicilio si es de la zona, consúltenos.
 Todo nuevo.
 Interesados al privado o WhatsApp.
-Garantía y seguridad en su compra, cero engaños.
+Seguridad en su compra, cero engaños.
 Cualquier pregunta es bienvenida.

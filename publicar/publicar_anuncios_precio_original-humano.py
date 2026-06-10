@@ -295,30 +295,8 @@ async def publicar_anuncio(page, item_id, datos, rutas_fotos, preview=False):
     # Inyectar texto Genuinamente! (Anti-Clon)
     descripcion = inyectar_frase(datos["descripcion"])
 
-    # === Lógica dinámica de incremento de precio y mensajería ===
+    # Mantener el precio original intacto sin aplicar la fórmula de incremento ni añadir textos
     precio_final = precio_original
-    try:
-        precio_num = int(precio_original)
-        incremento = (int(precio_num / 50) + 1) * 5
-        precio_final = str(precio_num + incremento)
-        
-        if incremento >= 10:
-            acciones = ["Mensajería", "Delivery", "Envío", "Transporte", "La entrega", "Servicio a domicilio"]
-            precios = ["gratis", "sin costo", "libre de costo", "incluida", "de cortesía", "por la casa"]
-            emojis = ["🚚", "🛵", "📦", "📍", "🚀", ""]
-            
-            if incremento >= 20:
-                destinos = ["a toda La Habana", "a cualquier municipio", "hasta la puerta de tu casa", "en la capital", "a todos los municipios"]
-            else:
-                destinos = ["para casi toda La Habana", "a zonas céntricas", "a la mayoría de los municipios", "a gran parte de la capital", "(consultar zona)"]
-                
-            frase_spintax = f"{random.choice(acciones)} {random.choice(precios)} {random.choice(destinos)}".capitalize()
-            emoji = random.choice(emojis)
-            inyeccion = f"{emoji} {frase_spintax}".strip()
-                
-            descripcion += f"\n\n{inyeccion}"
-    except (ValueError, TypeError):
-        pass # Si el precio no era un número válido, lo dejamos intacto
 
     print(f"  📝 {titulo} (Precio final: {precio_final} {moneda})")
     if preview: return "PREVIEW"
