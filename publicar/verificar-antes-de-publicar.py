@@ -3,6 +3,7 @@ import os
 import re
 import json
 import base64
+import sys
 from playwright.async_api import async_playwright
 
 async def obtener_email_cuenta(context):
@@ -60,10 +61,10 @@ async def cargar_todos_los_ids(page):
         
     return list(ids_vistos)
 
-async def check():
+async def check(puerto: int = 9222):
     async with async_playwright() as p:
-        print("🔌 Conectando a Chrome...")
-        browser = await p.chromium.connect_over_cdp("http://localhost:9222")
+        print(f"🔌 Conectando a Chrome en el puerto {puerto}...")
+        browser = await p.chromium.connect_over_cdp(f"http://localhost:{puerto}")
         context = browser.contexts[0]
         page = context.pages[0] if context.pages else await context.new_page()
         print("✅ Conectado\n")
@@ -173,4 +174,12 @@ async def check():
         print("━"*60)
 
 if __name__ == "__main__":
-    asyncio.run(check())
+    puerto = 9222
+    for arg in sys.argv[1:]:
+        if arg.startswith("--port=") or arg.startswith("-port="):
+            try:
+                puerto = int(arg.split("=", 1)[1])
+            except Exception:
+                pass
+
+    asyncio.run(check(puerto))
