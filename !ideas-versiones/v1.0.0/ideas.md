@@ -6,8 +6,15 @@ cuando entras a la cuenta debe seleccionar este comando  google-chrome --remote-
 cuando tu seleccionas una cuenta de, sales y seleccionas en revolico que cuenta gmail, el programa debe leer que cuenta es como hace publicados_en_fernandoantigravity@gmail.com.json para saber en los publicados en "nombre de cuenta" o sea lo q quiero decir es que se extraiga el nombre de la cuenta se asocie con publicados en nombre de cuenta y por ahi se sepa los anuncios que hay publicados en esa cuenta estos archivos de publicado te permite saber cuales son los anuncios q tiene publicados y cuales los que no entonces la aplicacion debe mostrar las imagenes y los detalles del anuncio, parecido a la pagina de revolico !ideas-versiones/v1.0.0/image1.jpg sobre todo el nombre y el precio y si se selecciona si te salgan todos los detalles como la descripcion y categorias etc, el tema es poder ver lo que tengo publicado en una seccion y lo q no tengo publicado entonces si se selecciona la opcion de eliminar, poder seleccionar de los que ya tengo publicado seleccionando las imagenes, si quiero publicar seleccionar de los q no estan publicados y publicar y asi seria
 
 
+asi que teniendo en cuenta esta idea dime como seria mejor para preparar el stack tecnologico, que programa usar, como hacerlo dame ideas de como seria, P
 
-ideas de mejorar scripts
+ideas para mejorar script
+
+Por otro lado hay gente que tiene una plicacion parecida que es esta /home/camiloueransim/maybel-ventas/renovar-anuncios/RevoRenew last update, q en lugar de usar playwright se pone directo en el navegador dime si esto es mejor que diferencias tiene con respecto a los scrips con python y playwright por ejemplo una cosa q me precupa mucho es que revolico usa muchas cosas para  deteeectar si eres un bot, ultimamante en todas las cuentas que publico me borran las publicaciones y creo q es pq piensa q uso bots entonces cual de las dos vias hace menos evidente q es un bot, ellos tienen cosas con cloudflare de estas q te mandan a seleccionar un punto y por ahi saben si eres un bot y no se si tb cogen si eres un bot si repites el mismo nombre o las mismas descripciones de los anuncios asi que a la hora de publicar dime si es posible aumentar el numero de combinaciones de frases de despedidas para las publicaciones. no se si te cogen a la hora de poner categorias a la hora de publicar que eso lo hace una ia automatico y por ahi te descubren. el hecho es que llega un punto a partir del cual ya no te dejan subir mas publicaciones a una cuenta.
+
+
+
+ideas 2 
 descargar anuncios descargar-todo-y-estadisticas/descargar_anuncios.py funciona mal cuando el anuncio recien se publica y revolico empieza en una fase q esta en revision donde aparte de verse las cosas que salen cuando esta normal aparecen mas cosas y falla a la hora de descargar pq descarga imagenes que no son, y anade cosas incorrectas, seria bueno corregir esto !ideas-versiones/v1.0.0/image2.jpg
 !ideas-versiones/v1.0.0/image3.jpg
 !ideas-versiones/v1.0.0/image4.jpg
@@ -16,4 +23,6 @@ descargar anuncios descargar-todo-y-estadisticas/descargar_anuncios.py funciona 
 
 idea 3
 en los de publicar /home/camiloueransim/maybel-ventas/renovar-anuncios/publicar me gustaria mayor control sobre los que puedo publicar por ejemplo poder poner que publique solo los ultimos 30 anuncios que salen en anuncio o publicar entre el anunncio 10 y el 20 y asi, ademas a la hora de publicar cuando el publica q da aceptar pasa directamente a la siguiente publicacion pero deberia hacer un camino que imite a una persona real cuando publica cuando termina de publicar viene para !ideas-versiones/v1.0.0/image6.jpg y despues es que se puede seleccionar de nuevo publicar
+idea 4
+parecido a  lo que te habia dicho en el de publicar cuando uno renueva manual terminas de renovar, pero luego de renovar la aplicacion esta iendo directo al siguiente a nuncio cuando en realidad lo q hace un humano es tocar en cuenta !ideas-versiones/v1.0.0/image7.jpg !ideas-versiones/v1.0.0/image8.jpg para ir de nuevo a la cuenta y de ahi seleccionar otro anuncio. el tema es q por un tema de q revolico se esta poniendo pesado con los bots hay q aparentar lo mas posible q es un humano quien opera todo. lo otro es que me gustaria es que cuando estoy renovando y ocurre algun error y se cierra el navegador o algo si vuelvo a echarlo andar y la cuenta es la misma que estaba antes continua por donde se quedo y no tenga q empezar de cero 
 

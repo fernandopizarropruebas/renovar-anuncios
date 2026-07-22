@@ -1,0 +1,5 @@
+hola este es un entorno que sirve para crear automatizaciones en el marketplace de cuba llamado revolico. para que tengas una idea de lo que va este proyecto lee todo en /home/camiloueransim/maybel-ventas/renovar-anuncios/documentacion ademas lee los scripts mas importantes que son los que estan en /home/camiloueransim/maybel-ventas/renovar-anuncios/publicar y renovar_revolico-antifallos.py
+
+la idea es que cuando empieces a trabajar en una version, lo primero que hagas sea leer las ideas de esta version, y crear dentro de la carpeta de la version una carpeta llamada plan y dentro de esa carpeta llamada plan debes crear por cada una de las ideas un md llamado idea1(resumen breve de q va la idea si es posible q no pase de 4 palabras).md, idea2(resumen breve de q va la idea si es posible q no pase de 4 palabras).md y asi por cada idea. donde detalles el plan de accion de como afrontar esa idea y en caso de que se te ocurran mejores ideas de como hacer un plan decirla.
+
+tb dentro de este entorno hay un trabajo de otras personas llamado RevoRenew que te puede servir como guia de inspiracion pero el metodo que ellos usaron es totalmente distinto
