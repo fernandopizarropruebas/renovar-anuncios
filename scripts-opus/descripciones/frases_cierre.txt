@@ -1,0 +1,32 @@
+# Frases de Cierre para Variación de Descripciones
+# ════════════════════════════════════════════════════════
+# Una frase por línea. Se añaden al final de la descripción
+# para hacerla única.
+#
+# Puedes editar, añadir o eliminar frases libremente.
+# Las líneas que empiezan con # son comentarios y se ignoran.
+# Las líneas vacías se ignoran.
+#
+# CONSEJO: Escribe frases que suenen naturales y humanas.
+# Evita frases robóticas o que se repitan mucho.
+
+No dude en escribirme para más información.
+Puede contactarme a cualquier hora.
+Escríbame sin compromiso.
+Se entrega donde usted diga.
+Consulte sin pena, con gusto le respondo.
+Aproveche, no durará mucho.
+Le invito a verlo personalmente.
+Se entrega en toda La Habana.
+Producto verificado y en perfectas condiciones.
+Contácteme por esta vía para más detalles.
+Con gusto le envío más fotos si las necesita.
+Escriba y coordinamos la entrega.
+Precio justo.
+Atiendo por WhatsApp también.
+Tengo más productos disponibles, pregunte.
+Producto tal cual se ve en las fotos.
+No pierda esta oportunidad.
+Ideal para regalo.
+Llame o escriba, respondo rápido.
+Entrega rápida y segura.

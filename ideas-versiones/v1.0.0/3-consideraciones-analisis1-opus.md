@@ -1,0 +1,3 @@
+mira respecto a lo que me dijiste como respuesta a la duda 1 vamos a crear entonces el script que me permita generar imagenes alternativas a partir de la imagen 1 con los metodos que dices que sirven para evitar que detecten que son imagenes iguales, asi estamos seguro de que lo que haces sirve y si funciona tomamos esta idea si no probamos mejorarla y si tampoco funciona nos pasamos a la idea de generar imagenes en la web con ia, mira el path aqui /home/camiloueransim/maybel-ventas/renovar-anuncios/scripts-opus de la carpeta donde quiero que pongas los scripts
+
+sobre lo demas me parece bastante bien la estrategia que me propusiste para la version 1.0.0

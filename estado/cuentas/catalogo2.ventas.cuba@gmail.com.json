@@ -1,0 +1,40 @@
+{
+  "email": "catalogo2.ventas.cuba@gmail.com",
+  "alias": "cuenta-1",
+  "fecha_creacion": "2026-09-11T23:21:15.918886",
+  "publicaciones": [
+    {
+      "producto": "buro-100cm",
+      "imagenes_usadas": [
+        "variantes_photo_2026-09-11_22-58-27/photo_2026-09-11_22-58-27_v001.jpg"
+      ],
+      "descripcion_usada": "variante_001.txt",
+      "fecha_asignacion": "2026-09-11T23:21:15.919420",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57380354/_/manage?action=created",
+      "fecha_publicacion": "2026-09-11T23:25:06.447462"
+    },
+    {
+      "producto": "escritorio-100cm",
+      "imagenes_usadas": [
+        "variantes_photo_2026-09-11_22-58-27/photo_2026-09-11_22-58-27_v001.jpg"
+      ],
+      "descripcion_usada": "variante_001.txt",
+      "fecha_asignacion": "2026-09-11T23:21:15.919541",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57380382/_/manage?action=created",
+      "fecha_publicacion": "2026-09-11T23:26:36.901775"
+    },
+    {
+      "producto": "mesa_de_oficina-100cm",
+      "imagenes_usadas": [
+        "variantes_photo_2026-09-11_22-58-27/photo_2026-09-11_22-58-27_v001.jpg"
+      ],
+      "descripcion_usada": "variante_001.txt",
+      "fecha_asignacion": "2026-09-11T23:21:15.919651",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57380392/_/manage?action=created",
+      "fecha_publicacion": "2026-09-11T23:27:37.229015"
+    }
+  ]
+}
