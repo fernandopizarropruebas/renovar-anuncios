@@ -1,0 +1,10 @@
+{
+  "nombre": "mesa de oficina",
+  "precio": "120",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "54170634"
+}
