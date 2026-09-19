@@ -1,0 +1,10 @@
+{
+  "nombre": "Tocadores",
+  "precio": "200",
+  "moneda": "USD",
+  "categoria": [
+    "Ropa y Accesorios",
+    "Belleza, Maquillaje y Perfumes"
+  ],
+  "id_original": "9975289"
+}

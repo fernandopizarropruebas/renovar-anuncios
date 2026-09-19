@@ -1,10 +1,10 @@
 {
-  "nombre": "mesa de oficina",
-  "precio": "120",
+  "nombre": "mesas de escritorio",
+  "precio": "140",
   "moneda": "USD",
   "categoria": [
     "Hogar",
     "Muebles"
   ],
-  "id_original": "54170634"
+  "id_original": "506384565"
 }

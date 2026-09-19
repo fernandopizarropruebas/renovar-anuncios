@@ -1,0 +1,10 @@
+{
+  "nombre": "ventilador",
+  "precio": "60",
+  "moneda": "USD",
+  "categoria": [
+    "Electrodomésticos",
+    "Ventiladores"
+  ],
+  "id_original": "50298779"
+}

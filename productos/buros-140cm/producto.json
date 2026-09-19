@@ -1,0 +1,10 @@
+{
+  "nombre": "buros",
+  "precio": "140",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "54154670633"
+}

@@ -1,0 +1,10 @@
+{
+  "nombre": "Escritorios con silla",
+  "precio": "110",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "2345566"
+}

@@ -1,0 +1,10 @@
+{
+  "nombre": "Estantes de tienda",
+  "precio": "110",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "612647"
+}

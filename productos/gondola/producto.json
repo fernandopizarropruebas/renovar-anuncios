@@ -1,0 +1,10 @@
+{
+  "nombre": "gondola",
+  "precio": "110",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "63554245"
+}

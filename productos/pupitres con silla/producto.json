@@ -1,0 +1,10 @@
+{
+  "nombre": "Pupitres con silla",
+  "precio": "110",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "7865444"
+}

@@ -1,0 +1,10 @@
+{
+  "nombre": "Bicicletas medida 20",
+  "precio": "140",
+  "moneda": "USD",
+  "categoria": [
+    "Vehículos",
+    "Bicicletas"
+  ],
+  "id_original": "854625"
+}

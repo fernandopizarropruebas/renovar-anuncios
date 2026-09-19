@@ -1,0 +1,10 @@
+{
+  "nombre": "Vanity",
+  "precio": "300",
+  "moneda": "USD",
+  "categoria": [
+    "Ropa y Accesorios",
+    "Belleza, Maquillaje y Perfumes"
+  ],
+  "id_original": "5068119"
+}

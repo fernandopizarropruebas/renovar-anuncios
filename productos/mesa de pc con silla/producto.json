@@ -1,0 +1,10 @@
+{
+  "nombre": "mesa de pc con silla",
+  "precio": "110",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "235666"
+}

@@ -1,0 +1,10 @@
+{
+  "nombre": "Bicicleta medida 16",
+  "precio": "110",
+  "moneda": "USD",
+  "categoria": [
+    "Vehículos",
+    "Bicicletas"
+  ],
+  "id_original": "862354"
+}

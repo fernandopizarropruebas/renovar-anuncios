@@ -1,0 +1,10 @@
+{
+  "nombre": "mesas de escritorio",
+  "precio": "120",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "506384565"
+}

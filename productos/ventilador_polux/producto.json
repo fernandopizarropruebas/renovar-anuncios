@@ -1,0 +1,10 @@
+{
+  "nombre": "ventilador polux",
+  "precio": "50",
+  "moneda": "USD",
+  "categoria": [
+    "Electrodomésticos",
+    "Ventiladores"
+  ],
+  "id_original": "5078765759"
+}

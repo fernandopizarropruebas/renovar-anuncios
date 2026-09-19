@@ -1,0 +1,10 @@
+{
+  "nombre": "Coquetas",
+  "precio": "210",
+  "moneda": "USD",
+  "categoria": [
+    "Ropa y Accesorios",
+    "Belleza, Maquillaje y Perfumes"
+  ],
+  "id_original": "59878519"
+}

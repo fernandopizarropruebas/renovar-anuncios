@@ -1,0 +1,10 @@
+{
+  "nombre": "Escritorios",
+  "precio": "140",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "541706356344"
+}

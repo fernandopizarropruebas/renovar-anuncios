@@ -1,0 +1,10 @@
+{
+  "nombre": "Bicicleta para niño",
+  "precio": "100",
+  "moneda": "USD",
+  "categoria": [
+    "Vehículos",
+    "Bicicletas"
+  ],
+  "id_original": "5070422"
+}

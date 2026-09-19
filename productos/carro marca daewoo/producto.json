@@ -1,0 +1,10 @@
+{
+  "nombre": "Carro marca Daewoo",
+  "precio": "11000",
+  "moneda": "USD",
+  "categoria": [
+    "Vehículos",
+    "Carros"
+  ],
+  "id_original": "1656"
+}

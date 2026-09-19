@@ -1,0 +1,10 @@
+{
+  "nombre": "Juego de comedor de terraza",
+  "precio": "350",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "75579986"
+}

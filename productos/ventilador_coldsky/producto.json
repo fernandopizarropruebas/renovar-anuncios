@@ -1,0 +1,10 @@
+{
+  "nombre": "ventilador coldsky",
+  "precio": "60",
+  "moneda": "USD",
+  "categoria": [
+    "Electrodomésticos",
+    "Ventiladores"
+  ],
+  "id_original": "50247879"
+}
