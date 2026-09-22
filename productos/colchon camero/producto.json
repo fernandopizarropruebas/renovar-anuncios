@@ -1,0 +1,10 @@
+{
+  "nombre": "Colchon camero",
+  "precio": "200",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "78455451"
+}

@@ -1,0 +1,10 @@
+{
+  "nombre": "Maquina de hielo",
+  "precio": "300",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "146532"
+}

@@ -1,0 +1,10 @@
+{
+  "nombre": "Zapatera de madera",
+  "precio": "90",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "211248"
+}

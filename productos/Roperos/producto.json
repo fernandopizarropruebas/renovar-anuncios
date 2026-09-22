@@ -1,0 +1,10 @@
+{
+  "nombre": "Roperos",
+  "precio": "225",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "96534"
+}

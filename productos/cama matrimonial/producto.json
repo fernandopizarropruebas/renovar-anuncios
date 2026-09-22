@@ -1,0 +1,10 @@
+{
+  "nombre": "Cama matrimonial",
+  "precio": "300",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "289564"
+}

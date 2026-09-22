@@ -1,0 +1,10 @@
+{
+  "nombre": "Sillas",
+  "precio": "85",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "46532"
+}

@@ -1,0 +1,10 @@
+{
+  "nombre": "Ventilador de techo",
+  "precio": "150",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "16315"
+}

@@ -1,0 +1,10 @@
+{
+  "nombre": "Espejo giratorio",
+  "precio": "100",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "583"
+}

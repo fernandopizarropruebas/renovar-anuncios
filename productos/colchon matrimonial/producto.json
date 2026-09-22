@@ -1,0 +1,10 @@
+{
+  "nombre": "Colchon matrimonial",
+  "precio": "200",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "78423541"
+}

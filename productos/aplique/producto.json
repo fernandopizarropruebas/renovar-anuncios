@@ -1,0 +1,10 @@
+{
+  "nombre": "Aplique",
+  "precio": "40",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "23117"
+}

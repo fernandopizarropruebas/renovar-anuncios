@@ -1,0 +1,10 @@
+{
+  "nombre": "bicicletas 26",
+  "precio": "210",
+  "moneda": "USD",
+  "categoria": [
+    "Vehículos",
+    "Bicicletas"
+  ],
+  "id_original": "77958561"
+}

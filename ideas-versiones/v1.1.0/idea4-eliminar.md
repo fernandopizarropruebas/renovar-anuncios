@@ -1,0 +1,1 @@
+anadir en los scripts de hacer imagenes y descripciones opcion para eliminarlos y en la de eliminar anuncios de revolico q cuando se eliminen estos anuncios de revolico tb eliminen la descripcion y la imagen q se usaron

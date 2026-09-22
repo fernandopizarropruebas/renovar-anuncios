@@ -1,0 +1,10 @@
+{
+  "nombre": "Zapatera",
+  "precio": "90",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "2334548"
+}

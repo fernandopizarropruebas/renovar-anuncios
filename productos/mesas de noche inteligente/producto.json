@@ -1,0 +1,10 @@
+{
+  "nombre": "Mesa de noche inteligente",
+  "precio": "165",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "45457762"
+}

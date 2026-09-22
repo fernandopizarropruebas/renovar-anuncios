@@ -1,0 +1,10 @@
+{
+  "nombre": "Closet",
+  "precio": "225",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "68732"
+}

@@ -1,0 +1,10 @@
+{
+  "nombre": "Carpas",
+  "precio": "105",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "7791"
+}

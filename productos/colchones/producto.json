@@ -1,0 +1,10 @@
+{
+  "nombre": "Colchones",
+  "precio": "200",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "784467551"
+}

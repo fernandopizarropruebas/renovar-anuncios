@@ -1,0 +1,10 @@
+{
+  "nombre": "Estantes de cocina",
+  "precio": "200",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "79526"
+}

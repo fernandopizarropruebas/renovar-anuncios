@@ -10,9 +10,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-11T23:21:15.919420",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57380354/_/manage?action=created",
-      "fecha_publicacion": "2026-09-11T23:25:06.447462"
+      "fecha_publicacion": "2026-09-11T23:25:06.447462",
+      "fecha_deteccion_borrado": "2026-09-22T13:04:19.821575"
     },
     {
       "producto": "escritorio-100cm",
@@ -21,9 +22,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-11T23:21:15.919541",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57380382/_/manage?action=created",
-      "fecha_publicacion": "2026-09-11T23:26:36.901775"
+      "fecha_publicacion": "2026-09-11T23:26:36.901775",
+      "fecha_deteccion_borrado": "2026-09-22T13:01:57.825323"
     },
     {
       "producto": "mesa_de_oficina-100cm",
@@ -64,9 +66,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T03:45:19.754299",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57476150/_/manage?action=created",
-      "fecha_publicacion": "2026-09-16T03:56:32.519149"
+      "fecha_publicacion": "2026-09-16T03:56:32.519149",
+      "fecha_deteccion_borrado": "2026-09-22T13:04:27.187179"
     },
     {
       "producto": "bicicleta medida 16",
@@ -86,9 +89,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T03:45:19.754558",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57476161/_/manage?action=created",
-      "fecha_publicacion": "2026-09-16T03:57:41.478055"
+      "fecha_publicacion": "2026-09-16T03:57:41.478055",
+      "fecha_deteccion_borrado": "2026-09-22T13:04:32.608228"
     },
     {
       "producto": "bicicleta para niño",
@@ -119,9 +123,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T03:45:19.754915",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57476173/_/manage?action=created",
-      "fecha_publicacion": "2026-09-16T03:59:23.514295"
+      "fecha_publicacion": "2026-09-16T03:59:23.514295",
+      "fecha_deteccion_borrado": "2026-09-22T13:02:54.175897"
     },
     {
       "producto": "bicicletas medida 12",
@@ -241,9 +246,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T03:45:19.756346",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57476210/_/manage?action=created",
-      "fecha_publicacion": "2026-09-16T04:06:11.066769"
+      "fecha_publicacion": "2026-09-16T04:06:11.066769",
+      "fecha_deteccion_borrado": "2026-09-22T13:04:39.666448"
     },
     {
       "producto": "escritorio-140cm",
@@ -308,9 +314,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T03:45:19.757095",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57476225/_/manage?action=created",
-      "fecha_publicacion": "2026-09-16T04:09:54.874402"
+      "fecha_publicacion": "2026-09-16T04:09:54.874402",
+      "fecha_deteccion_borrado": "2026-09-22T13:04:46.316891"
     },
     {
       "producto": "mesas de maquillaje",
@@ -319,9 +326,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T03:45:19.757264",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57476227/_/manage?action=created",
-      "fecha_publicacion": "2026-09-16T04:10:28.414013"
+      "fecha_publicacion": "2026-09-16T04:10:28.414013",
+      "fecha_deteccion_borrado": "2026-09-22T13:04:52.633946"
     },
     {
       "producto": "mesas_de_escritorio-100",
@@ -330,9 +338,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T03:45:19.757381",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57476232/_/manage?action=created",
-      "fecha_publicacion": "2026-09-16T04:11:01.492001"
+      "fecha_publicacion": "2026-09-16T04:11:01.492001",
+      "fecha_deteccion_borrado": "2026-09-22T13:05:00.098528"
     },
     {
       "producto": "mesas_de_escritorio-140cm",
@@ -341,9 +350,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T03:45:19.757493",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57476234/_/manage?action=created",
-      "fecha_publicacion": "2026-09-16T04:11:37.377655"
+      "fecha_publicacion": "2026-09-16T04:11:37.377655",
+      "fecha_deteccion_borrado": "2026-09-22T13:05:07.355921"
     },
     {
       "producto": "mesas_de_oficina-100cm",
@@ -374,9 +384,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T03:45:19.757876",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57476243/_/manage?action=created",
-      "fecha_publicacion": "2026-09-16T04:13:14.856982"
+      "fecha_publicacion": "2026-09-16T04:13:14.856982",
+      "fecha_deteccion_borrado": "2026-09-22T13:05:13.730360"
     },
     {
       "producto": "tocadores",
@@ -396,9 +407,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T03:45:19.758106",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57476248/_/manage?action=created",
-      "fecha_publicacion": "2026-09-16T04:14:16.977886"
+      "fecha_publicacion": "2026-09-16T04:14:16.977886",
+      "fecha_deteccion_borrado": "2026-09-22T13:05:21.428659"
     },
     {
       "producto": "vanitys",
@@ -506,9 +518,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T23:44:53.966266",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57493931/_/manage?action=created",
-      "fecha_publicacion": "2026-09-16T23:55:17.321147"
+      "fecha_publicacion": "2026-09-16T23:55:17.321147",
+      "fecha_deteccion_borrado": "2026-09-22T13:05:27.825807"
     },
     {
       "producto": "daewoo",
@@ -553,9 +566,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T23:44:53.967560",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57493961/_/manage?action=created",
-      "fecha_publicacion": "2026-09-16T23:59:12.735072"
+      "fecha_publicacion": "2026-09-16T23:59:12.735072",
+      "fecha_deteccion_borrado": "2026-09-22T13:05:35.449573"
     },
     {
       "producto": "escritorios con silla",
@@ -564,9 +578,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T23:44:53.967682",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57493983/_/manage?action=created",
-      "fecha_publicacion": "2026-09-17T00:02:17.135735"
+      "fecha_publicacion": "2026-09-17T00:02:17.135735",
+      "fecha_deteccion_borrado": "2026-09-22T13:05:42.754198"
     },
     {
       "producto": "estante",
@@ -729,9 +744,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T23:44:53.969558",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57494071/_/manage?action=created",
-      "fecha_publicacion": "2026-09-17T00:10:30.209136"
+      "fecha_publicacion": "2026-09-17T00:10:30.209136",
+      "fecha_deteccion_borrado": "2026-09-22T13:05:50.288859"
     },
     {
       "producto": "set de terraza",
@@ -762,9 +778,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T23:44:53.969916",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57494092/_/manage?action=created",
-      "fecha_publicacion": "2026-09-17T00:12:10.681528"
+      "fecha_publicacion": "2026-09-17T00:12:10.681528",
+      "fecha_deteccion_borrado": "2026-09-22T13:05:58.077180"
     },
     {
       "producto": "toldos",
@@ -784,9 +801,10 @@
       ],
       "descripcion_usada": "variante_001.txt",
       "fecha_asignacion": "2026-09-16T23:44:53.970165",
-      "estado": "publicado",
+      "estado": "borrado_por_revolico",
       "url_revolico": "https://www.revolico.com/item/57494107/_/manage?action=created",
-      "fecha_publicacion": "2026-09-17T00:13:21.892890"
+      "fecha_publicacion": "2026-09-17T00:13:21.892890",
+      "fecha_deteccion_borrado": "2026-09-22T13:06:05.279132"
     }
   ]
 }

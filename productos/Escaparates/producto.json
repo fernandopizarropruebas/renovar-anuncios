@@ -1,0 +1,10 @@
+{
+  "nombre": "Escaparates",
+  "precio": "225",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "7791"
+}

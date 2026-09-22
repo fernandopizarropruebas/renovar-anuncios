@@ -1,0 +1,10 @@
+{
+  "nombre": "bicicletas medida 26",
+  "precio": "210",
+  "moneda": "USD",
+  "categoria": [
+    "Vehículos",
+    "Bicicletas"
+  ],
+  "id_original": "7793455861"
+}

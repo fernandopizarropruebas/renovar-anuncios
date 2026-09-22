@@ -1,0 +1,10 @@
+{
+  "nombre": "Mesas de noche",
+  "precio": "165",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "455662"
+}

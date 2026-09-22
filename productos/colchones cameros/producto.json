@@ -1,0 +1,10 @@
+{
+  "nombre": "Colchones cameros",
+  "precio": "200",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "78231455451"
+}

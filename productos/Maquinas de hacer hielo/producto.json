@@ -1,0 +1,10 @@
+{
+  "nombre": "Maquinas de hacer hielo",
+  "precio": "300",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "98234"
+}

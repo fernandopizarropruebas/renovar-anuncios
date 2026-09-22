@@ -16,3 +16,14 @@ google-chrome --remote-debugging-port=9222
 # 6. Publicar (primero preview, luego real)
 python3 scripts-opus/publicar_v2.py --email tucuenta@gmail.com --preview
 python3 scripts-opus/publicar_v2.py --email tucuenta@gmail.com --limite 5
+
+
+Eliminar
+# 1. Primero verificar cuáles siguen vivos
+python3 scripts-opus/verificar_publicados.py --email alejandroantigravity1@gmail.com
+
+# 2. Preview de eliminación (no elimina nada)
+python3 scripts-opus/eliminar_anuncios.py --email alejandroantigravity1@gmail.com --preview
+
+# 3. Probar eliminando 1 solo anuncio
+python3 scripts-opus/eliminar_anuncios.py --email alejandroantigravity1@gmail.com --limite 1

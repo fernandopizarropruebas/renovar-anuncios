@@ -1,0 +1,10 @@
+{
+  "nombre": "Armarios",
+  "precio": "225",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "567211"
+}

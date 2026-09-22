@@ -1,0 +1,10 @@
+{
+  "nombre": "Cama camera",
+  "precio": "300",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "2894"
+}

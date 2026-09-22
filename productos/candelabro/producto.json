@@ -1,0 +1,10 @@
+{
+  "nombre": "Candelabro",
+  "precio": "150",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "1644315"
+}
