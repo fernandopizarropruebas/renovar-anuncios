@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Revolico Renew</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app compact-app">
+      <header class="topbar glass-shell">
+        <div class="brand-block">
+          <div class="brand-line">
+            <h1>RevoRenew</h1>
+            <span class="subtitle-chip">Panel</span>
+          </div>
+          <div class="subtitle-row">
+            <p class="subtitle">Versión 3.5</p>
+            <span id="runState" class="badge state-badge">idle</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="license-card compact-section glass-card">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Licencia</span>
+            <p id="licenseGreeting" class="license-greeting license-inline-status">Licencia no activada.</p>
+          </div>
+        </div>
+
+        <p id="licenseMessage" class="summary compact-summary">Licencia no activada.</p>
+
+        <div class="license-row">
+          <input id="licenseKey" class="text-input compact-input" type="text" placeholder="RR-XXXXXX-XXXXXX-XXXXXX" autocomplete="off" maxlength="24" spellcheck="false" inputmode="text" />
+          <div id="licenseMasked" class="license-masked" hidden></div>
+          <button id="activateBtn" class="primary compact-btn">Activar</button>
+        </div>
+
+        <div class="mini-meta two-cols tight-meta meta-surface">
+          <div><span class="label">Vence</span><strong id="licenseExpiresAt">-</strong></div>
+          <div><span class="label">Validación</span><strong id="lastLicenseCheckAt">-</strong></div>
+        </div>
+      </section>
+
+      <section class="status-card compact-section glass-card">
+        <div class="status-row mode-row">
+          <div>
+            <span class="eyebrow">Sesión</span>
+            <div class="section-title">Estado operativo</div>
+          </div>
+          <div class="mode-toggle segmented-toggle" role="tablist" aria-label="Modo de conexión">
+            <button id="modeNormalBtn" class="mode-btn">Normal</button>
+            <button id="modeSlowBtn" class="mode-btn">Lenta</button>
+          </div>
+        </div>
+
+        <p id="summary" class="summary compact-summary">Sin actividad.</p>
+
+        <div class="stats-grid main-stats">
+          <div class="stat-pill accent-blue"><span>Procesados</span><strong id="processedCount">0</strong></div>
+          <div class="stat-pill accent-cyan"><span>Renovados</span><strong id="renewedCount">0</strong></div>
+          <div class="stat-pill accent-amber"><span>Skip</span><strong id="skippedCount">0</strong></div>
+          <div class="stat-pill accent-red"><span>Errores</span><strong id="errorCount">0</strong></div>
+        </div>
+      </section>
+
+      <section class="actions compact-section glass-card">
+        <div class="actions-grid">
+          <button id="startBtn" class="primary">Iniciar</button>
+          <button id="pauseBtn">Pausar</button>
+          <button id="resumeBtn">Reanudar</button>
+          <button id="stopBtn" class="danger">Detener</button>
+        </div>
+      </section>
+
+      <details class="details-panel glass-card">
+        <summary>
+          <span>Detalles</span>
+          <small>Opcional</small>
+        </summary>
+        <div class="details-body">
+          <div class="mini-meta details-grid meta-surface details-stats">
+            <div><span class="label">Aún no listos</span><strong id="notReadyCount">0</strong></div>
+            <div><span class="label">En cola</span><strong id="queueCount">0</strong></div>
+            <div><span class="label">Último ID</span><strong id="lastProcessedId">-</strong></div>
+            <div><span class="label">Inicio</span><strong id="startedAt">-</strong></div>
+            <div class="full"><span class="label">Actualizado</span><strong id="updatedAt">-</strong></div>
+          </div>
+
+          <section class="appearance-panel meta-surface" aria-label="Apariencia del panel">
+            <div class="appearance-header">
+              <div>
+                <span class="eyebrow">Apariencia</span>
+                <div class="section-title small">Transparencia del panel</div>
+              </div>
+              <strong id="panelTransparencyValue" class="transparency-value">82%</strong>
+            </div>
+            <label class="range-wrap" for="panelTransparency">
+              <input id="panelTransparency" type="range" min="58" max="90" step="1" value="82" />
+            </label>
+          </section>
+        </div>
+      </details>
+
+      <div class="footer-bar">
+        <p id="feedback" class="feedback compact-feedback"></p>
+
+        <footer class="powered-by compact-footer">
+          <div class="powered-brand inline">
+            <span class="powered-label inline-label">Powered by</span>
+            <img src="assets/timeklip-wordmark.png" alt="TimeKlip" class="powered-wordmark" />
+          </div>
+        </footer>
+      </div>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

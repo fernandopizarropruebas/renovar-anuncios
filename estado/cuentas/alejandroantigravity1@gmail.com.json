@@ -788,6 +788,770 @@
       "estado": "publicado",
       "url_revolico": "https://www.revolico.com/item/57494237/_/manage?action=created",
       "fecha_publicacion": "2026-09-17T00:24:49.262647"
+    },
+    {
+      "producto": "Armario",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_42mplb42mplb42mp/Gemini_Generated_Image_42mplb42mplb42mp_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.064131",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646873/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:16:05.494161"
+    },
+    {
+      "producto": "Armarios",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_w3ig03w3ig03w3ig/Gemini_Generated_Image_w3ig03w3ig03w3ig_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.064351",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646877/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:16:36.964883"
+    },
+    {
+      "producto": "Closet",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_373k2g373k2g373k/Gemini_Generated_Image_373k2g373k2g373k_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.064582",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-09-24T00:17:34.133133"
+    },
+    {
+      "producto": "Escaparate",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_t1imdqt1imdqt1im/Gemini_Generated_Image_t1imdqt1imdqt1im_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.064791",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646881/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:18:07.899993"
+    },
+    {
+      "producto": "Escaparates",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_7u5srw7u5srw7u5s/Gemini_Generated_Image_7u5srw7u5srw7u5s_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.065017",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-09-24T00:19:08.195049"
+    },
+    {
+      "producto": "Espejo con luz",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_u4c519u4c519u4c5/Gemini_Generated_Image_u4c519u4c519u4c5_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.065592",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646888/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:19:42.879641"
+    },
+    {
+      "producto": "Espejo de baño",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_sx64wtsx64wtsx64/Gemini_Generated_Image_sx64wtsx64wtsx64_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.065831",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646891/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:20:15.522795"
+    },
+    {
+      "producto": "Espejo giratorio",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_l1d2apl1d2apl1d2/Gemini_Generated_Image_l1d2apl1d2apl1d2_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.066047",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646894/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:20:52.446005"
+    },
+    {
+      "producto": "Espejo ondulado",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_3rmd4f3rmd4f3rmd/Gemini_Generated_Image_3rmd4f3rmd4f3rmd_v002.jpg",
+        "variantes_Gemini_Generated_Image_wlt8tewlt8tewlt8/Gemini_Generated_Image_wlt8tewlt8tewlt8_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.066388",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646898/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:21:24.344253"
+    },
+    {
+      "producto": "Espejos con luz",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_5hkw8z5hkw8z5hkw/Gemini_Generated_Image_5hkw8z5hkw8z5hkw_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.066942",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646900/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:21:53.367521"
+    },
+    {
+      "producto": "Espejos de baño",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_3n453q3n453q3n45/Gemini_Generated_Image_3n453q3n453q3n45_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.067150",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646902/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:22:25.392758"
+    },
+    {
+      "producto": "Espejos giratorios",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_hsrro3hsrro3hsrr/Gemini_Generated_Image_hsrro3hsrro3hsrr_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.067388",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646905/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:23:02.359895"
+    },
+    {
+      "producto": "Espejos ondulado",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_104xto104xto104x/Gemini_Generated_Image_104xto104xto104x_v002.jpg",
+        "variantes_Gemini_Generated_Image_r9gu5br9gu5br9gu/Gemini_Generated_Image_r9gu5br9gu5br9gu_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.067738",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646908/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:23:36.593153"
+    },
+    {
+      "producto": "Estante de cocina",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_8mf76a8mf76a8mf7/Gemini_Generated_Image_8mf76a8mf76a8mf7_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.067943",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646909/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:24:07.175153"
+    },
+    {
+      "producto": "Estantes de cocinas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4l07uk4l07uk4l07/Gemini_Generated_Image_4l07uk4l07uk4l07_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.068151",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646911/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:24:44.141304"
+    },
+    {
+      "producto": "Maquina de hacer hielo",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_6m54626m54626m54/Gemini_Generated_Image_6m54626m54626m54_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.069573",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646914/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:25:21.711034"
+    },
+    {
+      "producto": "Maquina de hielo",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_yik80yik80yik80y/Gemini_Generated_Image_yik80yik80yik80y_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.069786",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646918/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:25:54.767270"
+    },
+    {
+      "producto": "Maquinas de hacer hielo",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_tdm7vmtdm7vmtdm7/Gemini_Generated_Image_tdm7vmtdm7vmtdm7_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.069989",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646920/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:26:27.029772"
+    },
+    {
+      "producto": "Maquinas de hielo",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-18 at 12.08.29 AM/WhatsApp Image 2026-09-18 at 12.08.29 AM_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.070186",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646924/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:27:01.771435"
+    },
+    {
+      "producto": "Ropero",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_n6jqnln6jqnln6jq/Gemini_Generated_Image_n6jqnln6jqnln6jq_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.070389",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646925/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:27:31.163688"
+    },
+    {
+      "producto": "Roperos",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_83e30d83e30d83e3/Gemini_Generated_Image_83e30d83e30d83e3_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.070598",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646927/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:28:05.748771"
+    },
+    {
+      "producto": "Silla",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_izwqywizwqywizwq/Gemini_Generated_Image_izwqywizwqywizwq_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.070806",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646929/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:28:36.796657"
+    },
+    {
+      "producto": "Silla Ergonómica",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_89fudf89fudf89fu/Gemini_Generated_Image_89fudf89fudf89fu_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.071018",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646931/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:29:09.271222"
+    },
+    {
+      "producto": "Silla de escritorio",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_hbpzp2hbpzp2hbpz/Gemini_Generated_Image_hbpzp2hbpzp2hbpz_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.071221",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646933/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:29:49.023481"
+    },
+    {
+      "producto": "Silla de oficina",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_6vjv036vjv036vjv/Gemini_Generated_Image_6vjv036vjv036vjv_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.071426",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646936/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:30:23.533290"
+    },
+    {
+      "producto": "Sillas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_8ncust8ncust8ncu/Gemini_Generated_Image_8ncust8ncust8ncu_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.071642",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646937/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:30:59.362661"
+    },
+    {
+      "producto": "Sillas Ergonómicas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_3y3j203y3j203y3j/Gemini_Generated_Image_3y3j203y3j203y3j_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.071849",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-09-24T00:31:55.971165"
+    },
+    {
+      "producto": "Sillas de escritorio",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_cyvtdqcyvtdqcyvt/Gemini_Generated_Image_cyvtdqcyvtdqcyvt_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.072055",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646945/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:32:26.150794"
+    },
+    {
+      "producto": "Sillas de oficina",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_q8icvgq8icvgq8ic/Gemini_Generated_Image_q8icvgq8icvgq8ic_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.072256",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646948/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:33:08.620397"
+    },
+    {
+      "producto": "Ventilador de techo",
+      "imagenes_usadas": [
+        "variantes_1WhatsApp Image 2026-09-17 at 6.23.22 PM (2)/1WhatsApp Image 2026-09-17 at 6.23.22 PM (2)_v002.jpg",
+        "variantes_Gemini_Generated_Image_k3ljnwk3ljnwk3lj/Gemini_Generated_Image_k3ljnwk3ljnwk3lj_v002.jpg",
+        "variantes_WhatsApp Image 2026-09-17 at 6.23.23 PM (2)/WhatsApp Image 2026-09-17 at 6.23.23 PM (2)_v002.jpg",
+        "variantes_WhatsApp Image 2026-09-17 at 6.23.24 PM (2)/WhatsApp Image 2026-09-17 at 6.23.24 PM (2)_v002.jpg",
+        "variantes_WhatsApp Image 2026-09-17 at 6.23.26 PM/WhatsApp Image 2026-09-17 at 6.23.26 PM_v002.jpg",
+        "variantes_w/w_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.073110",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646950/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:33:42.225373"
+    },
+    {
+      "producto": "aplique",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-17 at 6.23.21 PM/WhatsApp Image 2026-09-17 at 6.23.21 PM_v002.jpg",
+        "variantes_WhatsApp Image 2026-09-17 at 6.23.24 PM (1)/WhatsApp Image 2026-09-17 at 6.23.24 PM (1)_v002.jpg",
+        "variantes_WhatsApp Image 2026-09-17 at 6.23.24 PM (3)/WhatsApp Image 2026-09-17 at 6.23.24 PM (3)_v002.jpg",
+        "variantes_WhatsApp Image 2026-09-17 at 6.23.24 PM/WhatsApp Image 2026-09-17 at 6.23.24 PM_v002.jpg",
+        "variantes_WhatsApp Image 2026-09-17 at 6.23.25 PM/WhatsApp Image 2026-09-17 at 6.23.25 PM_v002.jpg",
+        "variantes_WhatsApp Image 2026-09-17 at 6.23.27 PM/WhatsApp Image 2026-09-17 at 6.23.27 PM_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.073941",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646955/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:34:19.734229"
+    },
+    {
+      "producto": "bicicleta",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_ct3qj4ct3qj4ct3q/Gemini_Generated_Image_ct3qj4ct3qj4ct3q_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.074149",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646957/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:34:50.257109"
+    },
+    {
+      "producto": "bicicleta 26",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_3b3yyb3b3yyb3b3y/Gemini_Generated_Image_3b3yyb3b3yyb3b3y_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.074347",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646962/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:35:22.414589"
+    },
+    {
+      "producto": "bicicleta medida 26",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_5uf3sq5uf3sq5uf3/Gemini_Generated_Image_5uf3sq5uf3sq5uf3_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.074562",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646965/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:35:58.710829"
+    },
+    {
+      "producto": "bicicletas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_33ts8933ts8933ts/Gemini_Generated_Image_33ts8933ts8933ts_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.074763",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646967/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:36:30.482318"
+    },
+    {
+      "producto": "bicicletas 26",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_h4n3xvh4n3xvh4n3/Gemini_Generated_Image_h4n3xvh4n3xvh4n3_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.074960",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-09-24T00:37:23.277358"
+    },
+    {
+      "producto": "bicicletas medida 26",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_emce7aemce7aemce/Gemini_Generated_Image_emce7aemce7aemce_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.075173",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646975/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:37:58.722012"
+    },
+    {
+      "producto": "cama",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_6cl8kx6cl8kx6cl8/Gemini_Generated_Image_6cl8kx6cl8kx6cl8_v002.jpg",
+        "variantes_Gemini_Generated_Image_ytm1z8ytm1z8ytm1/Gemini_Generated_Image_ytm1z8ytm1z8ytm1_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.075509",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646978/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:38:36.233081"
+    },
+    {
+      "producto": "cama camera",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_72tl1r72tl1r72tl/Gemini_Generated_Image_72tl1r72tl1r72tl_v002.jpg",
+        "variantes_Gemini_Generated_Image_e94u0fe94u0fe94u/Gemini_Generated_Image_e94u0fe94u0fe94u_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.075832",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646983/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:39:11.118032"
+    },
+    {
+      "producto": "cama matrimonial",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_qy030vqy030vqy03/Gemini_Generated_Image_qy030vqy030vqy03_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.076032",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646985/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:39:46.277870"
+    },
+    {
+      "producto": "cama metalica",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_uw2nipuw2nipuw2n/Gemini_Generated_Image_uw2nipuw2nipuw2n_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.076229",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646988/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:40:15.629196"
+    },
+    {
+      "producto": "camas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_5x4yue5x4yue5x4y/Gemini_Generated_Image_5x4yue5x4yue5x4y_v002.jpg",
+        "variantes_Gemini_Generated_Image_lmp9krlmp9krlmp9/Gemini_Generated_Image_lmp9krlmp9krlmp9_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.076570",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646990/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:40:47.327755"
+    },
+    {
+      "producto": "camas cameras",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_5cra2z5cra2z5cra/Gemini_Generated_Image_5cra2z5cra2z5cra_v002.jpg",
+        "variantes_Gemini_Generated_Image_tu0b6ntu0b6ntu0b/Gemini_Generated_Image_tu0b6ntu0b6ntu0b_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.076902",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57646992/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T00:41:20.956856"
+    },
+    {
+      "producto": "camas matrimoniales",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_qcwd5qcwd5qcwd5q/Gemini_Generated_Image_qcwd5qcwd5qcwd5q_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.077099",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57647144/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T01:13:55.064199"
+    },
+    {
+      "producto": "camas metalicas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_b51q0wb51q0wb51q/Gemini_Generated_Image_b51q0wb51q0wb51q_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.077317",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57647150/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T01:14:27.195228"
+    },
+    {
+      "producto": "candelabro",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-17 at 6.23.21 PM (1)/WhatsApp Image 2026-09-17 at 6.23.21 PM (1)_v002.jpg",
+        "variantes_WhatsApp Image 2026-09-17 at 6.23.21 PM (2)/WhatsApp Image 2026-09-17 at 6.23.21 PM (2)_v002.jpg",
+        "variantes_WhatsApp Image 2026-09-17 at 6.23.28 PM/WhatsApp Image 2026-09-17 at 6.23.28 PM_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.077793",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57647158/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T01:14:59.212097"
+    },
+    {
+      "producto": "carpa",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_6etj2z6etj2z6etj/Gemini_Generated_Image_6etj2z6etj2z6etj_v002.jpg",
+        "variantes_Gemini_Generated_Image_deicx4deicx4deic/Gemini_Generated_Image_deicx4deicx4deic_v002.jpg",
+        "variantes_Gemini_Generated_Image_xowwflxowwflxoww/Gemini_Generated_Image_xowwflxowwflxoww_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.078242",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57647163/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T01:15:34.078940"
+    },
+    {
+      "producto": "carpa de lona",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_mkwo4amkwo4amkwo/Gemini_Generated_Image_mkwo4amkwo4amkwo_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.078443",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57647167/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T01:16:08.161908"
+    },
+    {
+      "producto": "carpas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_yt77t5yt77t5yt77/Gemini_Generated_Image_yt77t5yt77t5yt77_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.078659",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57647172/_/manage?action=created",
+      "fecha_publicacion": "2026-09-24T01:16:38.429374"
+    },
+    {
+      "producto": "carpas de lona",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_niohponiohponioh/Gemini_Generated_Image_niohponiohponioh_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.078859",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-09-24T01:17:37.743156"
+    },
+    {
+      "producto": "colchon",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_dz5uf4dz5uf4dz5u/Gemini_Generated_Image_dz5uf4dz5uf4dz5u_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.079062",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "colchon camero",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_kr5c2rkr5c2rkr5c/Gemini_Generated_Image_kr5c2rkr5c2rkr5c_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.079259",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "colchon matrimonial",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_m707lgm707lgm707/Gemini_Generated_Image_m707lgm707lgm707_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.079455",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "colchones",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_yaj9q3yaj9q3yaj9/Gemini_Generated_Image_yaj9q3yaj9q3yaj9_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.079661",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "colchones cameros",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_j7rac4j7rac4j7ra/Gemini_Generated_Image_j7rac4j7rac4j7ra_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.079865",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "colchones matrimoniales",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_60nr8960nr8960nr/Gemini_Generated_Image_60nr8960nr8960nr_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.080071",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "mesa de noche",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_oyzne1oyzne1oyzn/Gemini_Generated_Image_oyzne1oyzne1oyzn_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.080277",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "mesa de noche inteligente",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_9utavh9utavh9uta/Gemini_Generated_Image_9utavh9utavh9uta_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.080497",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "mesa_de_oficina-140cm",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM/WhatsApp Image 2026-09-09 at 4.12.26 PM_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.080702",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "mesas de noche",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_rc8g4lrc8g4lrc8g/Gemini_Generated_Image_rc8g4lrc8g4lrc8g_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.080907",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "mesas de noche inteligente",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_6vvq5q6vvq5q6vvq/Gemini_Generated_Image_6vvq5q6vvq5q6vvq_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.081112",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "mesita de noche",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_qtjkeaqtjkeaqtjk/Gemini_Generated_Image_qtjkeaqtjkeaqtjk_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.081311",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "mesita de noche inteligente",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_48dsfh48dsfh48ds/Gemini_Generated_Image_48dsfh48dsfh48ds_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.081523",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "mesitas de noche",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_oyzne1oyzne1oyzn (1)/Gemini_Generated_Image_oyzne1oyzne1oyzn (1)_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.081726",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "mesitas de noche inteligentes",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_8grimh8grimh8gri/Gemini_Generated_Image_8grimh8grimh8gri_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.081925",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "zapatera",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_2fnpyg2fnpyg2fnp/Gemini_Generated_Image_2fnpyg2fnpyg2fnp_v002.jpg",
+        "variantes_Gemini_Generated_Image_rdc6i9rdc6i9rdc6/Gemini_Generated_Image_rdc6i9rdc6i9rdc6_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.082259",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "zapatera de madera",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_in3892in3892in38/Gemini_Generated_Image_in3892in3892in38_v002.jpg",
+        "variantes_Gemini_Generated_Image_la1s7ula1s7ula1s/Gemini_Generated_Image_la1s7ula1s7ula1s_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.082593",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "zapateras",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_d1uxald1uxald1ux/Gemini_Generated_Image_d1uxald1uxald1ux_v002.jpg",
+        "variantes_Gemini_Generated_Image_k2i5b5k2i5b5k2i5/Gemini_Generated_Image_k2i5b5k2i5b5k2i5_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.082921",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "zapateras de madera",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_uu73riuu73riuu73/Gemini_Generated_Image_uu73riuu73riuu73_v002.jpg",
+        "variantes_WhatsApp Image 2026-09-18 at 7.18.43 PM (1)/WhatsApp Image 2026-09-18 at 7.18.43 PM (1)_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-24T00:11:41.083245",
+      "estado": "pendiente",
+      "url_revolico": null
     }
   ]
 }

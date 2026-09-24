@@ -27,3 +27,9 @@ python3 scripts-opus/eliminar_anuncios.py --email alejandroantigravity1@gmail.co
 
 # 3. Probar eliminando 1 solo anuncio
 python3 scripts-opus/eliminar_anuncios.py --email alejandroantigravity1@gmail.com --limite 1
+
+
+
+
+########
+Eliminar descripciones e imagenes 
