@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "RevoRenew",
+  "version": "0.3.3.5",
+  "description": "Extensi\u00f3n interna para renovar anuncios de Revolico desde /account con control manual y checkpoint persistente.",
+  "icons": {
+    "16": "assets/icon-16.png",
+    "32": "assets/icon-32.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.revolico.com/*",
+    "https://revorenew.timeklip.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "RevoRenew",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icon-16.png",
+      "32": "assets/icon-32.png",
+      "48": "assets/icon-48.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.revolico.com/account*",
+        "https://www.revolico.com/item/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

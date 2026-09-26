@@ -1,0 +1,34 @@
+# Banco de Sinónimos para Variación de Descripciones
+# ════════════════════════════════════════════════════════
+# Formato: palabra_original = alternativa1, alternativa2, alternativa3
+# 
+# Puedes editar, añadir o eliminar líneas libremente.
+# Las líneas que empiezan con # son comentarios y se ignoran.
+# Las líneas vacías se ignoran.
+#
+# IMPORTANTE: Revolico detecta descripciones idénticas.
+# Estos sinónimos se usan para variar automáticamente las 
+# descripciones de los productos entre cuentas.
+
+vendo = se vende, ofrezco, disponible, en venta
+nuevo = sin uso, recién comprado, sin estrenar, completamente nuevo
+bueno = buen, excelente, perfecto, impecable
+estado = condición, condiciones
+precio = valor, costo
+contactar = escribir, llamar, comunicarse
+interesados = interesad@s, quienes estén interesados
+entrega = entrego, se entrega, disponible para entregar
+incluye = viene con, trae, con
+garantía = garantizado, con garantía
+grande = amplio, espacioso, de buen tamaño
+pequeño = compacto, práctico, de tamaño reducido
+resistente = duradero, fuerte, robusto
+bonito = elegante, atractivo, hermoso, lindo
+barato = a buen precio, económico, accesible
+rápido = veloz, ágil, ligero
+calidad = alta calidad, buena calidad, primera calidad
+original = auténtico, genuino, legítimo
+importado = traído de afuera, de importación
+moderno = contemporáneo, actual, de última generación
+cómodo = confortable, ergonómico
+práctico = funcional, útil, versátil

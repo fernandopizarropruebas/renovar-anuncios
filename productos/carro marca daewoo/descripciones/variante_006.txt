@@ -1,5 +1,4 @@
 Carro Marca Daewoo
-
 Marca y Modelo	
 Daewoo Nexia N150 (Nexia II)
 
@@ -47,4 +46,4 @@ Aceleración (0-100 km/h)
 
 Velocidad Máxima	
 163 km/h
-Con gusto le muestro más detalles del producto.
+Mucha atención y trato amable. Si quiere más información, me escribe.
