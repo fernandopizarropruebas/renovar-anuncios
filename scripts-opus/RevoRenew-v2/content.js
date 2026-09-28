@@ -15,6 +15,9 @@
 //  CONSTANTES DE ESTADO (deben coincidir con background.js)
 // ═══════════════════════════════════════════════════════════════
 
+// Máximo de rondas de reintento para anuncios con error/skip
+const MAX_RETRY_ROUNDS = 3;
+
 const STORAGE_DEFAULTS = {
   runState: 'idle',
   processedIds: [],
@@ -23,6 +26,7 @@ const STORAGE_DEFAULTS = {
   skippedIds: [],
   errorIds: [],
   queue: [],
+  retryRound: 0,
   lastProcessedId: null,
   startedAt: null,
   updatedAt: null,
@@ -505,14 +509,50 @@ async function handleAccountPage() {
   const updatedState = await getState();
   if (updatedState.runState !== 'running') return;
 
-  // Si no hay anuncios pendientes, terminar
+  // Si no hay anuncios pendientes en la cola principal...
   if (!queue.length) {
-    await updateState({
-      runState: 'completed',
-      currentItemId: null,
-      summary: 'Proceso terminado. No quedan anuncios en cola.'
-    });
-    return;
+    // Verificar si hay anuncios con error o skip que se puedan reintentar
+    const freshState = await getState();
+    const retryRound = freshState.retryRound || 0;
+    const retryableIds = dedupe([
+      ...(freshState.errorIds || []),
+      ...(freshState.skippedIds || [])
+    ]);
+
+    if (retryableIds.length > 0 && retryRound < MAX_RETRY_ROUNDS) {
+      // Hay anuncios que fallaron y aún quedan rondas de reintento
+      const newRound = retryRound + 1;
+      await updateState({
+        queue: retryableIds,
+        // Quitar de processedIds para que se reintenten
+        processedIds: (freshState.processedIds || []).filter(
+          id => !retryableIds.includes(id)
+        ),
+        // Limpiar las listas de error/skip para esta nueva ronda
+        errorIds: [],
+        skippedIds: [],
+        retryRound: newRound,
+        summary: '🔄 Ronda de reintento ' + newRound + '/' + MAX_RETRY_ROUNDS +
+                 ': ' + retryableIds.length + ' anuncio(s) para reintentar.'
+      });
+      queue = retryableIds;
+    } else {
+      // No hay reintentos pendientes o se agotaron las rondas
+      const totalRenewed = (freshState.renewedIds || []).length;
+      const totalErrors = (freshState.errorIds || []).length;
+      const totalSkipped = (freshState.skippedIds || []).length;
+      const totalNotReady = (freshState.notReadyIds || []).length;
+      await updateState({
+        runState: 'completed',
+        currentItemId: null,
+        summary: 'Proceso terminado. Renovados: ' + totalRenewed +
+                 ' | Errores: ' + totalErrors +
+                 ' | Skips: ' + totalSkipped +
+                 ' | No listos: ' + totalNotReady +
+                 (retryRound > 0 ? ' (tras ' + retryRound + ' ronda(s) de reintento)' : '')
+      });
+      return;
+    }
   }
 
   // Navegar al primer anuncio de la cola

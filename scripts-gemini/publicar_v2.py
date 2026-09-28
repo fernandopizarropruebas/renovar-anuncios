@@ -137,6 +137,33 @@ def cargar_descripcion(producto, desc_archivo):
     return ""
 
 
+FRASES_CIERRE_RUTA = Path(__file__).parent / "descripciones" / "frases_cierre.txt"
+
+
+def cargar_frases_cierre():
+    """Carga frases de cierre desde scripts-gemini/descripciones/frases_cierre.txt"""
+    frases = []
+    if not FRASES_CIERRE_RUTA.exists():
+        return ["Escríbame sin compromiso para más información."]
+    with open(FRASES_CIERRE_RUTA, "r", encoding="utf-8") as f:
+        for linea in f:
+            linea = linea.strip()
+            if linea and not linea.startswith("#"):
+                frases.append(linea)
+    return frases if frases else ["Escríbame sin compromiso para más información."]
+
+
+def obtener_descripcion_aleatoria(banco_frases):
+    """Devuelve 1 o 2 frases aleatorias de frases_cierre.txt para crear una descripción natural y variada."""
+    if not banco_frases:
+        return "Escríbame sin compromiso para más información."
+    # 75% 1 frase, 25% 2 frases
+    if random.random() < 0.25 and len(banco_frases) > 1:
+        f1, f2 = random.sample(banco_frases, 2)
+        return f"{f1} {f2}"
+    return random.choice(banco_frases)
+
+
 def cargar_producto(producto):
     """Carga los datos del producto."""
     ruta = PRODUCTOS_DIR / producto / "producto.json"
@@ -434,7 +461,8 @@ async def publicar_anuncio(page, datos_producto, descripcion, rutas_fotos, previ
     moneda = datos_producto.get("moneda", "USD")
     categoria = datos_producto.get("categoria", [])
 
-    print(f"  📝 {titulo} ({precio} {moneda}) — {len(rutas_fotos)} foto(s)")
+    desc_log = "[SIN DESCRIPCIÓN]" if not descripcion else f"{len(descripcion)} chars"
+    print(f"  📝 {titulo} ({precio} {moneda}) — {len(rutas_fotos)} foto(s) — {desc_log}")
 
     if preview:
         return "PREVIEW"
@@ -469,7 +497,20 @@ async def publicar_anuncio(page, datos_producto, descripcion, rutas_fotos, previ
     await fill(page, 'input[name="price"]', precio)
     if moneda != "USD":
         await seleccionar_moneda(page, moneda)
-    await fill(page, 'textarea[name="description"]', descripcion[:1000])
+    if descripcion:
+        await fill(page, 'textarea[name="description"]', descripcion[:1000])
+    else:
+        # Dejar descripción vacía y remover 'required' por si existe en el DOM
+        try:
+            await page.evaluate("""() => {
+                const el = document.querySelector('textarea[name="description"]');
+                if (el) {
+                    el.value = '';
+                    el.removeAttribute('required');
+                }
+            }""")
+        except Exception:
+            pass
 
     if categoria:
         await seleccionar_categoria(page, categoria)
@@ -525,6 +566,10 @@ async def main():
     parser.add_argument("--limite", "-l", type=int, default=0, help="Máximo de anuncios (0=todos)")
     parser.add_argument("--orden", choices=["aleatorio", "alfabetico"], default="aleatorio",
                        help="Orden de publicación de los pendientes (default: aleatorio)")
+    parser.add_argument("--sin-descripcion", action="store_true",
+                       help="Publicar sin descripción (dejar el campo en blanco)")
+    parser.add_argument("--descripciones-aleatorias", action="store_true",
+                       help="Usar frases aleatorias de frases_cierre.txt como descripción")
     parser.add_argument("--port", "-p", type=int, default=9222, help="Puerto de Chrome debug")
     parser.add_argument("--rafaga", type=int, default=ANUNCIOS_POR_RAFAGA,
                        help=f"Anuncios por ráfaga (default: {ANUNCIOS_POR_RAFAGA})")
@@ -532,6 +577,9 @@ async def main():
                        help=f"Minutos de descanso entre ráfagas (default: {DESCANSO_RAFAGA_MINUTOS})")
 
     args = parser.parse_args()
+
+    # Cargar banco de frases si se solicitan descripciones aleatorias
+    banco_frases = cargar_frases_cierre() if args.descripciones_aleatorias else []
 
     # Verificar que la cuenta existe en el sistema
     ruta_cuenta = CUENTAS_DIR / f"{args.email}.json"
@@ -556,12 +604,20 @@ async def main():
     if args.limite > 0:
         pendientes = pendientes[:args.limite]
 
+    if args.sin_descripcion:
+        desc_info = "DESACTIVADA (en blanco)"
+    elif args.descripciones_aleatorias:
+        desc_info = f"ALEATORIAS ({len(banco_frases)} frases en banco)"
+    else:
+        desc_info = "ACTIVA (carpetas de productos)"
+
     print(f"\n{'═' * 65}")
     print(f"  🚀 PUBLICADOR v2 — {args.email}")
     print(f"  ({cuenta.get('alias', '?')})")
     print(f"{'═' * 65}")
     print(f"  Pendientes a procesar: {len(pendientes)}")
     print(f"  Orden:                 {args.orden.upper()}")
+    print(f"  Descripción:           {desc_info}")
     print(f"  Ráfaga:                {args.rafaga} anuncios, descanso {args.descanso} min")
     print(f"  Puerto Chrome:         {args.port}")
     print(f"  Modo:                  {'PREVIEW (sin publicar)' if args.preview else 'PUBLICACIÓN REAL'}")
@@ -632,8 +688,13 @@ async def main():
                     fail_count += 1
                     continue
 
-                # Cargar descripción
-                descripcion = cargar_descripcion(producto, desc_archivo)
+                # Cargar descripción (o vacía si se especificó --sin-descripcion, o aleatoria de frases_cierre.txt)
+                if args.sin_descripcion:
+                    descripcion = ""
+                elif args.descripciones_aleatorias:
+                    descripcion = obtener_descripcion_aleatoria(banco_frases)
+                else:
+                    descripcion = cargar_descripcion(producto, desc_archivo)
 
                 # Publicar
                 try:
@@ -686,8 +747,16 @@ async def main():
             precio = datos.get("precio", "?") if datos else "?"
             moneda = datos.get("moneda", "") if datos else ""
 
+            if args.sin_descripcion:
+                desc_mostrar = "[SIN DESCRIPCIÓN]"
+            elif args.descripciones_aleatorias:
+                ejemplo = obtener_descripcion_aleatoria(banco_frases)
+                desc_mostrar = f"[ALEATORIA]: \"{ejemplo}\""
+            else:
+                desc_mostrar = desc_archivo
+
             print(f"  [{i+1:3d}] {nombre:40s} {precio} {moneda}")
-            print(f"        🖼️ {len(imagenes)} foto(s)  📝 {desc_archivo}")
+            print(f"        🖼️ {len(imagenes)} foto(s)  📝 {desc_mostrar}")
             ok_count += 1
 
         fail_count = 0
