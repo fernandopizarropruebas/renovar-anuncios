@@ -468,6 +468,28 @@ async function goToAccount() {
 }
 
 // ═══════════════════════════════════════════════════════════════
+//  PROTECCIÓN ANTI-DETECCIÓN: CLOUDFLARE
+// ═══════════════════════════════════════════════════════════════
+
+/**
+ * Cuando se detecta Cloudflare, PAUSA la ejecución inmediatamente.
+ * NO navega a ningún lado — quedarse quieto es más seguro.
+ * El usuario puede reanudar manualmente desde el popup cuando
+ * haya resuelto el challenge de Cloudflare.
+ */
+async function pauseForCloudflare(itemId) {
+  await updateState({
+    runState: 'paused',
+    currentItemId: itemId || null,
+    lastError: '🛡️ Cloudflare detectado — pausado por seguridad.',
+    summary: '🛡️ CLOUDFLARE DETECTADO. Extensión pausada automáticamente. ' +
+             'Resuelve el challenge manualmente y luego pulsa "Reanudar" en el popup.'
+  });
+  // No hacemos goToAccount() ni ninguna navegación.
+  // Quedarse quieto es lo más seguro.
+}
+
+// ═══════════════════════════════════════════════════════════════
 //  LÓGICA DE /account/ads
 // ═══════════════════════════════════════════════════════════════
 
@@ -617,10 +639,9 @@ async function attemptRenew(itemId) {
 
   // ── Manejar casos especiales ──
 
-  // Cloudflare
+  // Cloudflare → PAUSA INMEDIATA (no navegar a ningún lado)
   if (info.hasCloudflare) {
-    await finalizeItem(itemId, 'error', 'Bloqueado por Cloudflare/verificación manual.');
-    await goToAccount();
+    await pauseForCloudflare(itemId);
     return;
   }
 
@@ -676,9 +697,16 @@ async function attemptRenew(itemId) {
   for (let i = 0; i < timing.postClickLoops; i++) {
     await sleep(timing.postClickSleepMs);
     info = await inspectManagePage();
+
+    // Cloudflare post-click → PAUSA INMEDIATA
+    if (info.hasCloudflare) {
+      await pauseForCloudflare(itemId);
+      return;
+    }
+
     if (info.hasSuccess || info.hasUnderstood || info.hasRetry) break;
 
-    // NUEVO: Verificar si el botón Renovar desapareció (indica éxito)
+    // Verificar si el botón Renovar desapareció (indica éxito)
     if (!findRenewButton() && info.hasManageActions) break;
   }
 
@@ -727,6 +755,13 @@ async function attemptRenew(itemId) {
  * Punto de entrada principal. Decide qué hacer según la página actual.
  */
 async function continueRunIfNeeded() {
+  // Chequeo inmediato de Cloudflare antes de hacer cualquier cosa
+  if (/just a moment/i.test(document.title) ||
+      /challenges\.cloudflare\.com/i.test(location.href)) {
+    await pauseForCloudflare(null);
+    return;
+  }
+
   const state = await getState();
   if (state.runState !== 'running') return;
 
