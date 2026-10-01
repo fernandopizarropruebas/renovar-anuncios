@@ -1,0 +1,51 @@
+{
+  "email": "fernandoantigravity6@gmail.com",
+  "alias": "cuenta-7",
+  "fecha_creacion": "2026-09-29T09:44:28.452687",
+  "publicaciones": [
+    {
+      "producto": "sofa",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_khdj2okhdj2okhdj/Gemini_Generated_Image_khdj2okhdj2okhdj_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-29T09:44:28.456443",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57766834/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:45:09.294327"
+    },
+    {
+      "producto": "sofa en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_ln0y83ln0y83ln0y/Gemini_Generated_Image_ln0y83ln0y83ln0y_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-29T09:44:28.456701",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57766844/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:45:43.122294"
+    },
+    {
+      "producto": "sofas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_wtlqobwtlqobwtlq/Gemini_Generated_Image_wtlqobwtlqobwtlq_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-29T09:44:28.456929",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57766856/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:46:13.890794"
+    },
+    {
+      "producto": "sofas en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4uftge4uftge4uft/Gemini_Generated_Image_4uftge4uftge4uft_v002.jpg"
+      ],
+      "descripcion_usada": "variante_002.txt",
+      "fecha_asignacion": "2026-09-29T09:44:28.457158",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57766868/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:46:48.116375"
+    }
+  ]
+}

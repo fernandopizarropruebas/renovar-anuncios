@@ -1,0 +1,10 @@
+{
+  "nombre": "piscinas",
+  "precio": "5",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "264548"
+}

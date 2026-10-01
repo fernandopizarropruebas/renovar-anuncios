@@ -1,0 +1,10 @@
+{
+  "nombre": "Sofa",
+  "precio": "680",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "264548"
+}

@@ -1,0 +1,10 @@
+{
+  "nombre": "mesa de centro",
+  "precio": "100",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "264548"
+}

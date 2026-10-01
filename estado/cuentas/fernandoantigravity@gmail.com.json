@@ -1,0 +1,51 @@
+{
+  "email": "fernandoantigravity@gmail.com",
+  "alias": "cuenta-6",
+  "fecha_creacion": "2026-09-29T09:38:14.165036",
+  "publicaciones": [
+    {
+      "producto": "sofa",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_khdj2okhdj2okhdj/Gemini_Generated_Image_khdj2okhdj2okhdj_v001.jpg"
+      ],
+      "descripcion_usada": "variante_001.txt",
+      "fecha_asignacion": "2026-09-29T09:38:14.178764",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57766718/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:40:32.319743"
+    },
+    {
+      "producto": "sofa en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_ln0y83ln0y83ln0y/Gemini_Generated_Image_ln0y83ln0y83ln0y_v001.jpg"
+      ],
+      "descripcion_usada": "variante_001.txt",
+      "fecha_asignacion": "2026-09-29T09:38:14.179009",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57766728/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:41:01.791874"
+    },
+    {
+      "producto": "sofas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_wtlqobwtlqobwtlq/Gemini_Generated_Image_wtlqobwtlqobwtlq_v001.jpg"
+      ],
+      "descripcion_usada": "variante_001.txt",
+      "fecha_asignacion": "2026-09-29T09:38:14.179273",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57766701/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:39:58.722849"
+    },
+    {
+      "producto": "sofas en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4uftge4uftge4uft/Gemini_Generated_Image_4uftge4uftge4uft_v001.jpg"
+      ],
+      "descripcion_usada": "variante_001.txt",
+      "fecha_asignacion": "2026-09-29T09:38:14.179517",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57766738/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:41:30.781847"
+    }
+  ]
+}

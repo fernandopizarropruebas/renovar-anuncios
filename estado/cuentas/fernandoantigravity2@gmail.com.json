@@ -1,0 +1,51 @@
+{
+  "email": "fernandoantigravity2@gmail.com",
+  "alias": "cuenta-9",
+  "fecha_creacion": "2026-09-29T09:58:00.886510",
+  "publicaciones": [
+    {
+      "producto": "sofa",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_khdj2okhdj2okhdj/Gemini_Generated_Image_khdj2okhdj2okhdj_v004.jpg"
+      ],
+      "descripcion_usada": "variante_004.txt",
+      "fecha_asignacion": "2026-09-29T09:58:00.891088",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57767283/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:59:40.042830"
+    },
+    {
+      "producto": "sofa en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_ln0y83ln0y83ln0y/Gemini_Generated_Image_ln0y83ln0y83ln0y_v004.jpg"
+      ],
+      "descripcion_usada": "variante_004.txt",
+      "fecha_asignacion": "2026-09-29T09:58:00.891339",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57767298/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T10:00:15.570985"
+    },
+    {
+      "producto": "sofas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_wtlqobwtlqobwtlq/Gemini_Generated_Image_wtlqobwtlqobwtlq_v004.jpg"
+      ],
+      "descripcion_usada": "variante_004.txt",
+      "fecha_asignacion": "2026-09-29T09:58:00.891584",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57767309/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T10:00:49.350917"
+    },
+    {
+      "producto": "sofas en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4uftge4uftge4uft/Gemini_Generated_Image_4uftge4uftge4uft_v004.jpg"
+      ],
+      "descripcion_usada": "variante_004.txt",
+      "fecha_asignacion": "2026-09-29T09:58:00.891814",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57767265/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:59:06.152180"
+    }
+  ]
+}

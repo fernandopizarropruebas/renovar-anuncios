@@ -1,0 +1,51 @@
+{
+  "email": "fernandoantigravity7@gmail.com",
+  "alias": "cuenta-15",
+  "fecha_creacion": "2026-09-29T11:30:01.422740",
+  "publicaciones": [
+    {
+      "producto": "sofa",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_khdj2okhdj2okhdj/Gemini_Generated_Image_khdj2okhdj2okhdj_v010.jpg"
+      ],
+      "descripcion_usada": "variante_010.txt",
+      "fecha_asignacion": "2026-09-29T11:30:01.429438",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57770176/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T11:31:49.942415"
+    },
+    {
+      "producto": "sofa en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_ln0y83ln0y83ln0y/Gemini_Generated_Image_ln0y83ln0y83ln0y_v010.jpg"
+      ],
+      "descripcion_usada": "variante_010.txt",
+      "fecha_asignacion": "2026-09-29T11:30:01.429703",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57770196/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T11:32:25.216107"
+    },
+    {
+      "producto": "sofas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_wtlqobwtlqobwtlq/Gemini_Generated_Image_wtlqobwtlqobwtlq_v010.jpg"
+      ],
+      "descripcion_usada": "variante_010.txt",
+      "fecha_asignacion": "2026-09-29T11:30:01.429925",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57770158/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T11:31:17.570299"
+    },
+    {
+      "producto": "sofas en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4uftge4uftge4uft/Gemini_Generated_Image_4uftge4uftge4uft_v010.jpg"
+      ],
+      "descripcion_usada": "variante_010.txt",
+      "fecha_asignacion": "2026-09-29T11:30:01.430152",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57770135/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T11:30:43.257323"
+    }
+  ]
+}

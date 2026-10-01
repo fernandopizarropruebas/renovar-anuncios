@@ -1,0 +1,51 @@
+{
+  "email": "fernandoantigravity1@gmail.com",
+  "alias": "cuenta-12",
+  "fecha_creacion": "2026-09-29T10:51:18.930369",
+  "publicaciones": [
+    {
+      "producto": "sofa",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_khdj2okhdj2okhdj/Gemini_Generated_Image_khdj2okhdj2okhdj_v007.jpg"
+      ],
+      "descripcion_usada": "variante_007.txt",
+      "fecha_asignacion": "2026-09-29T10:51:18.934387",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57768997/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T10:53:00.071836"
+    },
+    {
+      "producto": "sofa en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_ln0y83ln0y83ln0y/Gemini_Generated_Image_ln0y83ln0y83ln0y_v007.jpg"
+      ],
+      "descripcion_usada": "variante_007.txt",
+      "fecha_asignacion": "2026-09-29T10:51:18.934637",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57768966/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T10:51:58.288687"
+    },
+    {
+      "producto": "sofas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_wtlqobwtlqobwtlq/Gemini_Generated_Image_wtlqobwtlqobwtlq_v007.jpg"
+      ],
+      "descripcion_usada": "variante_007.txt",
+      "fecha_asignacion": "2026-09-29T10:51:18.934859",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57768981/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T10:52:27.847583"
+    },
+    {
+      "producto": "sofas en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4uftge4uftge4uft/Gemini_Generated_Image_4uftge4uftge4uft_v007.jpg"
+      ],
+      "descripcion_usada": "variante_007.txt",
+      "fecha_asignacion": "2026-09-29T10:51:18.935081",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57769008/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T10:53:30.860704"
+    }
+  ]
+}

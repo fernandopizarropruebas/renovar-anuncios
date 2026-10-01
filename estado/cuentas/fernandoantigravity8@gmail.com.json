@@ -1,0 +1,51 @@
+{
+  "email": "fernandoantigravity8@gmail.com",
+  "alias": "cuenta-10",
+  "fecha_creacion": "2026-09-29T10:06:06.323048",
+  "publicaciones": [
+    {
+      "producto": "sofa",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_khdj2okhdj2okhdj/Gemini_Generated_Image_khdj2okhdj2okhdj_v005.jpg"
+      ],
+      "descripcion_usada": "variante_005.txt",
+      "fecha_asignacion": "2026-09-29T10:06:06.327077",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57767479/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T10:06:42.141849"
+    },
+    {
+      "producto": "sofa en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_ln0y83ln0y83ln0y/Gemini_Generated_Image_ln0y83ln0y83ln0y_v005.jpg"
+      ],
+      "descripcion_usada": "variante_005.txt",
+      "fecha_asignacion": "2026-09-29T10:06:06.327345",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57767519/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T10:07:58.463861"
+    },
+    {
+      "producto": "sofas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_wtlqobwtlqobwtlq/Gemini_Generated_Image_wtlqobwtlqobwtlq_v005.jpg"
+      ],
+      "descripcion_usada": "variante_005.txt",
+      "fecha_asignacion": "2026-09-29T10:06:06.327636",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57767540/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T10:08:32.372330"
+    },
+    {
+      "producto": "sofas en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4uftge4uftge4uft/Gemini_Generated_Image_4uftge4uftge4uft_v005.jpg"
+      ],
+      "descripcion_usada": "variante_005.txt",
+      "fecha_asignacion": "2026-09-29T10:06:06.327873",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57767501/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T10:07:20.720744"
+    }
+  ]
+}

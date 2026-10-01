@@ -1,0 +1,51 @@
+{
+  "email": "fernandoantigravity3@gmail.com",
+  "alias": "cuenta-8",
+  "fecha_creacion": "2026-09-29T09:49:06.683002",
+  "publicaciones": [
+    {
+      "producto": "sofa",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_khdj2okhdj2okhdj/Gemini_Generated_Image_khdj2okhdj2okhdj_v003.jpg"
+      ],
+      "descripcion_usada": "variante_003.txt",
+      "fecha_asignacion": "2026-09-29T09:49:06.689277",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57766987/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:50:53.196336"
+    },
+    {
+      "producto": "sofa en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_ln0y83ln0y83ln0y/Gemini_Generated_Image_ln0y83ln0y83ln0y_v003.jpg"
+      ],
+      "descripcion_usada": "variante_003.txt",
+      "fecha_asignacion": "2026-09-29T09:49:06.689553",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57766957/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:49:45.569775"
+    },
+    {
+      "producto": "sofas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_wtlqobwtlqobwtlq/Gemini_Generated_Image_wtlqobwtlqobwtlq_v003.jpg"
+      ],
+      "descripcion_usada": "variante_003.txt",
+      "fecha_asignacion": "2026-09-29T09:49:06.689782",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57767002/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:51:23.096054"
+    },
+    {
+      "producto": "sofas en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4uftge4uftge4uft/Gemini_Generated_Image_4uftge4uftge4uft_v003.jpg"
+      ],
+      "descripcion_usada": "variante_003.txt",
+      "fecha_asignacion": "2026-09-29T09:49:06.690014",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57766972/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T09:50:20.613271"
+    }
+  ]
+}

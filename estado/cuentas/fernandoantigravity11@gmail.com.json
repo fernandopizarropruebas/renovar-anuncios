@@ -1,0 +1,51 @@
+{
+  "email": "fernandoantigravity11@gmail.com",
+  "alias": "cuenta-14",
+  "fecha_creacion": "2026-09-29T11:24:31.551904",
+  "publicaciones": [
+    {
+      "producto": "sofa",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_khdj2okhdj2okhdj/Gemini_Generated_Image_khdj2okhdj2okhdj_v009.jpg"
+      ],
+      "descripcion_usada": "variante_009.txt",
+      "fecha_asignacion": "2026-09-29T11:24:31.555952",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57769970/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T11:26:18.464831"
+    },
+    {
+      "producto": "sofa en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_ln0y83ln0y83ln0y/Gemini_Generated_Image_ln0y83ln0y83ln0y_v009.jpg"
+      ],
+      "descripcion_usada": "variante_009.txt",
+      "fecha_asignacion": "2026-09-29T11:24:31.556191",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57769949/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T11:25:46.894125"
+    },
+    {
+      "producto": "sofas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_wtlqobwtlqobwtlq/Gemini_Generated_Image_wtlqobwtlqobwtlq_v009.jpg"
+      ],
+      "descripcion_usada": "variante_009.txt",
+      "fecha_asignacion": "2026-09-29T11:24:31.556422",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57769931/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T11:25:12.850353"
+    },
+    {
+      "producto": "sofas en L",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4uftge4uftge4uft/Gemini_Generated_Image_4uftge4uftge4uft_v009.jpg"
+      ],
+      "descripcion_usada": "variante_009.txt",
+      "fecha_asignacion": "2026-09-29T11:24:31.556664",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57769992/_/manage?action=created",
+      "fecha_publicacion": "2026-09-29T11:26:52.054034"
+    }
+  ]
+}
