@@ -46,6 +46,276 @@
       "estado": "publicado",
       "url_revolico": "https://www.revolico.com/item/57769992/_/manage?action=created",
       "fecha_publicacion": "2026-09-29T11:26:52.054034"
+    },
+    {
+      "producto": "mesa",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_1g9n4v1g9n4v1g9n/Gemini_Generated_Image_1g9n4v1g9n4v1g9n_v002.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.115126",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-01T13:38:13.426572"
+    },
+    {
+      "producto": "mesa de centro",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_c0w47pc0w47pc0w4/Gemini_Generated_Image_c0w47pc0w47pc0w4_v002.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.122762",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826120/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:34:04.650632"
+    },
+    {
+      "producto": "mesa_de_escritorio-100cm",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_zdqbprzdqbprzdqb/Gemini_Generated_Image_zdqbprzdqbprzdqb_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.125678",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826368/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:43:45.350548"
+    },
+    {
+      "producto": "mesa_de_escritorio-140cm",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM/WhatsApp Image 2026-09-09 at 4.12.26 PM_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.128523",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-01T13:43:18.499509"
+    },
+    {
+      "producto": "mesa_de_oficina-100cm",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_m9zbn2m9zbn2m9zb/Gemini_Generated_Image_m9zbn2m9zbn2m9zb_v005.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.131578",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826209/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:37:20.414779"
+    },
+    {
+      "producto": "mesas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_9ka4fs9ka4fs9ka4/Gemini_Generated_Image_9ka4fs9ka4fs9ka4_v002.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.134798",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57825895/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:23:45.956316"
+    },
+    {
+      "producto": "mesas de centro",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_yikdp3yikdp3yikd/Gemini_Generated_Image_yikdp3yikdp3yikd_v002.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.138246",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-01T13:39:13.170546"
+    },
+    {
+      "producto": "piscina",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_wqiyj0wqiyj0wqiy/Gemini_Generated_Image_wqiyj0wqiyj0wqiy_v002.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.142339",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826305/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:41:32.462542"
+    },
+    {
+      "producto": "piscina INTEX",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_dmpmdwdmpmdwdmpm/Gemini_Generated_Image_dmpmdwdmpmdwdmpm_v002.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.144539",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826165/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:35:44.437027"
+    },
+    {
+      "producto": "piscina estructural",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4ts4g94ts4g94ts4/Gemini_Generated_Image_4ts4g94ts4g94ts4_v002.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.149846",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826197/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:36:49.655132"
+    },
+    {
+      "producto": "piscinas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_fmulewfmulewfmul/Gemini_Generated_Image_fmulewfmulewfmul_v002.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.151385",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826295/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:40:54.974524"
+    },
+    {
+      "producto": "piscinas INTEX",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_smks6lsmks6lsmks/Gemini_Generated_Image_smks6lsmks6lsmks_v002.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.154341",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826378/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:44:17.347564"
+    },
+    {
+      "producto": "piscinas estructurales",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_i05of1i05of1i05o/Gemini_Generated_Image_i05of1i05of1i05o_v002.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.156118",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826107/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:33:33.761774"
+    },
+    {
+      "producto": "sofa cama",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_v0vac2v0vac2v0va/Gemini_Generated_Image_v0vac2v0vac2v0va_v002.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.157547",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826353/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:43:10.462697"
+    },
+    {
+      "producto": "sofacama",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_yuiuplyuiuplyuiu/Gemini_Generated_Image_yuiuplyuiuplyuiu_v002.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:22:35.158734",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826152/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:35:07.095559"
+    },
+    {
+      "producto": "buro-160cm",
+      "imagenes_usadas": [
+        "variantes_1-Gemini_Generated_Image_eoliqreoliqreoli/1-Gemini_Generated_Image_eoliqreoliqreoli_v001.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM/WhatsApp Image 2026-09-09 at 4.12.26 PM_v001.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.27 PM/WhatsApp Image 2026-09-09 at 4.12.27 PM_v001.jpg",
+        "variantes_WhatsApp Image 2026-09-15 at 5.35.07 PM/WhatsApp Image 2026-09-15 at 5.35.07 PM_v001.jpg"
+      ],
+      "descripcion_usada": "variante_001.txt",
+      "fecha_asignacion": "2026-10-01T13:32:22.990631",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826335/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:42:36.110052"
+    },
+    {
+      "producto": "buros-160cm",
+      "imagenes_usadas": [
+        "variantes_1-Gemini_Generated_Image_l4g075l4g075l4g0/1-Gemini_Generated_Image_l4g075l4g075l4g0_v001.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM/WhatsApp Image 2026-09-09 at 4.12.26 PM_v001.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.27 PM/WhatsApp Image 2026-09-09 at 4.12.27 PM_v001.jpg",
+        "variantes_photo_2026-09-11_22-58-27/photo_2026-09-11_22-58-27_v001.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:32:22.991975",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826318/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:42:02.241613"
+    },
+    {
+      "producto": "escritorio-160cm",
+      "imagenes_usadas": [
+        "variantes_1Gemini_Generated_Image_jghtcmjghtcmjght/1Gemini_Generated_Image_jghtcmjghtcmjght_v001.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM (1)/WhatsApp Image 2026-09-09 at 4.12.26 PM (1)_v001.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM/WhatsApp Image 2026-09-09 at 4.12.26 PM_v001.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.27 PM/WhatsApp Image 2026-09-09 at 4.12.27 PM_v001.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:32:22.993298",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826133/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:34:34.912142"
+    },
+    {
+      "producto": "escritorios-160cm",
+      "imagenes_usadas": [
+        "variantes_1Gemini_Generated_Image_u7mfa6u7mfa6u7mf/1Gemini_Generated_Image_u7mfa6u7mfa6u7mf_v001.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.27 PM/WhatsApp Image 2026-09-09 at 4.12.27 PM_v001.jpg",
+        "variantes_photo_2026-09-11_22-58-27/photo_2026-09-11_22-58-27_v001.jpg"
+      ],
+      "descripcion_usada": "variante_001.txt",
+      "fecha_asignacion": "2026-10-01T13:32:22.994302",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826409/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:45:28.167423"
+    },
+    {
+      "producto": "mesa_de_escritorio-160cm",
+      "imagenes_usadas": [
+        "variantes_1Gemini_Generated_Image_9dcybh9dcybh9dcy/1Gemini_Generated_Image_9dcybh9dcybh9dcy_v001.jpg",
+        "variantes_Gemini_Generated_Image_zdqbprzdqbprzdqb/Gemini_Generated_Image_zdqbprzdqbprzdqb_v001.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM/WhatsApp Image 2026-09-09 at 4.12.26 PM_v001.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:32:22.995380",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826184/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:36:18.192465"
+    },
+    {
+      "producto": "mesa_de_oficina-160cm",
+      "imagenes_usadas": [
+        "variantes_1Gemini_Generated_Image_8ajqmu8ajqmu8ajq/1Gemini_Generated_Image_8ajqmu8ajqmu8ajq_v001.jpg",
+        "variantes_Gemini_Generated_Image_m9zbn2m9zbn2m9zb/Gemini_Generated_Image_m9zbn2m9zbn2m9zb_v001.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:32:22.996215",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826392/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:44:51.680783"
+    },
+    {
+      "producto": "mesas_de_escritorio-160cm",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_8ajqmu8ajqmu8ajq/Gemini_Generated_Image_8ajqmu8ajqmu8ajq_v001.jpg",
+        "variantes_Gemini_Generated_Image_iei336iei336iei3/Gemini_Generated_Image_iei336iei336iei3_v001.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM/WhatsApp Image 2026-09-09 at 4.12.26 PM_v001.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:32:22.997193",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826287/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:40:26.291554"
+    },
+    {
+      "producto": "mesas_de_oficina-160cm",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_nxecsbnxecsbnxec/Gemini_Generated_Image_nxecsbnxecsbnxec_v001.jpg",
+        "variantes_Gemini_Generated_Image_to702oto702oto70/Gemini_Generated_Image_to702oto702oto70_v001.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-01T13:32:22.998156",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/57826274/_/manage?action=created",
+      "fecha_publicacion": "2026-10-01T13:39:48.232566"
     }
   ]
 }
