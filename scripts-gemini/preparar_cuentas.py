@@ -57,6 +57,9 @@ import argparse
 from pathlib import Path
 from datetime import datetime
 
+sys.path.insert(0, str(Path(__file__).parent))
+from utilidades_nombres import parsear_nombres_producto
+
 # ══════════════════════════════════════════════════════════════════════════════
 # ── CONFIGURACIÓN
 # ══════════════════════════════════════════════════════════════════════════════
@@ -572,6 +575,7 @@ def cmd_asignar(args):
     sets_globales_usados = {}   # producto → set de tuplas de imágenes usadas
     imgs_globales_usadas = {}   # producto → set de imágenes individuales usadas
     descs_globales_usadas = {}  # producto → set de descripciones usadas
+    titulos_globales_asignados = {}  # producto → int (cantidad asignada globalmente)
 
     if CUENTAS_DIR.exists():
         for archivo_cuenta in CUENTAS_DIR.iterdir():
@@ -596,6 +600,8 @@ def cmd_asignar(args):
                     if prod not in descs_globales_usadas:
                         descs_globales_usadas[prod] = set()
                     descs_globales_usadas[prod].add(pub.get("descripcion_usada", ""))
+                    # Títulos
+                    titulos_globales_asignados[prod] = titulos_globales_asignados.get(prod, 0) + 1
 
     # Asignar un producto por cada producto disponible
     asignaciones_nuevas = []
@@ -646,8 +652,16 @@ def cmd_asignar(args):
         else:
             desc_elegida = "descripcion_base.txt"
 
+        # Título rotativo según asignaciones globales previas
+        datos_prod = cargar_producto(producto)
+        nombres_prod = parsear_nombres_producto(datos_prod.get("nombre"))
+        asignaciones_previas = titulos_globales_asignados.get(producto, 0)
+        titulo_elegido = nombres_prod[asignaciones_previas % len(nombres_prod)]
+        titulos_globales_asignados[producto] = asignaciones_previas + 1
+
         asignaciones_nuevas.append({
             "producto": producto,
+            "titulo_usado": titulo_elegido,
             "imagenes_usadas": set_elegido,  # LISTA de imágenes (una por cada foto original)
             "descripcion_usada": desc_elegida,
             "fecha_asignacion": datetime.now().isoformat(),
@@ -671,7 +685,7 @@ def cmd_asignar(args):
 
     for a in asignaciones_nuevas[:10]:
         n_fotos = len(a['imagenes_usadas'])
-        print(f"  📦 {a['producto']:30s} 🖼️ {n_fotos} foto(s)  📝 {a['descripcion_usada']}")
+        print(f"  📦 {a['producto']:20s} 🏷️ \"{a['titulo_usado']}\"  🖼️ {n_fotos} foto(s)  📝 {a['descripcion_usada']}")
 
     if len(asignaciones_nuevas) > 10:
         print(f"  ... y {len(asignaciones_nuevas) - 10} más")
@@ -746,10 +760,11 @@ def cmd_pendientes(args):
 
     for i, p in enumerate(pendientes, 1):
         datos = cargar_producto(p["producto"])
-        nombre = datos.get("nombre", p["producto"]) if datos else p["producto"]
+        nombres_disp = parsear_nombres_producto(datos.get("nombre", p["producto"]) if datos else p["producto"])
+        titulo_asignado = p.get("titulo_usado") or nombres_disp[0]
         precio = datos.get("precio", "?") if datos else "?"
         moneda = datos.get("moneda", "") if datos else ""
-        print(f"  {i:3d}. {nombre:35s} {precio} {moneda}")
+        print(f"  {i:3d}. {p['producto']:20s} 🏷️ \"{titulo_asignado}\" ({precio} {moneda})")
         imgs = p.get('imagenes_usadas', [p.get('imagen_usada', '?')])
         print(f"       🖼️ {len(imgs)} foto(s)  📝 {p['descripcion_usada']}")
 

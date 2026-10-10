@@ -43,6 +43,9 @@ from datetime import datetime
 from playwright.async_api import async_playwright
 import argparse
 
+sys.path.insert(0, str(Path(__file__).parent))
+from utilidades_nombres import parsear_nombres_producto, rotar_y_guardar_producto
+
 # ══════════════════════════════════════════════════════════════════════════════
 # ── CONFIGURACIÓN
 # ══════════════════════════════════════════════════════════════════════════════
@@ -96,13 +99,15 @@ def obtener_pendientes(cuenta):
     return [p for p in cuenta.get("publicaciones", []) if p.get("estado") == "pendiente"]
 
 
-def marcar_publicacion(cuenta, producto, estado, url_revolico=None):
+def marcar_publicacion(cuenta, producto, estado, url_revolico=None, titulo_usado=None):
     """Marca una publicación como publicada o fallida."""
     for pub in cuenta.get("publicaciones", []):
         if pub["producto"] == producto and pub.get("estado") == "pendiente":
             pub["estado"] = estado
             pub["url_revolico"] = url_revolico
             pub["fecha_publicacion"] = datetime.now().isoformat()
+            if titulo_usado:
+                pub["titulo_usado"] = titulo_usado
             break
     return cuenta
 
@@ -454,9 +459,10 @@ async def subir_fotos(page, rutas_fotos):
 # ── LÓGICA CENTRAL DE PUBLICACIÓN
 # ══════════════════════════════════════════════════════════════════════════════
 
-async def publicar_anuncio(page, datos_producto, descripcion, rutas_fotos, preview=False):
+async def publicar_anuncio(page, datos_producto, descripcion, rutas_fotos, preview=False, titulo=None):
     """Publica un anuncio individual en Revolico."""
-    titulo = datos_producto.get("nombre", "Sin título")
+    if not titulo:
+        titulo = datos_producto.get("nombre", "Sin título")
     precio = datos_producto.get("precio", "")
     moneda = datos_producto.get("moneda", "USD")
     categoria = datos_producto.get("categoria", [])
@@ -688,6 +694,11 @@ async def main():
                     fail_count += 1
                     continue
 
+                # Determinar título a usar
+                nombres = parsear_nombres_producto(datos_producto.get("nombre", producto))
+                titulo = pub.get("titulo_usado") or nombres[0]
+                pub["titulo_usado"] = titulo
+
                 # Cargar descripción (o vacía si se especificó --sin-descripcion, o aleatoria de frases_cierre.txt)
                 if args.sin_descripcion:
                     descripcion = ""
@@ -698,16 +709,21 @@ async def main():
 
                 # Publicar
                 try:
-                    nueva_url = await publicar_anuncio(page, datos_producto, descripcion, rutas_fotos)
+                    nueva_url = await publicar_anuncio(page, datos_producto, descripcion, rutas_fotos, titulo=titulo)
                 except Exception as e:
                     print(f"  ❌ Excepción: {e}")
                     nueva_url = None
 
+                # Rotar SIEMPRE producto.json (incluso si falló, según apunte del usuario)
+                if len(nombres) > 1:
+                    _, nuevos_nombres = rotar_y_guardar_producto(PRODUCTOS_DIR / producto / "producto.json")
+                    print(f"    🔄 Cola de títulos rotada → Próximo: \"{nuevos_nombres[0]}\"")
+
                 if nueva_url:
-                    cuenta = marcar_publicacion(cuenta, producto, "publicado", nueva_url)
+                    cuenta = marcar_publicacion(cuenta, producto, "publicado", nueva_url, titulo_usado=titulo)
                     ok_count += 1
                 else:
-                    cuenta = marcar_publicacion(cuenta, producto, "fallido")
+                    cuenta = marcar_publicacion(cuenta, producto, "fallido", titulo_usado=titulo)
                     fail_count += 1
 
                     # Si fue Cloudflare, verificar si debemos parar
@@ -743,7 +759,8 @@ async def main():
             imagenes = pub.get("imagenes_usadas", [])
             desc_archivo = pub.get("descripcion_usada", "?")
             datos = cargar_producto(producto)
-            nombre = datos.get("nombre", producto) if datos else producto
+            nombres = parsear_nombres_producto(datos.get("nombre", producto) if datos else producto)
+            titulo = pub.get("titulo_usado") or nombres[0]
             precio = datos.get("precio", "?") if datos else "?"
             moneda = datos.get("moneda", "") if datos else ""
 
@@ -755,7 +772,9 @@ async def main():
             else:
                 desc_mostrar = desc_archivo
 
-            print(f"  [{i+1:3d}] {nombre:40s} {precio} {moneda}")
+            info_nombres = f" [de {len(nombres)} nombres: {', '.join(nombres)}]" if len(nombres) > 1 else ""
+            print(f"  [{i+1:3d}] {producto:25s} {precio} {moneda}")
+            print(f"        🏷️ Título: \"{titulo}\"{info_nombres}")
             print(f"        🖼️ {len(imagenes)} foto(s)  📝 {desc_mostrar}")
             ok_count += 1
 

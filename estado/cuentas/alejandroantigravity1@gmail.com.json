@@ -1366,8 +1366,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.079062",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:37:25.408610"
     },
     {
       "producto": "colchon camero",
@@ -1376,8 +1377,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.079259",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:31:45.274720"
     },
     {
       "producto": "colchon matrimonial",
@@ -1386,8 +1388,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.079455",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:34:35.805112"
     },
     {
       "producto": "colchones",
@@ -1396,8 +1399,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.079661",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:33:26.474493"
     },
     {
       "producto": "colchones cameros",
@@ -1406,8 +1410,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.079865",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:28:38.183145"
     },
     {
       "producto": "colchones matrimoniales",
@@ -1416,8 +1421,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.080071",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:36:19.038169"
     },
     {
       "producto": "mesa de noche",
@@ -1426,8 +1432,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.080277",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:39:13.367153"
     },
     {
       "producto": "mesa de noche inteligente",
@@ -1436,8 +1443,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.080497",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:33:26.469764"
     },
     {
       "producto": "mesa_de_oficina-140cm",
@@ -1446,8 +1454,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.080702",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:34:35.802751"
     },
     {
       "producto": "mesas de noche",
@@ -1456,8 +1465,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.080907",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:36:19.035912"
     },
     {
       "producto": "mesas de noche inteligente",
@@ -1466,8 +1476,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.081112",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:34:01.398957"
     },
     {
       "producto": "mesita de noche",
@@ -1476,8 +1487,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.081311",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:41:52.279724"
     },
     {
       "producto": "mesita de noche inteligente",
@@ -1486,8 +1498,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.081523",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:33:26.472093"
     },
     {
       "producto": "mesitas de noche",
@@ -1496,8 +1509,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.081726",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:34:01.396650"
     },
     {
       "producto": "mesitas de noche inteligentes",
@@ -1506,8 +1520,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.081925",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:31:45.272388"
     },
     {
       "producto": "zapatera",
@@ -1517,8 +1532,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.082259",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:41:52.282166"
     },
     {
       "producto": "zapatera de madera",
@@ -1528,8 +1544,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.082593",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:28:38.180927"
     },
     {
       "producto": "zapateras",
@@ -1539,8 +1556,9 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.082921",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:41:52.284628"
     },
     {
       "producto": "zapateras de madera",
@@ -1550,8 +1568,224 @@
       ],
       "descripcion_usada": "variante_002.txt",
       "fecha_asignacion": "2026-09-24T00:11:41.083245",
-      "estado": "pendiente",
-      "url_revolico": null
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:36:19.040647"
+    },
+    {
+      "producto": "buro-160cm",
+      "imagenes_usadas": [
+        "variantes_1-Gemini_Generated_Image_eoliqreoliqreoli/1-Gemini_Generated_Image_eoliqreoliqreoli_v014.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM/WhatsApp Image 2026-09-09 at 4.12.26 PM_v014.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.27 PM/WhatsApp Image 2026-09-09 at 4.12.27 PM_v014.jpg",
+        "variantes_WhatsApp Image 2026-09-15 at 5.35.07 PM/WhatsApp Image 2026-09-15 at 5.35.07 PM_v014.jpg"
+      ],
+      "descripcion_usada": "variante_001.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.608897",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003092/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:40:12.416634"
+    },
+    {
+      "producto": "buros-160cm",
+      "imagenes_usadas": [
+        "variantes_1-Gemini_Generated_Image_l4g075l4g075l4g0/1-Gemini_Generated_Image_l4g075l4g075l4g0_v014.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM/WhatsApp Image 2026-09-09 at 4.12.26 PM_v014.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.27 PM/WhatsApp Image 2026-09-09 at 4.12.27 PM_v014.jpg",
+        "variantes_photo_2026-09-11_22-58-27/photo_2026-09-11_22-58-27_v014.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.610146",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003068/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:37:52.617374"
+    },
+    {
+      "producto": "escritorio-160cm",
+      "imagenes_usadas": [
+        "variantes_1Gemini_Generated_Image_jghtcmjghtcmjght/1Gemini_Generated_Image_jghtcmjghtcmjght_v014.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM (1)/WhatsApp Image 2026-09-09 at 4.12.26 PM (1)_v014.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM/WhatsApp Image 2026-09-09 at 4.12.26 PM_v014.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.27 PM/WhatsApp Image 2026-09-09 at 4.12.27 PM_v014.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.611390",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-08T23:32:15.278787"
+    },
+    {
+      "producto": "escritorios-160cm",
+      "imagenes_usadas": [
+        "variantes_1Gemini_Generated_Image_u7mfa6u7mfa6u7mf/1Gemini_Generated_Image_u7mfa6u7mfa6u7mf_v014.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.27 PM/WhatsApp Image 2026-09-09 at 4.12.27 PM_v014.jpg",
+        "variantes_photo_2026-09-11_22-58-27/photo_2026-09-11_22-58-27_v014.jpg"
+      ],
+      "descripcion_usada": "variante_001.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.612347",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003035/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:33:55.988568"
+    },
+    {
+      "producto": "mesa",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_1g9n4v1g9n4v1g9n/Gemini_Generated_Image_1g9n4v1g9n4v1g9n_v015.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.612729",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003054/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:35:35.166771"
+    },
+    {
+      "producto": "mesa de centro",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_c0w47pc0w47pc0w4/Gemini_Generated_Image_c0w47pc0w47pc0w4_v015.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.613080",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003076/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:38:33.706650"
+    },
+    {
+      "producto": "mesa_de_escritorio-160cm",
+      "imagenes_usadas": [
+        "variantes_1Gemini_Generated_Image_9dcybh9dcybh9dcy/1Gemini_Generated_Image_9dcybh9dcybh9dcy_v014.jpg",
+        "variantes_Gemini_Generated_Image_zdqbprzdqbprzdqb/Gemini_Generated_Image_zdqbprzdqbprzdqb_v014.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM/WhatsApp Image 2026-09-09 at 4.12.26 PM_v014.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.614005",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003018/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:31:36.148917"
+    },
+    {
+      "producto": "mesa_de_oficina-160cm",
+      "imagenes_usadas": [
+        "variantes_1Gemini_Generated_Image_8ajqmu8ajqmu8ajq/1Gemini_Generated_Image_8ajqmu8ajqmu8ajq_v014.jpg",
+        "variantes_Gemini_Generated_Image_m9zbn2m9zbn2m9zb/Gemini_Generated_Image_m9zbn2m9zbn2m9zb_v014.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.614651",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003030/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:33:17.987404"
+    },
+    {
+      "producto": "mesas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_9ka4fs9ka4fs9ka4/Gemini_Generated_Image_9ka4fs9ka4fs9ka4_v015.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.614993",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003066/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:37:21.675414"
+    },
+    {
+      "producto": "mesas de centro",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_yikdp3yikdp3yikd/Gemini_Generated_Image_yikdp3yikdp3yikd_v015.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.615334",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003103/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:41:15.553722"
+    },
+    {
+      "producto": "mesas_de_escritorio-160cm",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_8ajqmu8ajqmu8ajq/Gemini_Generated_Image_8ajqmu8ajqmu8ajq_v014.jpg",
+        "variantes_Gemini_Generated_Image_iei336iei336iei3/Gemini_Generated_Image_iei336iei336iei3_v014.jpg",
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM/WhatsApp Image 2026-09-09 at 4.12.26 PM_v014.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.616364",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003064/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:36:45.931938"
+    },
+    {
+      "producto": "mesas_de_oficina-160cm",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_nxecsbnxecsbnxec/Gemini_Generated_Image_nxecsbnxecsbnxec_v014.jpg",
+        "variantes_Gemini_Generated_Image_to702oto702oto70/Gemini_Generated_Image_to702oto702oto70_v014.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.617010",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003057/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:36:10.579437"
+    },
+    {
+      "producto": "piscina",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_wqiyj0wqiyj0wqiy/Gemini_Generated_Image_wqiyj0wqiyj0wqiy_v015.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.617352",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003087/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:39:40.563136"
+    },
+    {
+      "producto": "piscina INTEX",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_dmpmdwdmpmdwdmpm/Gemini_Generated_Image_dmpmdwdmpmdwdmpm_v015.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.617702",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003098/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:40:44.228841"
+    },
+    {
+      "producto": "piscina estructural",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4ts4g94ts4g94ts4/Gemini_Generated_Image_4ts4g94ts4g94ts4_v015.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.618086",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003041/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:34:28.719996"
+    },
+    {
+      "producto": "piscinas",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_fmulewfmulewfmul/Gemini_Generated_Image_fmulewfmulewfmul_v015.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.618423",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003108/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:41:48.337819"
+    },
+    {
+      "producto": "piscinas INTEX",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_smks6lsmks6lsmks/Gemini_Generated_Image_smks6lsmks6lsmks_v015.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.618769",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003082/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:39:03.479850"
+    },
+    {
+      "producto": "piscinas estructurales",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_i05of1i05of1i05o/Gemini_Generated_Image_i05of1i05of1i05o_v015.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-08T23:25:50.619099",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58003045/_/manage?action=created",
+      "fecha_publicacion": "2026-10-08T23:35:00.627605"
     }
   ]
 }
