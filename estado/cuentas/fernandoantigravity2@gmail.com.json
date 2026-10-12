@@ -283,6 +283,122 @@
       "estado": "publicado",
       "url_revolico": "https://www.revolico.com/item/57848191/_/manage?action=created",
       "fecha_publicacion": "2026-10-02T12:56:06.844353"
+    },
+    {
+      "producto": "comoda",
+      "titulo_usado": "Tocador",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM (4)/WhatsApp Image 2026-09-09 at 4.12.26 PM (4)_v009.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-12T12:58:39.293186",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58082991/_/manage?action=created",
+      "fecha_publicacion": "2026-10-12T12:59:58.539114"
+    },
+    {
+      "producto": "comodas",
+      "titulo_usado": "Tocadores",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-16 at 2.35.28 AM/WhatsApp Image 2026-09-16 at 2.35.28 AM_v009.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-12T12:58:39.293613",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "coqueta",
+      "titulo_usado": "Vanitys",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.27 PM/WhatsApp Image 2026-09-09 at 4.12.27 PM_v009.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-12T12:58:39.294021",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "coquetas",
+      "titulo_usado": "Vanity",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.27 PM (1)/WhatsApp Image 2026-09-09 at 4.12.27 PM (1)_v009.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-12T12:58:39.294417",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58083076/_/manage?action=created",
+      "fecha_publicacion": "2026-10-12T13:02:45.291204"
+    },
+    {
+      "producto": "mesa de maquillaje",
+      "titulo_usado": "Comodas",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM (8)/WhatsApp Image 2026-09-09 at 4.12.26 PM (8)_v009.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-12T12:58:39.294844",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58083044/_/manage?action=created",
+      "fecha_publicacion": "2026-10-12T13:01:37.842474"
+    },
+    {
+      "producto": "mesas de maquillaje",
+      "titulo_usado": "Comoda",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM (5)/WhatsApp Image 2026-09-09 at 4.12.26 PM (5)_v009.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-12T12:58:39.295237",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "tocador",
+      "titulo_usado": "Coqueta",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.26 PM (6)/WhatsApp Image 2026-09-09 at 4.12.26 PM (6)_v009.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-12T12:58:39.295637",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "tocadores",
+      "titulo_usado": "Coquetas",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-16 at 2.36.46 AM/WhatsApp Image 2026-09-16 at 2.36.46 AM_v009.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-12T12:58:39.296021",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58083008/_/manage?action=created",
+      "fecha_publicacion": "2026-10-12T13:00:30.368301"
+    },
+    {
+      "producto": "vanity",
+      "titulo_usado": "Mesa de maquillaje",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.27 PM (3)/WhatsApp Image 2026-09-09 at 4.12.27 PM (3)_v009.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-12T12:58:39.296406",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58083060/_/manage?action=created",
+      "fecha_publicacion": "2026-10-12T13:02:11.047125"
+    },
+    {
+      "producto": "vanitys",
+      "titulo_usado": "Mesas de maquillaje",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-09-09 at 4.12.27 PM (2)/WhatsApp Image 2026-09-09 at 4.12.27 PM (2)_v009.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-12T12:58:39.296804",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58083026/_/manage?action=created",
+      "fecha_publicacion": "2026-10-12T13:01:03.261941"
     }
   ]
 }
