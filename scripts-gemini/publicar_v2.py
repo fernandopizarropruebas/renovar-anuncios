@@ -99,7 +99,7 @@ def obtener_pendientes(cuenta):
     return [p for p in cuenta.get("publicaciones", []) if p.get("estado") == "pendiente"]
 
 
-def marcar_publicacion(cuenta, producto, estado, url_revolico=None, titulo_usado=None):
+def marcar_publicacion(cuenta, producto, estado, url_revolico=None, titulo_usado=None, descripcion_usada=None):
     """Marca una publicación como publicada o fallida."""
     for pub in cuenta.get("publicaciones", []):
         if pub["producto"] == producto and pub.get("estado") == "pendiente":
@@ -108,6 +108,8 @@ def marcar_publicacion(cuenta, producto, estado, url_revolico=None, titulo_usado
             pub["fecha_publicacion"] = datetime.now().isoformat()
             if titulo_usado:
                 pub["titulo_usado"] = titulo_usado
+            if descripcion_usada is not None:
+                pub["descripcion_usada"] = descripcion_usada
             break
     return cuenta
 
@@ -146,27 +148,100 @@ FRASES_CIERRE_RUTA = Path(__file__).parent / "descripciones" / "frases_cierre.tx
 
 
 def cargar_frases_cierre():
-    """Carga frases de cierre desde scripts-gemini/descripciones/frases_cierre.txt"""
-    frases = []
+    """
+    Carga frases de cierre desde scripts-gemini/descripciones/frases_cierre.txt.
+    - Líneas no vacías que no empiezan con '#' son frases disponibles.
+    - Líneas que empiezan con '# [USADA' o '# [USADO' se contabilizan como usadas.
+    - Otras líneas con '#' son comentarios y se ignoran.
+    Retorna:
+      (disponibles, total_disponibles, total_usadas, total_lineas)
+    """
     if not FRASES_CIERRE_RUTA.exists():
-        return ["Escríbame sin compromiso para más información."]
+        return ["Escríbame sin compromiso para más información."], 1, 0, 1
+
+    disponibles = []
+    total_usadas = 0
+
     with open(FRASES_CIERRE_RUTA, "r", encoding="utf-8") as f:
         for linea in f:
-            linea = linea.strip()
-            if linea and not linea.startswith("#"):
-                frases.append(linea)
-    return frases if frases else ["Escríbame sin compromiso para más información."]
+            linea_strip = linea.strip()
+            if not linea_strip:
+                continue
+            if linea_strip.startswith("#"):
+                if re.search(r'^#\s*\[?USAD[AO]', linea_strip, re.IGNORECASE):
+                    total_usadas += 1
+                continue
+            disponibles.append(linea_strip)
+
+    total_disponibles = len(disponibles)
+    total_lineas = total_disponibles + total_usadas
+
+    return disponibles, total_disponibles, total_usadas, total_lineas
+
+
+def marcar_frases_en_archivo(frases_a_marcar, ruta=FRASES_CIERRE_RUTA):
+    """
+    Marca las frases especificadas anteponiendo '# [USADA YYYY-MM-DD]' en frases_cierre.txt.
+    Preserva comentarios, orden y formato del archivo.
+    """
+    if not frases_a_marcar or not ruta.exists():
+        return 0
+
+    frases_set = set(f.strip() for f in frases_a_marcar if f and f.strip())
+    if not frases_set:
+        return 0
+
+    fecha_hoy = datetime.now().strftime("%Y-%m-%d")
+
+    with open(ruta, "r", encoding="utf-8") as f:
+        lineas = f.readlines()
+
+    nuevas_lineas = []
+    marcadas = 0
+
+    for linea in lineas:
+        linea_strip = linea.strip()
+        if frases_set and linea_strip in frases_set and not linea_strip.startswith("#"):
+            fin = "\n" if linea.endswith("\n") else "\n"
+            nuevas_lineas.append(f"# [USADA {fecha_hoy}] {linea_strip}{fin}")
+            frases_set.remove(linea_strip)
+            marcadas += 1
+        else:
+            nuevas_lineas.append(linea)
+
+    if marcadas > 0:
+        with open(ruta, "w", encoding="utf-8") as f:
+            f.writelines(nuevas_lineas)
+
+    return marcadas
+
+
+def obtener_siguiente_descripcion_aleatoria(banco_frases):
+    """
+    Extrae 1 o 2 frases del banco disponible (sin reemplazo) para crear una descripción única.
+    Remueve las frases usadas de la lista banco_frases en memoria.
+    Retorna:
+      (texto_descripcion, lista_frases_usadas)
+    """
+    if not banco_frases:
+        return "Escríbame sin compromiso para más información.", []
+
+    frases_elegidas = []
+    # Extraer la primera frase disponible
+    frases_elegidas.append(banco_frases.pop(0))
+
+    # 25% de probabilidad de combinar con una segunda frase si quedan disponibles
+    if random.random() < 0.25 and banco_frases:
+        frases_elegidas.append(banco_frases.pop(0))
+
+    texto_desc = " ".join(frases_elegidas)
+    return texto_desc, frases_elegidas
 
 
 def obtener_descripcion_aleatoria(banco_frases):
-    """Devuelve 1 o 2 frases aleatorias de frases_cierre.txt para crear una descripción natural y variada."""
-    if not banco_frases:
-        return "Escríbame sin compromiso para más información."
-    # 75% 1 frase, 25% 2 frases
-    if random.random() < 0.25 and len(banco_frases) > 1:
-        f1, f2 = random.sample(banco_frases, 2)
-        return f"{f1} {f2}"
-    return random.choice(banco_frases)
+    """Helper retrocompatible: devuelve solo el texto de la descripción."""
+    desc, _ = obtener_siguiente_descripcion_aleatoria(banco_frases)
+    return desc
 
 
 def cargar_producto(producto):
@@ -584,9 +659,6 @@ async def main():
 
     args = parser.parse_args()
 
-    # Cargar banco de frases si se solicitan descripciones aleatorias
-    banco_frases = cargar_frases_cierre() if args.descripciones_aleatorias else []
-
     # Verificar que la cuenta existe en el sistema
     ruta_cuenta = CUENTAS_DIR / f"{args.email}.json"
     if not ruta_cuenta.exists():
@@ -610,12 +682,17 @@ async def main():
     if args.limite > 0:
         pendientes = pendientes[:args.limite]
 
-    if args.sin_descripcion:
-        desc_info = "DESACTIVADA (en blanco)"
-    elif args.descripciones_aleatorias:
-        desc_info = f"ALEATORIAS ({len(banco_frases)} frases en banco)"
+    # Cargar banco de frases si se solicitan descripciones aleatorias
+    if args.descripciones_aleatorias:
+        banco_frases, total_disp, total_usadas, total_frases = cargar_frases_cierre()
+        if total_disp == 0:
+            print(f"⚠️  ATENCIÓN: No quedan frases disponibles en frases_cierre.txt ({total_usadas} usadas).")
+            print(f"    Agrega nuevas frases al archivo o desmarca frases para continuar.")
+        random.shuffle(banco_frases)  # Barajar para distribución aleatoria sin repetición
+        desc_info = f"ALEATORIAS ({total_disp} disponibles, {total_usadas} usadas / {total_frases} totales)"
     else:
-        desc_info = "ACTIVA (carpetas de productos)"
+        banco_frases = []
+        desc_info = "DESACTIVADA (en blanco)" if args.sin_descripcion else "ACTIVA (carpetas de productos)"
 
     print(f"\n{'═' * 65}")
     print(f"  🚀 PUBLICADOR v2 — {args.email}")
@@ -700,10 +777,11 @@ async def main():
                 pub["titulo_usado"] = titulo
 
                 # Cargar descripción (o vacía si se especificó --sin-descripcion, o aleatoria de frases_cierre.txt)
+                frases_usadas_en_anuncio = []
                 if args.sin_descripcion:
                     descripcion = ""
                 elif args.descripciones_aleatorias:
-                    descripcion = obtener_descripcion_aleatoria(banco_frases)
+                    descripcion, frases_usadas_en_anuncio = obtener_siguiente_descripcion_aleatoria(banco_frases)
                 else:
                     descripcion = cargar_descripcion(producto, desc_archivo)
 
@@ -719,11 +797,17 @@ async def main():
                     _, nuevos_nombres = rotar_y_guardar_producto(PRODUCTOS_DIR / producto / "producto.json")
                     print(f"    🔄 Cola de títulos rotada → Próximo: \"{nuevos_nombres[0]}\"")
 
+                # Marcar frases como USADAS en frases_cierre.txt (tanto en éxito como en fallo)
+                if frases_usadas_en_anuncio:
+                    marcadas = marcar_frases_en_archivo(frases_usadas_en_anuncio)
+                    if marcadas:
+                        print(f"    🏷️  {marcadas} frase(s) marcada(s) como [USADA] en frases_cierre.txt ({len(banco_frases)} disponibles restantes)")
+
                 if nueva_url:
-                    cuenta = marcar_publicacion(cuenta, producto, "publicado", nueva_url, titulo_usado=titulo)
+                    cuenta = marcar_publicacion(cuenta, producto, "publicado", nueva_url, titulo_usado=titulo, descripcion_usada=descripcion)
                     ok_count += 1
                 else:
-                    cuenta = marcar_publicacion(cuenta, producto, "fallido", titulo_usado=titulo)
+                    cuenta = marcar_publicacion(cuenta, producto, "fallido", titulo_usado=titulo, descripcion_usada=descripcion)
                     fail_count += 1
 
                     # Si fue Cloudflare, verificar si debemos parar
@@ -754,6 +838,7 @@ async def main():
         # Modo preview
         ok_count = 0
         fail_count = 0
+        banco_preview = list(banco_frases)  # Copia para previsualización sin alterar el banco
         for i, pub in enumerate(pendientes):
             producto = pub["producto"]
             imagenes = pub.get("imagenes_usadas", [])
@@ -767,7 +852,7 @@ async def main():
             if args.sin_descripcion:
                 desc_mostrar = "[SIN DESCRIPCIÓN]"
             elif args.descripciones_aleatorias:
-                ejemplo = obtener_descripcion_aleatoria(banco_frases)
+                ejemplo, _ = obtener_siguiente_descripcion_aleatoria(banco_preview)
                 desc_mostrar = f"[ALEATORIA]: \"{ejemplo}\""
             else:
                 desc_mostrar = desc_archivo

@@ -403,6 +403,174 @@
       "estado": "publicado",
       "url_revolico": "https://www.revolico.com/item/58082163/_/manage?action=created",
       "fecha_publicacion": "2026-10-12T12:31:49.125968"
+    },
+    {
+      "producto": "Escaparate-m",
+      "titulo_usado": "Escaparate",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_is1lfuis1lfuis1l/Gemini_Generated_Image_is1lfuis1lfuis1l_v013.jpg"
+      ],
+      "descripcion_usada": "No duden en escribir, respondo con gusto. Si le gusta, no espere tanto.",
+      "fecha_asignacion": "2026-10-15T09:05:19.356110",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58145137/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T09:06:58.851567"
+    },
+    {
+      "producto": "Escaparate-metalico",
+      "titulo_usado": "Escaparate metalico",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4xx1fz4xx1fz4xx1/Gemini_Generated_Image_4xx1fz4xx1fz4xx1_v013.jpg"
+      ],
+      "descripcion_usada": "Si le interesa, puedo pasarle más información.",
+      "fecha_asignacion": "2026-10-15T09:05:19.356560",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58145227/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T09:10:11.986302"
+    },
+    {
+      "producto": "Escaparates m",
+      "titulo_usado": "Escaparates",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_re24rore24rore24/Gemini_Generated_Image_re24rore24rore24_v013.jpg"
+      ],
+      "descripcion_usada": "Se puede retirar o entregar según lo prefiera.",
+      "fecha_asignacion": "2026-10-15T09:05:19.356952",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-15T09:11:06.966502"
+    },
+    {
+      "producto": "Escaparates metalicos",
+      "titulo_usado": "Escaparates metalicos",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_twzucstwzucstwzu/Gemini_Generated_Image_twzucstwzucstwzu_v013.jpg"
+      ],
+      "descripcion_usada": "Le doy toda la información que necesite. Le respondo con rapidez y cordialidad.",
+      "fecha_asignacion": "2026-10-15T09:05:19.357350",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58145184/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T09:08:39.178710"
+    },
+    {
+      "producto": "armario-m",
+      "titulo_usado": "armario",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_tj49vdtj49vdtj49/Gemini_Generated_Image_tj49vdtj49vdtj49_v013.jpg"
+      ],
+      "descripcion_usada": "Se entrega con buena atención. Puede venir a revisarlo personalmente.",
+      "fecha_asignacion": "2026-10-15T09:05:19.357763",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58145169/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T09:08:07.083382"
+    },
+    {
+      "producto": "armario-metalico",
+      "titulo_usado": "armario metalico",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_23uaq523uaq523ua/Gemini_Generated_Image_23uaq523uaq523ua_v013.jpg"
+      ],
+      "descripcion_usada": "Todo está bien explicado para que decida.",
+      "fecha_asignacion": "2026-10-15T09:05:19.358167",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-15T09:14:53.069642"
+    },
+    {
+      "producto": "armarios-m",
+      "titulo_usado": "armarios",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_ngc877ngc877ngc8/Gemini_Generated_Image_ngc877ngc877ngc8_v013.jpg"
+      ],
+      "descripcion_usada": "Se puede revisar antes de llevarlo.",
+      "fecha_asignacion": "2026-10-15T09:05:19.358563",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58145120/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T09:06:26.315782"
+    },
+    {
+      "producto": "armarios-metalicos",
+      "titulo_usado": "armarios metalicos",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_pytftdpytftdpytf/Gemini_Generated_Image_pytftdpytftdpytf_v013.jpg"
+      ],
+      "descripcion_usada": "Consulte sin pena, con gusto le respondo. Es un buen momento para aprovechar esta oferta.",
+      "fecha_asignacion": "2026-10-15T09:05:19.358953",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-15T09:09:37.225282"
+    },
+    {
+      "producto": "colset-m",
+      "titulo_usado": "closet",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_370oon370oon370o/Gemini_Generated_Image_370oon370oon370o_v013.jpg"
+      ],
+      "descripcion_usada": "Le doy atención rápida y efectiva. Puede coordinar entrega según le convenga.",
+      "fecha_asignacion": "2026-10-15T09:05:19.359349",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-15T09:12:56.820777"
+    },
+    {
+      "producto": "colset-metalico",
+      "titulo_usado": "closet metalico",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_z7863jz7863jz786/Gemini_Generated_Image_z7863jz7863jz786_v013.jpg"
+      ],
+      "descripcion_usada": "Le atiendo con buena atención y rapidez.",
+      "fecha_asignacion": "2026-10-15T09:05:19.359743",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-15T09:13:55.299317"
+    },
+    {
+      "producto": "ropero-m",
+      "titulo_usado": "ropero",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_xbkkm0xbkkm0xbkk/Gemini_Generated_Image_xbkkm0xbkkm0xbkk_v013.jpg"
+      ],
+      "descripcion_usada": "Puede preguntarme por cualquier detalle.",
+      "fecha_asignacion": "2026-10-15T09:05:19.360127",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58145152/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T09:07:33.962848"
+    },
+    {
+      "producto": "ropero-metalico",
+      "titulo_usado": "ropero metalico",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4vahpx4vahpx4vah/Gemini_Generated_Image_4vahpx4vahpx4vah_v013.jpg"
+      ],
+      "descripcion_usada": "Con mucho gusto le muestro más fotos.",
+      "fecha_asignacion": "2026-10-15T09:05:19.360508",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-15T09:15:51.414487"
+    },
+    {
+      "producto": "roperos-m",
+      "titulo_usado": "roperos",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_a5gtipa5gtipa5gt/Gemini_Generated_Image_a5gtipa5gtipa5gt_v013.jpg"
+      ],
+      "descripcion_usada": "Si quiere, le doy más fotos y detalles.",
+      "fecha_asignacion": "2026-10-15T09:05:19.360904",
+      "estado": "fallido",
+      "url_revolico": null,
+      "fecha_publicacion": "2026-10-15T09:12:03.382417"
+    },
+    {
+      "producto": "roperos-metalico",
+      "titulo_usado": "roperos metalicos",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_5uylkv5uylkv5uyl/Gemini_Generated_Image_5uylkv5uylkv5uyl_v013.jpg"
+      ],
+      "descripcion_usada": "Me gusta venderlo a quien lo va a usar de verdad.",
+      "fecha_asignacion": "2026-10-15T09:05:19.361289",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58145098/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T09:05:54.488190"
     }
   ]
 }

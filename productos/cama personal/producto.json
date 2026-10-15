@@ -1,0 +1,10 @@
+{
+  "nombre": "cama personal",
+  "precio": "65",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "74791"
+}

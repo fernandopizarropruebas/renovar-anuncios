@@ -1,0 +1,161 @@
+{
+  "email": "fernandpizarrobecas@gmail.com",
+  "alias": "cuenta-20",
+  "fecha_creacion": "2026-10-14T14:16:20.533045",
+  "publicaciones": [
+    {
+      "producto": "Escaparate-m",
+      "titulo_usado": "Escaparate",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_is1lfuis1lfuis1l/Gemini_Generated_Image_is1lfuis1lfuis1l_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.539427",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "Escaparate-metalico",
+      "titulo_usado": "Escaparate metalico",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4xx1fz4xx1fz4xx1/Gemini_Generated_Image_4xx1fz4xx1fz4xx1_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.539846",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "Escaparates m",
+      "titulo_usado": "Escaparates",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_re24rore24rore24/Gemini_Generated_Image_re24rore24rore24_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.540243",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "Escaparates metalicos",
+      "titulo_usado": "Escaparates metalicos",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_twzucstwzucstwzu/Gemini_Generated_Image_twzucstwzucstwzu_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.540642",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "armario-m",
+      "titulo_usado": "armario",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_tj49vdtj49vdtj49/Gemini_Generated_Image_tj49vdtj49vdtj49_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.541026",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "armario-metalico",
+      "titulo_usado": "armario metalico",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_23uaq523uaq523ua/Gemini_Generated_Image_23uaq523uaq523ua_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.541417",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "armarios-m",
+      "titulo_usado": "armarios",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_ngc877ngc877ngc8/Gemini_Generated_Image_ngc877ngc877ngc8_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.541820",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "armarios-metalicos",
+      "titulo_usado": "armarios metalicos",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_pytftdpytftdpytf/Gemini_Generated_Image_pytftdpytftdpytf_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.542207",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "colset-m",
+      "titulo_usado": "closet",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_370oon370oon370o/Gemini_Generated_Image_370oon370oon370o_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.542605",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "colset-metalico",
+      "titulo_usado": "closet metalico",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_z7863jz7863jz786/Gemini_Generated_Image_z7863jz7863jz786_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.542997",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "ropero-m",
+      "titulo_usado": "ropero",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_xbkkm0xbkkm0xbkk/Gemini_Generated_Image_xbkkm0xbkkm0xbkk_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.543450",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "ropero-metalico",
+      "titulo_usado": "ropero metalico",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_4vahpx4vahpx4vah/Gemini_Generated_Image_4vahpx4vahpx4vah_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.543853",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "roperos-m",
+      "titulo_usado": "roperos",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_a5gtipa5gtipa5gt/Gemini_Generated_Image_a5gtipa5gtipa5gt_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.544241",
+      "estado": "pendiente",
+      "url_revolico": null
+    },
+    {
+      "producto": "roperos-metalico",
+      "titulo_usado": "roperos metalicos",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_5uylkv5uylkv5uyl/Gemini_Generated_Image_5uylkv5uylkv5uyl_v006.jpg"
+      ],
+      "descripcion_usada": "descripcion_base.txt",
+      "fecha_asignacion": "2026-10-14T14:16:20.544661",
+      "estado": "pendiente",
+      "url_revolico": null
+    }
+  ]
+}
