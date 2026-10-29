@@ -94,18 +94,65 @@ def guardar_cuenta(email, datos):
     guardar_json(str(ruta), datos)
 
 
+def obtener_cola_publicacion(cuenta, incluir_fallidos=False, max_reintentos=1):
+    """
+    Devuelve las publicaciones a procesar.
+    - Publicaciones con estado == 'pendiente'.
+    - Si incluir_fallidos es True o si no hay 'pendiente' pero sí 'fallido' recuperables:
+      incluye publicaciones con estado == 'fallido' cuyos intentos sean < 1 + max_reintentos.
+    Retorna:
+      (lista_publicaciones, motivo_str)
+    """
+    total_max_intentos = 1 + max_reintentos
+    publicaciones = cuenta.get("publicaciones", [])
+
+    pendientes = [p for p in publicaciones if p.get("estado") == "pendiente"]
+    fallidos_recuperables = [
+        p for p in publicaciones
+        if p.get("estado") == "fallido" and p.get("intentos", 1) < total_max_intentos
+    ]
+
+    if pendientes and not incluir_fallidos:
+        return pendientes, "pendientes_nuevos"
+    elif pendientes and incluir_fallidos:
+        return pendientes + fallidos_recuperables, "mixtos"
+    elif fallidos_recuperables:
+        return fallidos_recuperables, "reintento_fallidos"
+
+    return [], "ninguno"
+
+
 def obtener_pendientes(cuenta):
-    """Devuelve solo las publicaciones pendientes."""
-    return [p for p in cuenta.get("publicaciones", []) if p.get("estado") == "pendiente"]
+    """Devuelve publicaciones pendientes o fallidas recuperables (retrocompatible)."""
+    cola, _ = obtener_cola_publicacion(cuenta)
+    return cola
 
 
-def marcar_publicacion(cuenta, producto, estado, url_revolico=None, titulo_usado=None, descripcion_usada=None):
-    """Marca una publicación como publicada o fallida."""
+def marcar_publicacion(cuenta, producto, estado, url_revolico=None, titulo_usado=None, descripcion_usada=None, error=None, max_reintentos=1):
+    """
+    Marca una publicación como publicada o fallida, gestionando el contador de intentos y límite.
+    """
+    total_max_intentos = 1 + max_reintentos
     for pub in cuenta.get("publicaciones", []):
-        if pub["producto"] == producto and pub.get("estado") == "pendiente":
-            pub["estado"] = estado
-            pub["url_revolico"] = url_revolico
-            pub["fecha_publicacion"] = datetime.now().isoformat()
+        if pub["producto"] == producto and pub.get("estado") in ("pendiente", "fallido"):
+            intentos_previos = pub.get("intentos", 1 if pub.get("estado") == "fallido" else 0)
+            nuevos_intentos = intentos_previos + 1
+            pub["intentos"] = nuevos_intentos
+            pub["fecha_ultimo_intento"] = datetime.now().isoformat()
+
+            if estado == "publicado":
+                pub["estado"] = "publicado"
+                pub["url_revolico"] = url_revolico
+                pub["fecha_publicacion"] = datetime.now().isoformat()
+                pub.pop("ultimo_error", None)
+            else:
+                if nuevos_intentos >= total_max_intentos:
+                    pub["estado"] = "fallido_definitivo"
+                else:
+                    pub["estado"] = "fallido"
+                if error:
+                    pub["ultimo_error"] = str(error)
+
             if titulo_usado:
                 pub["titulo_usado"] = titulo_usado
             if descripcion_usada is not None:
@@ -534,6 +581,32 @@ async def subir_fotos(page, rutas_fotos):
 # ── LÓGICA CENTRAL DE PUBLICACIÓN
 # ══════════════════════════════════════════════════════════════════════════════
 
+async def extraer_mensaje_error_pagina(page):
+    """Busca mensajes de error o validación visibles en el DOM de Revolico."""
+    try:
+        mensajes = await page.evaluate("""() => {
+            const selectores = [
+                '[role="alert"]',
+                '.text-red-500', '.text-danger', '.error-message',
+                '[class*="error"]', '[class*="alert"]',
+                'p[class*="danger"]', 'span[class*="danger"]'
+            ];
+            for (const sel of selectores) {
+                const els = document.querySelectorAll(sel);
+                for (const el of els) {
+                    const txt = el.innerText ? el.innerText.trim() : '';
+                    if (txt && txt.length > 3 && txt.length < 250 && el.offsetParent !== null) {
+                        return txt;
+                    }
+                }
+            }
+            return null;
+        }""")
+        return mensajes
+    except Exception:
+        return None
+
+
 async def publicar_anuncio(page, datos_producto, descripcion, rutas_fotos, preview=False, titulo=None):
     """Publica un anuncio individual en Revolico."""
     if not titulo:
@@ -607,21 +680,44 @@ async def publicar_anuncio(page, datos_producto, descripcion, rutas_fotos, previ
             if box:
                 await mover_mouse_organico(page, box["x"] + box["width"]/2,
                                            box["y"] + box["height"]/2)
-            await page.evaluate("el => el.click()", btn)
+            try:
+                await btn.click()
+            except Exception:
+                await page.evaluate("el => el.click()", btn)
     except Exception:
         pass
 
     print(f"    ⏳ Esperando confirmación...")
-    try:
-        await page.wait_for_url(
-            lambda url: url != url_antes and "publish" not in url,
-            timeout=25000
-        )
-    except Exception:
-        pass
+
+    # Esperar confirmación hasta 25s, con chequeo activo cada 1.5s
+    inicio_espera = asyncio.get_event_loop().time()
+    clic_reintento_hecho = False
+
+    while (asyncio.get_event_loop().time() - inicio_espera) < 25:
+        nueva_url = page.url
+        if nueva_url and ("item" in nueva_url or "manage" in nueva_url) and "publish" not in nueva_url:
+            print(f"    ✅ Publicado → {nueva_url}")
+            return nueva_url
+
+        # A los 10 segundos, si sigue en /publish, verificar errores o dar segundo clic de soporte
+        transcurrido = asyncio.get_event_loop().time() - inicio_espera
+        if transcurrido >= 10 and not clic_reintento_hecho:
+            clic_reintento_hecho = True
+            error_texto = await extraer_mensaje_error_pagina(page)
+            if error_texto:
+                print(f"    ⚠️  Aviso en pantalla de Revolico: \"{error_texto}\"")
+            else:
+                try:
+                    btn_retry = await page.query_selector('button[type="submit"]')
+                    if btn_retry and await btn_retry.is_enabled():
+                        await btn_retry.click()
+                except Exception:
+                    pass
+
+        await asyncio.sleep(1.5)
 
     nueva_url = page.url
-    if nueva_url and "item" in nueva_url and "publish" not in nueva_url:
+    if nueva_url and ("item" in nueva_url or "manage" in nueva_url) and "publish" not in nueva_url:
         print(f"    ✅ Publicado → {nueva_url}")
         return nueva_url
 
@@ -630,7 +726,11 @@ async def publicar_anuncio(page, datos_producto, descripcion, rutas_fotos, previ
         print(f"    🚨 Cloudflare intervino durante la publicación")
         return None
 
-    print(f"    ❌ No se pudo confirmar la publicación")
+    error_texto = await extraer_mensaje_error_pagina(page)
+    if error_texto:
+        print(f"    ❌ Error detectado en Revolico: \"{error_texto}\"")
+    else:
+        print(f"    ❌ No se pudo confirmar la publicación")
     return None
 
 
@@ -656,6 +756,12 @@ async def main():
                        help=f"Anuncios por ráfaga (default: {ANUNCIOS_POR_RAFAGA})")
     parser.add_argument("--descanso", type=int, default=DESCANSO_RAFAGA_MINUTOS,
                        help=f"Minutos de descanso entre ráfagas (default: {DESCANSO_RAFAGA_MINUTOS})")
+    parser.add_argument("--reintentar-fallidos", action="store_true",
+                       help="Forzar inclusión de anuncios en estado fallido que no hayan superado el límite")
+    parser.add_argument("--max-reintentos", type=int, default=1,
+                       help="Máximo de reintentos permitidos por anuncio tras el primer fallo (default: 1)")
+    parser.add_argument("--sin-reintento-sesion", action="store_true",
+                       help="Desactivar la ronda de reintento automático al final de la misma ejecución")
 
     args = parser.parse_args()
 
@@ -667,11 +773,25 @@ async def main():
         return
 
     cuenta = cargar_cuenta(args.email)
-    pendientes = obtener_pendientes(cuenta)
+    pendientes, motivo_cola = obtener_cola_publicacion(
+        cuenta,
+        incluir_fallidos=args.reintentar_fallidos,
+        max_reintentos=args.max_reintentos
+    )
 
     if not pendientes:
-        print(f"✅ No hay productos pendientes para {args.email}")
+        total_definitivos = len([
+            p for p in cuenta.get("publicaciones", [])
+            if p.get("estado") == "fallido_definitivo" or (p.get("estado") == "fallido" and p.get("intentos", 1) >= (1 + args.max_reintentos))
+        ])
+        msg_extra = f" ({total_definitivos} alcanzaron límite de reintentos)" if total_definitivos else ""
+        print(f"✅ No hay productos pendientes para {args.email}{msg_extra}")
         return
+
+    if motivo_cola == "reintento_fallidos":
+        print(f"ℹ️  No hay productos pendientes nuevos, pero hay {len(pendientes)} producto(s) fallidos recuperables. Reintentando...")
+    elif motivo_cola == "mixtos":
+        print(f"ℹ️  Procesando cola mixta: pendientes nuevos + fallidos recuperables ({len(pendientes)} en total).")
 
     # Ordenar o barajar pendientes
     if args.orden == "aleatorio":
@@ -698,10 +818,11 @@ async def main():
     print(f"  🚀 PUBLICADOR v2 — {args.email}")
     print(f"  ({cuenta.get('alias', '?')})")
     print(f"{'═' * 65}")
-    print(f"  Pendientes a procesar: {len(pendientes)}")
+    print(f"  Anuncios a procesar:   {len(pendientes)}")
     print(f"  Orden:                 {args.orden.upper()}")
     print(f"  Descripción:           {desc_info}")
     print(f"  Ráfaga:                {args.rafaga} anuncios, descanso {args.descanso} min")
+    print(f"  Reintentos permitidos: {args.max_reintentos} por anuncio (reintento al final: {'NO' if args.sin_reintento_sesion else 'SÍ'})")
     print(f"  Puerto Chrome:         {args.port}")
     print(f"  Modo:                  {'PREVIEW (sin publicar)' if args.preview else 'PUBLICACIÓN REAL'}")
     print(f"{'═' * 65}\n")
@@ -736,6 +857,7 @@ async def main():
             ok_count = 0
             fail_count = 0
             cloudflare_count = 0
+            fallidos_esta_sesion = []
 
             for i, pub in enumerate(pendientes):
                 # Ráfagas
@@ -749,26 +871,30 @@ async def main():
                 producto = pub["producto"]
                 imagenes = pub.get("imagenes_usadas", [pub.get("imagen_usada", "")])
                 desc_archivo = pub.get("descripcion_usada", "descripcion_base.txt")
+                es_reintento_previo = pub.get("estado") == "fallido"
+                tag_reintento = f" [REINTENTO previo #{pub.get('intentos', 1) + 1}]" if es_reintento_previo else ""
 
                 print(f"{'─' * 65}")
-                print(f"[{i+1}/{len(pendientes)}] {producto}")
+                print(f"[{i+1}/{len(pendientes)}] {producto}{tag_reintento}")
 
                 # Cargar datos
                 datos_producto = cargar_producto(producto)
                 if not datos_producto:
                     print(f"  ❌ No se encontraron datos del producto")
-                    cuenta = marcar_publicacion(cuenta, producto, "fallido")
+                    cuenta = marcar_publicacion(cuenta, producto, "fallido", error="No se encontraron datos del producto", max_reintentos=args.max_reintentos)
                     guardar_cuenta(args.email, cuenta)
                     fail_count += 1
+                    fallidos_esta_sesion.append(pub)
                     continue
 
                 # Resolver rutas de imágenes
                 rutas_fotos = resolver_rutas_imagenes(producto, imagenes)
                 if not rutas_fotos:
                     print(f"  ❌ No se encontraron imágenes")
-                    cuenta = marcar_publicacion(cuenta, producto, "fallido")
+                    cuenta = marcar_publicacion(cuenta, producto, "fallido", error="No se encontraron imágenes", max_reintentos=args.max_reintentos)
                     guardar_cuenta(args.email, cuenta)
                     fail_count += 1
+                    fallidos_esta_sesion.append(pub)
                     continue
 
                 # Determinar título a usar
@@ -804,11 +930,12 @@ async def main():
                         print(f"    🏷️  {marcadas} frase(s) marcada(s) como [USADA] en frases_cierre.txt ({len(banco_frases)} disponibles restantes)")
 
                 if nueva_url:
-                    cuenta = marcar_publicacion(cuenta, producto, "publicado", nueva_url, titulo_usado=titulo, descripcion_usada=descripcion)
+                    cuenta = marcar_publicacion(cuenta, producto, "publicado", nueva_url, titulo_usado=titulo, descripcion_usada=descripcion, max_reintentos=args.max_reintentos)
                     ok_count += 1
                 else:
-                    cuenta = marcar_publicacion(cuenta, producto, "fallido", titulo_usado=titulo, descripcion_usada=descripcion)
+                    cuenta = marcar_publicacion(cuenta, producto, "fallido", titulo_usado=titulo, descripcion_usada=descripcion, error="Fallo de confirmación o timeout", max_reintentos=args.max_reintentos)
                     fail_count += 1
+                    fallidos_esta_sesion.append(pub)
 
                     # Si fue Cloudflare, verificar si debemos parar
                     if await detectar_cloudflare(page):
@@ -834,6 +961,92 @@ async def main():
                     print(f"\n  ⏳ Pausa: {espera:.0f}s")
                     await asyncio.sleep(espera)
 
+            # ── FASE DE REINTENTO AUTOMÁTICO EN LA MISMA SESIÓN ──
+            if fallidos_esta_sesion and not args.sin_reintento_sesion and cloudflare_count < 3:
+                cuenta = cargar_cuenta(args.email)
+                reintentables = [
+                    p for p in cuenta.get("publicaciones", [])
+                    if p["producto"] in [f["producto"] for f in fallidos_esta_sesion]
+                    and p.get("estado") == "fallido"
+                    and p.get("intentos", 1) < (1 + args.max_reintentos)
+                ]
+
+                if reintentables:
+                    print(f"\n{'═' * 65}")
+                    print(f"  🔄 RONDA DE REINTENTO AUTOMÁTICO: {len(reintentables)} producto(s) fallaron")
+                    print(f"  Pausa de enfriamiento: 15s antes de reintentar...")
+                    print(f"{'═' * 65}\n")
+                    await asyncio.sleep(15)
+
+                    for j, pub in enumerate(reintentables):
+                        producto = pub["producto"]
+                        imagenes = pub.get("imagenes_usadas", [pub.get("imagen_usada", "")])
+                        desc_archivo = pub.get("descripcion_usada", "descripcion_base.txt")
+                        intentos_hechos = pub.get("intentos", 1)
+
+                        print(f"{'─' * 65}")
+                        print(f"[REINTENTO {j+1}/{len(reintentables)}] {producto} (intento #{intentos_hechos + 1})")
+
+                        datos_producto = cargar_producto(producto)
+                        if not datos_producto:
+                            print(f"  ❌ No se encontraron datos del producto")
+                            cuenta = marcar_publicacion(cuenta, producto, "fallido", error="No se encontraron datos", max_reintentos=args.max_reintentos)
+                            guardar_cuenta(args.email, cuenta)
+                            continue
+
+                        rutas_fotos = resolver_rutas_imagenes(producto, imagenes)
+                        if not rutas_fotos:
+                            print(f"  ❌ No se encontraron imágenes")
+                            cuenta = marcar_publicacion(cuenta, producto, "fallido", error="No se encontraron imágenes", max_reintentos=args.max_reintentos)
+                            guardar_cuenta(args.email, cuenta)
+                            continue
+
+                        # Título fresco tras la rotación previa
+                        nombres = parsear_nombres_producto(datos_producto.get("nombre", producto))
+                        titulo = nombres[0]
+                        pub["titulo_usado"] = titulo
+
+                        frases_usadas_en_anuncio = []
+                        if args.sin_descripcion:
+                            descripcion = ""
+                        elif args.descripciones_aleatorias:
+                            descripcion, frases_usadas_en_anuncio = obtener_siguiente_descripcion_aleatoria(banco_frases)
+                        else:
+                            descripcion = cargar_descripcion(producto, desc_archivo)
+
+                        try:
+                            nueva_url = await publicar_anuncio(page, datos_producto, descripcion, rutas_fotos, titulo=titulo)
+                        except Exception as e:
+                            print(f"  ❌ Excepción en reintento: {e}")
+                            nueva_url = None
+
+                        if len(nombres) > 1:
+                            _, nuevos_nombres = rotar_y_guardar_producto(PRODUCTOS_DIR / producto / "producto.json")
+                            print(f"    🔄 Cola de títulos rotada → Próximo: \"{nuevos_nombres[0]}\"")
+
+                        if frases_usadas_en_anuncio:
+                            marcadas = marcar_frases_en_archivo(frases_usadas_en_anuncio)
+                            if marcadas:
+                                print(f"    🏷️  {marcadas} frase(s) marcada(s) como [USADA] en frases_cierre.txt ({len(banco_frases)} disponibles restantes)")
+
+                        if nueva_url:
+                            cuenta = marcar_publicacion(cuenta, producto, "publicado", nueva_url, titulo_usado=titulo, descripcion_usada=descripcion, max_reintentos=args.max_reintentos)
+                            ok_count += 1
+                            fail_count -= 1
+                        else:
+                            cuenta = marcar_publicacion(cuenta, producto, "fallido", titulo_usado=titulo, descripcion_usada=descripcion, error="Fallo en reintento automático", max_reintentos=args.max_reintentos)
+                            if await detectar_cloudflare(page):
+                                print(f"  🛑 Cloudflare en reintento. Deteniendo.")
+                                guardar_cuenta(args.email, cuenta)
+                                break
+
+                        guardar_cuenta(args.email, cuenta)
+
+                        if j < len(reintentables) - 1:
+                            espera = random.uniform(PAUSA_ENTRE_ANUNCIOS[0], PAUSA_ENTRE_ANUNCIOS[1])
+                            print(f"\n  ⏳ Pausa: {espera:.0f}s")
+                            await asyncio.sleep(espera)
+
     else:
         # Modo preview
         ok_count = 0
@@ -848,6 +1061,8 @@ async def main():
             titulo = pub.get("titulo_usado") or nombres[0]
             precio = datos.get("precio", "?") if datos else "?"
             moneda = datos.get("moneda", "") if datos else ""
+            es_fallido = pub.get("estado") == "fallido"
+            tag_preview = f" [REINTENTO #{pub.get('intentos', 1) + 1}]" if es_fallido else ""
 
             if args.sin_descripcion:
                 desc_mostrar = "[SIN DESCRIPCIÓN]"
@@ -858,7 +1073,7 @@ async def main():
                 desc_mostrar = desc_archivo
 
             info_nombres = f" [de {len(nombres)} nombres: {', '.join(nombres)}]" if len(nombres) > 1 else ""
-            print(f"  [{i+1:3d}] {producto:25s} {precio} {moneda}")
+            print(f"  [{i+1:3d}] {producto:25s} {precio} {moneda}{tag_preview}")
             print(f"        🏷️ Título: \"{titulo}\"{info_nombres}")
             print(f"        🖼️ {len(imagenes)} foto(s)  📝 {desc_mostrar}")
             ok_count += 1
@@ -871,8 +1086,24 @@ async def main():
     print(f"{'═' * 65}")
     print(f"  ✅ Publicados: {ok_count}")
     print(f"  ❌ Fallidos:   {fail_count}")
-    total_pendientes = len(obtener_pendientes(cargar_cuenta(args.email)))
-    print(f"  📋 Pendientes: {total_pendientes}")
+
+    cuenta_final = cargar_cuenta(args.email)
+    pubs_final = cuenta_final.get("publicaciones", [])
+    total_pendientes = len([p for p in pubs_final if p.get("estado") == "pendiente"])
+    total_fallidos_recup = len([
+        p for p in pubs_final
+        if p.get("estado") == "fallido" and p.get("intentos", 1) < (1 + args.max_reintentos)
+    ])
+    total_definitivos = len([
+        p for p in pubs_final
+        if p.get("estado") == "fallido_definitivo" or (p.get("estado") == "fallido" and p.get("intentos", 1) >= (1 + args.max_reintentos))
+    ])
+
+    print(f"  📋 Pendientes nuevos:     {total_pendientes}")
+    if total_fallidos_recup:
+        print(f"  🔄 Fallidos recuperables: {total_fallidos_recup} (vuelve a correr el comando para reintentar)")
+    if total_definitivos:
+        print(f"  🛑 Fallidos definitivos:  {total_definitivos} (límite de reintentos alcanzado)")
     print(f"{'═' * 65}\n")
 
 

@@ -1,0 +1,10 @@
+{
+  "nombre": "juego de sala",
+  "precio": "400",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "74791"
+}

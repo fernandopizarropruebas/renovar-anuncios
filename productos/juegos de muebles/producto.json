@@ -1,0 +1,10 @@
+{
+  "nombre": "juegos de Muebles",
+  "precio": "400",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "74791"
+}

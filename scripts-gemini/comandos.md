@@ -27,6 +27,17 @@ python3 scripts-gemini/publicar_sin_descripcion.py --email tucuenta@gmail.com --
 python3 scripts-gemini/publicar_v2.py --email tucuenta@gmail.com --descripciones-aleatorias --preview --limite 5
 python3 scripts-gemini/publicar_v2.py --email tucuenta@gmail.com --port=9223 --limite 20 --descripciones-aleatorias
 
+# 8.1. Reintentar ANUNCIOS FALLIDOS (con límite estricto)
+# Por defecto, si fallan anuncios, reintenta automáticamente al final de la tanda (15s de pausa).
+# Si vuelves a ejecutar el comando y no hay pendientes nuevos, toma automáticamente los fallidos recuperables:
+python3 scripts-gemini/publicar_v2.py --email tucuenta@gmail.com --descripciones-aleatorias
+# Forzar inclusión de fallidos junto con nuevos:
+python3 scripts-gemini/publicar_v2.py --email tucuenta@gmail.com --reintentar-fallidos
+# Configurar límite de reintentos (ej: hasta 2 reintentos permitidos):
+python3 scripts-gemini/publicar_v2.py --email tucuenta@gmail.com --max-reintentos 2
+# Desactivar la ronda de reintento automático al final de la tanda:
+python3 scripts-gemini/publicar_v2.py --email tucuenta@gmail.com --sin-reintento-sesion
+
 # 9. Listar productos actualmente publicados en la cuenta (con scroll y total)
 python3 scripts-gemini/listar_publicados.py --port=9223
 python3 scripts-gemini/listar_publicados.py --port=9223 --guardar

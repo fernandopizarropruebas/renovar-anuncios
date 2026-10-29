@@ -1,0 +1,10 @@
+{
+  "nombre": "Triciclo de carga",
+  "precio": "3500",
+  "moneda": "USD",
+  "categoria": [
+    "Hogar",
+    "Muebles"
+  ],
+  "id_original": "74791"
+}

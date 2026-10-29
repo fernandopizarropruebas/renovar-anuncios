@@ -604,6 +604,126 @@
       "estado": "publicado",
       "url_revolico": "https://www.revolico.com/item/58127107/_/manage?action=created",
       "fecha_publicacion": "2026-10-14T11:41:31.719698"
+    },
+    {
+      "producto": "cama personal",
+      "titulo_usado": "cama personal",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_c01e1mc01e1mc01e/Gemini_Generated_Image_c01e1mc01e1mc01e_v003.jpg"
+      ],
+      "descripcion_usada": "Puede preguntarme y le respondo enseguida. Quedo atento para cualquier duda o detalle.",
+      "fecha_asignacion": "2026-10-15T22:43:37.592039",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58161547/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T22:48:19.134002"
+    },
+    {
+      "producto": "cama plegable",
+      "titulo_usado": "cama plegable",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_w84jhsw84jhsw84j/Gemini_Generated_Image_w84jhsw84jhsw84j_v003.jpg"
+      ],
+      "descripcion_usada": "Pregunta sin pena, respondo con gusto. El producto está listo para ser usado.",
+      "fecha_asignacion": "2026-10-15T22:43:37.592489",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58161520/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T22:46:43.257856"
+    },
+    {
+      "producto": "cama portatil",
+      "titulo_usado": "cama portatil",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_1g2aoa1g2aoa1g2a/Gemini_Generated_Image_1g2aoa1g2aoa1g2a_v003.jpg"
+      ],
+      "descripcion_usada": "Es una buena compra con excelente valor.",
+      "fecha_asignacion": "2026-10-15T22:43:37.592895",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58161503/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T22:45:35.048907"
+    },
+    {
+      "producto": "camas personales",
+      "titulo_usado": "camas personales",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_p4rwdsp4rwdsp4rw/Gemini_Generated_Image_p4rwdsp4rwdsp4rw_v003.jpg"
+      ],
+      "descripcion_usada": "No dude en preguntarme por detalles.",
+      "fecha_asignacion": "2026-10-15T22:43:37.593285",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58161568/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T22:49:22.887080"
+    },
+    {
+      "producto": "camas plegables",
+      "titulo_usado": "camas plegables",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_8b2iy98b2iy98b2i/Gemini_Generated_Image_8b2iy98b2iy98b2i_v003.jpg"
+      ],
+      "descripcion_usada": "Puedo ofrecerle una explicación clara.",
+      "fecha_asignacion": "2026-10-15T22:43:37.593688",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58161493/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T22:45:04.349657"
+    },
+    {
+      "producto": "camas portatiles",
+      "titulo_usado": "camas portatiles",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_dau75dau75dau75d/Gemini_Generated_Image_dau75dau75dau75d_v003.jpg"
+      ],
+      "descripcion_usada": "Estoy atento a su respuesta.",
+      "fecha_asignacion": "2026-10-15T22:43:37.594070",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58161531/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T22:47:14.250782"
+    },
+    {
+      "producto": "canape",
+      "titulo_usado": "canape",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_r2aqznr2aqznr2aq/Gemini_Generated_Image_r2aqznr2aqznr2aq_v003.jpg"
+      ],
+      "descripcion_usada": "Es una compra con buen valor por lo que ofrece.",
+      "fecha_asignacion": "2026-10-15T22:43:37.594477",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58161541/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T22:47:45.612655"
+    },
+    {
+      "producto": "canapes",
+      "titulo_usado": "canapes",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_eqnfr0eqnfr0eqnf/Gemini_Generated_Image_eqnfr0eqnfr0eqnf_v003.jpg"
+      ],
+      "descripcion_usada": "Si le gusta, me avisa y lo vemos.",
+      "fecha_asignacion": "2026-10-15T22:43:37.594896",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58161576/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T22:49:54.462946"
+    },
+    {
+      "producto": "tumbona",
+      "titulo_usado": "tumbona",
+      "imagenes_usadas": [
+        "variantes_Gemini_Generated_Image_h4ezqth4ezqth4ez/Gemini_Generated_Image_h4ezqth4ezqth4ez_v003.jpg"
+      ],
+      "descripcion_usada": "Lo entrego con mucha buena disposición.",
+      "fecha_asignacion": "2026-10-15T22:43:37.595279",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58161554/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T22:48:48.452169"
+    },
+    {
+      "producto": "tumbonas",
+      "titulo_usado": "tumbonas",
+      "imagenes_usadas": [
+        "variantes_WhatsApp Image 2026-10-09 at 7.41.31 PM/WhatsApp Image 2026-10-09 at 7.41.31 PM_v003.jpg"
+      ],
+      "descripcion_usada": "Puede escribirme y le respondo enseguida.",
+      "fecha_asignacion": "2026-10-15T22:43:37.595676",
+      "estado": "publicado",
+      "url_revolico": "https://www.revolico.com/item/58161510/_/manage?action=created",
+      "fecha_publicacion": "2026-10-15T22:46:10.391304"
     }
   ]
 }
